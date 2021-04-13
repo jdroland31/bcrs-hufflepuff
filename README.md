@@ -1,4 +1,4 @@
-# Bob's Computer Repair Shop
+# Nodebucket
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.0.
 
@@ -26,8 +26,12 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-<br> <br>
+# Project Info
 
-# Contributors 
+Contributors: Nicole Barleta, Jonathan Roland, Wendy Leon
 
-## Jonathan Roland - jdroland@my365.bellevue.edu <br> Wendy Leon - wleon@my365.bellevue.edu <br> Marie Nicole Barleta - mnbarleta@my365.bellevue.edu
+Professor: Richard Krasso
+
+Project Name: Bob's Computer Repair Shop
+
+Course: WEB 450:  Mastering the MEAN Stack Bootcamp
