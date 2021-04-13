@@ -30,8 +30,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 # Contributors 
 
-## Jonathan Roland - jdroland@my365.bellevue.edu
-
-## Wendy Leon - wleon@my365.bellevue.edu
+## Jonathan Roland - jdroland@my365.bellevue.edu <br> Wendy Leon - wleon@my365.bellevue.edu
 
 ## Marie Nicole Barleta - mnbarleta@my365.bellevue.edu
