@@ -21,13 +21,27 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SecurityQuestionsCreateComponent } from './pages/security-questions-create/security-questions-create.component';
+import { SecurityQuestionsDetailsComponent } from './pages/security-questions-details/security-questions-details.component';
+import { SecurityQuestionsListComponent } from './pages/security-questions-list/security-questions-list.component';
+import { SigninComponent } from './pages/signin/signin.component';
+import { UserCreateComponent } from './pages/user-create/user-create.component';
+import { UserDetailsComponent } from './pages/user-details/user-details.component';
+import { UserListComponent } from './pages/user-list/user-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     BaseLayoutComponent,
-    AuthLayoutComponent
+    AuthLayoutComponent,
+    SecurityQuestionsCreateComponent,
+    SecurityQuestionsDetailsComponent,
+    SecurityQuestionsListComponent,
+    SigninComponent,
+    UserCreateComponent,
+    UserDetailsComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
