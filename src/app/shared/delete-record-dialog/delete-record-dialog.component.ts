@@ -9,11 +9,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-user-list',
-  templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.css']
+  selector: 'app-delete-record-dialog',
+  templateUrl: './delete-record-dialog.component.html',
+  styleUrls: ['./delete-record-dialog.component.css']
 })
-export class UserListComponent implements OnInit {
+export class DeleteRecordDialogComponent implements OnInit {
 
   constructor() { }
 
