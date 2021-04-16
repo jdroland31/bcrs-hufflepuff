@@ -1,7 +1,7 @@
 /***
 ** Title: Bob's Computer Repair Shop
 ** Author:  Professor Krasso
-** Modified by: Jonathan Rodlan, Nicole Barleta, Wendy Leon
+** Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
 ** Date: April 15 2021
 ** Description: API - Sprint 1
  ***/
@@ -10,7 +10,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const UserRoleSchema = require('../schemas/user-role');
-const SelectionSecurityQuestionSchema = require('../schemas/selected-security-questions');
+const SelectedSecurityQuestionSchema = require('../schemas/selected-security-question');
 //Here we define the user schema.
 let userSchema = new Schema({
   userName:                    {type: String, required: true, unique: true, dropDups: true},
@@ -20,9 +20,9 @@ let userSchema = new Schema({
   phoneNumber:                 {type: String},
   address:                     {type: String},
   email:                       {type: String},
-  isDisabled:                  {type: String, default: false},
-  roles:                       UserRoleSchema,
-  selectionSecurityQuestions:  {SelectionSecurityQuestionSchema},
+  isDisabled:                  {type: String, default: false },
+  role:                        UserRoleSchema,
+  selectedSecurityQuestions:  [SelectedSecurityQuestionSchema],
   dateCreated:                 {type: Date, default: new Date()},
   dateModified:                {type: Date}
 }, {collection: 'users'});
