@@ -16,7 +16,13 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path');
 const mongoose = require('mongoose');
-
+/**
+ * Routes
+ */
+// API import / require statements - file import
+ const UserApi = require('./routes/user-api');
+ const SecurityQuestionsApi = require('./routes/securityQuestion-api');
+ const SessionApi = require('./routes/session-api')
 /**
  * App configurations
  */
@@ -30,7 +36,7 @@ app.use('/', express.static(path.join(__dirname, '../dist/bcrs')));
 /**
  * Variables
  */
-const port = 3000; // server port
+const port = process.env.PORT || 3000; // server port
 
 // DB connection
 const conn = 'mongodb+srv://bcrs_user:hufflepuffers21@buwebdev-cluster-1.oqsoi.mongodb.net/bcrs?retryWrites=true&w=majority';
@@ -51,6 +57,12 @@ mongoose.connect(conn, {
 /**
  * API(s) go here...
  */
+//mapping imported files to route
+app.use('/api/users', UserApi);
+app.use('/api/session', SessionApi);
+app.use('/api/securityQuestions', SecurityQuestionsApi);
+
+
 
 /**
  * Create and start server
