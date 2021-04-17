@@ -7,7 +7,9 @@
 User API's
  ***/
 
-const bcrypt = require('bcryptjs');
+const express = require('express');
+const User = require('../models/user');
+// const bcrypt = require('bcryptjs');
 const BaseResponse = require('../services/base-response');
 const ErrorResponse = require('../services/error-response');
 const RoleSchema = require('../schemas/user-role');
@@ -71,3 +73,41 @@ router.post('/', async(req, res) => {
 
   }
 });
+
+/**
+ * API: findById
+ * @param userId
+ * @returns User document or null
+ * This route gets a single user by ID and provides data or error handling as appropriate.
+ */
+
+router.get('/:userId', async(req, res) => {
+  try
+  {
+    //Attempt to query for a single user by id using the findOne() function.
+    User.findOne({'userId':req.params.empId}, function(err, user){
+      if(err)
+      {
+        //If the database encounters and error, log the error to the console and output it as an object.
+        console.log(err);
+        const mongoDbErrorResponse = new BaseResponse('500',`MongoDB Native Error ${err.message}`,null);
+        res.json(mongoDbErrorResponse.toObject());
+      }
+      else
+      {
+        //If successful, return the user object that was found.
+        console.log(user);
+        const userResponse = new BaseResponse('200', 'Successful Query', user);
+        res.json(userResponse.toObject());
+      }
+    })
+  }
+  catch(e)
+  {
+    console.log(e);
+    const findUserCatchError = new BaseResponse('500', `Internal Server Error ${err.message}`,null);
+    res.json(findUserCatchError)
+  }
+})
+
+module.exports = router;

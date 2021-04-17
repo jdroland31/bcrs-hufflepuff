@@ -24,6 +24,14 @@ const mongoose = require('mongoose');
  const SecurityQuestionsApi = require('./routes/securityQuestion-api');
  const SessionApi = require('./routes/session-api')
 /**
+ * API Routes
+ */
+
+const SecurityModelAPI = require('./routes/security-questions-api');
+const SessionAPI = require('./routes/session-api');
+const UserAPI = require('./routes/user-api');
+
+/**
  * App configurations
  */
 let app = express();
@@ -32,6 +40,8 @@ app.use(bodyParser.urlencoded({'extended': true}));
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, '../dist/bcrs')));
 app.use('/', express.static(path.join(__dirname, '../dist/bcrs')));
+
+
 
 /**
  * Variables
@@ -55,13 +65,11 @@ mongoose.connect(conn, {
 }); // end mongoose connection
 
 /**
- * API(s) go here...
+ * API use statements
  */
-//mapping imported files to route
-app.use('/api/users', UserApi);
-app.use('/api/session', SessionApi);
-app.use('/api/securityQuestions', SecurityQuestionsApi);
-
+app.use('/api/security_questions', SecurityQuestionAPI);
+app.use('/api/session', SessionAPI);
+app.use('/api/users', UserAPI);
 
 
 /**

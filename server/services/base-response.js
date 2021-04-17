@@ -8,20 +8,25 @@ This is where the error response is so
 the response can be used all throughout the APIs
  ***/
 
+// The BaseResponse class provides a response object for requests.
+
 class BaseResponse {
-  constructor(httpCode, message, data) {
+  constructor(httpCode,message,data,timestamp)
+  {
     this.httpCode = httpCode;
     this.message = message;
     this.data = data;
+    this.timestamp = new Date().toLocaleDateString('en-US')
   }
 
-  toObject() {
-     return {
-       'httpCode': this.httpCode,
-       'message': this.message,
-       'data': this.data,
-       'timestamp': new Date().toLocaleDateString()
-     }
+  toObject()
+  {
+    return {
+      'httpCode' : this.httpCode,
+      'message' : this.message,
+      'data' : this.data,
+      'timestamp' : this.timestamp
+    }
   }
 }
 
