@@ -20,6 +20,39 @@ const saltRounds = 10; // set salt rounds for hashing algorithm
  * FindAll
  */
 
+ router.get('/', async (req, res) => {
+  try {
+    // get all users that are not disabled
+    User.find({}).where('isDisabled').equals(false).exec(function(err, users){
+
+      // server error message if there is one
+      if (err) {
+        console.log('inside error 500' + err);
+        const findAllMongodbErrorResponse = new ErrorResponse(500, 'Internal server error', err);
+        res.status(500).send(findAllMongodbErrorResponse.toObject());
+      }
+
+      // if query returns resutls
+      else {
+        console.log('inside error 200' + users);
+        const findAllUsersResponse = new BaseResponse(200, 'Query successful!', users);
+        res.json(findAllUsersResponse.toObject());
+      }
+    });
+  }
+   // catch all e
+  catch (e) {
+    console.log('inside catch error' + error);
+    const findAllCatchErrorResponse = new ErrorResponse (500, 'Internal Server Error', error);
+    res.status(500).send(findAllCatchErrorResponse.toObject());
+  }
+
+});
+
+
+
+
+
  /**
   *FindById
   */
