@@ -68,7 +68,7 @@ const router = express.Router();
   }
   catch (e)
   {
-      console.log(e);
+      console.log(e);console.log('catch');
       const createSecurityQuestionCatchErrorResponse = new ErrorResponse('500', 'Internal Server Error!', e.message);
       res.status(500).send(createSecurityQuestionCatchErrorResponse.toObject());
   }

@@ -21,14 +21,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SecurityQuestionsCreateComponent } from './pages/security-questions-create/security-questions-create.component';
-import { SecurityQuestionsDetailsComponent } from './pages/security-questions-details/security-questions-details.component';
-import { SecurityQuestionsListComponent } from './pages/security-questions-list/security-questions-list.component';
+
+
 import { SigninComponent } from './pages/signin/signin.component';
 import { UserCreateComponent } from './pages/user-create/user-create.component';
 import { UserDetailsComponent } from './pages/user-details/user-details.component';
 import { UserListComponent } from './pages/user-list/user-list.component';
 import { DeleteRecordDialogComponent } from './shared/delete-record-dialog/delete-record-dialog.component';
+
+import { SecurityQuestionDetailsComponent } from './pages/security-question-details/security-question-details.component';
+import { SecurityQuestionListComponent } from './pages/security-question-list/security-question-list.component';
+import { SecurityQuestionCreateComponent } from './pages/security-question-create/security-question-create.component';
 
 @NgModule({
   declarations: [
@@ -36,14 +39,16 @@ import { DeleteRecordDialogComponent } from './shared/delete-record-dialog/delet
     HomeComponent,
     BaseLayoutComponent,
     AuthLayoutComponent,
-    SecurityQuestionsCreateComponent,
-    SecurityQuestionsDetailsComponent,
-    SecurityQuestionsListComponent,
+
     SigninComponent,
     UserCreateComponent,
     UserDetailsComponent,
     UserListComponent,
-    DeleteRecordDialogComponent
+    DeleteRecordDialogComponent,
+    
+    SecurityQuestionDetailsComponent,
+    SecurityQuestionListComponent,
+    SecurityQuestionCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +59,7 @@ import { DeleteRecordDialogComponent } from './shared/delete-record-dialog/delet
     MatButtonModule,
     MatIconModule,
     HttpClientModule,
+    //HttpClient,
     FormsModule,
     ReactiveFormsModule,
   ],

@@ -9,11 +9,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-security-questions-details',
-  templateUrl: './security-questions-details.component.html',
-  styleUrls: ['./security-questions-details.component.css']
+  selector: 'app-security-question-list',
+  templateUrl: './security-question-list.component.html',
+  styleUrls: ['./security-question-list.component.css']
 })
-export class SecurityQuestionsDetailsComponent implements OnInit {
+export class SecurityQuestionListComponent implements OnInit {
 
   constructor() { }
 

@@ -13,12 +13,12 @@ const Schema = mongoose.Schema;
 let securityQuestionSchema = new Schema(
   {
     text: {
-            type: String,
-            unique: true /*mongoose schema field validation*/,
-            required: true /*mongoose required field validadtion*/
+            type: String
+            //unique: true mongoose schema field validation*/,
+            //required: true mongoose required field validadtion*/
           },
     isDisabled: {type: Boolean, default: false}
   },
   {collection: 'security_questions'})
 //Here we export the model.
-module.exports = mongoose.model('SecurityQuestions', securityQuestionSchema);
+module.exports = mongoose.model('SecurityQuestion', securityQuestionSchema);

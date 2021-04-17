@@ -7,7 +7,7 @@
  ***/
 
 
-export interface SecurityQuestions {
+export interface SecurityQuestion {
   _id: string;
   text: string;
 

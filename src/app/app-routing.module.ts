@@ -10,9 +10,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { BaseLayoutComponent } from './shared/base-layout/base-layout.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SecurityQuestionsDetailsComponent } from './pages/security-questions-details/security-questions-details.component';
-import { SecurityQuestionsListComponent } from './pages/security-questions-list/security-questions-list.component';
-
+import { SecurityQuestionDetailsComponent } from './pages/security-question-details/security-question-details.component';
+import { SecurityQuestionListComponent } from './pages/security-question-list/security-question-list.component';
+import { SecurityQuestionCreateComponent } from './pages/security-question-create/security-question-create.component';
 const routes: Routes = [
   {
     path: '',
@@ -25,15 +25,15 @@ const routes: Routes = [
         // security questions
       {
         path: 'security-questions',
-        component: SecurityQuestionsListComponent
+        component: SecurityQuestionListComponent
       },
       {
         path: 'security-questions/:questionId',
-        component: SecurityQuestionsDetailsComponent
+        component: SecurityQuestionDetailsComponent
       },
       {
         path: 'security-questions/create/new',
-        component: SecurityQuestionsDetailsComponent
+        component: SecurityQuestionCreateComponent
       }
     ]
   }

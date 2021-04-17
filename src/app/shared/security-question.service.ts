@@ -15,7 +15,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class SecurityQuestionsService {
+export class SecurityQuestionService {
   // constructor
   constructor(private http: HttpClient) { }
 
@@ -28,7 +28,7 @@ export class SecurityQuestionsService {
   /** Create SQ **/
   createSecurityQuestion(newSecurityQuestion: SecurityQuestion): Observable<any>{
     return this.http.post('/api/security-questions', {
-      text: updatedSecurityQuestions.text
+      text: newSecurityQuestion.text
     })
   }
 

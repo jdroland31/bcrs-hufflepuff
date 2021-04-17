@@ -16,18 +16,12 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path');
 const mongoose = require('mongoose');
-/**
- * Routes
- */
-// API import / require statements - file import
- const UserApi = require('./routes/user-api');
- const SecurityQuestionsApi = require('./routes/security-questions-api');
- const SessionApi = require('./routes/session-api')
+
 /**
  * API Routes
  */
 
-const SecurityQuestionAPI = require('./routes/security-questions-api');
+const SecurityQuestionAPI = require('./routes/security-question-api');
 const SessionAPI = require('./routes/session-api');
 const UserAPI = require('./routes/user-api');
 
@@ -38,8 +32,8 @@ let app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended': true}));
 app.use(morgan('dev'));
-app.use(express.static(path.join(__dirname, '../dist/bcrs')));
-app.use('/', express.static(path.join(__dirname, '../dist/bcrs')));
+app.use(express.static(path.join(__dirname, '../dist/bcrs-hufflepuff')));
+app.use('/', express.static(path.join(__dirname, '../dist/bcrs-hufflepuff')));
 
 
 
@@ -57,7 +51,8 @@ const conn = 'mongodb+srv://bcrs_user:hufflepuffers21@buwebdev-cluster-1.oqsoi.m
 mongoose.connect(conn, {
   promiseLibrary: require('bluebird'),
   useUnifiedTopology: true,
-  useNewUrlParser: true
+  useNewUrlParser: true,
+  useCreateIndex: true
 }).then(() => {
   console.debug(`Connection to the database instance was successful`);
 }).catch(err => {
@@ -67,7 +62,7 @@ mongoose.connect(conn, {
 /**
  * API use statements
  */
-app.use('/api/security_question', SecurityQuestionAPI);
+app.use('/api/security_questions', SecurityQuestionAPI);
 app.use('/api/session', SessionAPI);
 app.use('/api/users', UserAPI);
 
