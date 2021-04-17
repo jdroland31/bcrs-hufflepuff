@@ -9,10 +9,9 @@ User API's
 
 const express = require('express');
 const User = require('../models/user');
-//const bcrypt = require('bcryptjs');
+const bcrypt = require('bcryptjs');
 const BaseResponse = require('../services/base-response');
 const ErrorResponse = require('../services/error-response');
-const RoleSchema = require('../schemas/user-role');
 
 const router = express.Router();
 const saltRounds = 10; // set salt rounds for hashing algorithm
@@ -36,7 +35,7 @@ const saltRounds = 10; // set salt rounds for hashing algorithm
 
 router.post('/', async(req, res) => {
   try {
-    let hashedPassword = bcrypt.hashSync(req.body.passwords, saltRounds); // salting and hashing the password
+    let hashedPassword = bcrypt.hashSync(req.body.password, saltRounds); // salting and hashing the password
     //the standard role for all newly created user
     standardRole ={
       role: 'standard'
