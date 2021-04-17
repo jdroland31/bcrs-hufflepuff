@@ -21,7 +21,7 @@ const mongoose = require('mongoose');
  */
 // API import / require statements - file import
  const UserApi = require('./routes/user-api');
- const SecurityQuestionsApi = require('./routes/securityQuestion-api');
+ const SecurityQuestionsApi = require('./routes/security-questions-api');
  const SessionApi = require('./routes/session-api')
 /**
  * API Routes
