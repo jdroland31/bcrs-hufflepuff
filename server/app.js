@@ -27,7 +27,7 @@ const mongoose = require('mongoose');
  * API Routes
  */
 
-const SecurityModelAPI = require('./routes/security-questions-api');
+const SecurityQuestionAPI = require('./routes/security-questions-api');
 const SessionAPI = require('./routes/session-api');
 const UserAPI = require('./routes/user-api');
 
@@ -67,7 +67,7 @@ mongoose.connect(conn, {
 /**
  * API use statements
  */
-app.use('/api/security_questions', SecurityQuestionAPI);
+app.use('/api/security_question', SecurityQuestionAPI);
 app.use('/api/session', SessionAPI);
 app.use('/api/users', UserAPI);
 

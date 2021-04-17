@@ -13,7 +13,7 @@ Security Questions API
 
 // require statements
 const express = require('express');
-const SecurityQuestion = require('../models/securityQuestion');
+const SecurityQuestion = require('../models/security-question');
 
 // file import - baseresponse & errorresponse classes
 const BaseResponse = require('../services/base-response');
@@ -87,4 +87,6 @@ const router = express.Router();
  ** Delete SQ
  **
  **/
+
+ module.exports = router;
 

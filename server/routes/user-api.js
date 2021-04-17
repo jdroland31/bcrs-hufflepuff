@@ -9,7 +9,7 @@ User API's
 
 const express = require('express');
 const User = require('../models/user');
-// const bcrypt = require('bcryptjs');
+const bcrypt = require('bcryptjs');
 const BaseResponse = require('../services/base-response');
 const ErrorResponse = require('../services/error-response');
 const RoleSchema = require('../schemas/user-role');
@@ -50,7 +50,9 @@ router.post('/', async(req, res) => {
       phoneNumber: req.body.phoneNumber,
       address: req.body.address,
       email: req.body.email,
-      role: standardRole
+      role: standardRole,
+      date_created: new Date(),
+      date_modified: null
 
     };
     // create query on database
@@ -85,7 +87,7 @@ router.get('/:userId', async(req, res) => {
   try
   {
     //Attempt to query for a single user by id using the findOne() function.
-    User.findOne({'userId':req.params.empId}, function(err, user){
+    User.findOne({'userId':req.params.userId}, function(err, user){
       if(err)
       {
         //If the database encounters and error, log the error to the console and output it as an object.
@@ -107,6 +109,150 @@ router.get('/:userId', async(req, res) => {
     console.log(e);
     const findUserCatchError = new BaseResponse('500', `Internal Server Error ${err.message}`,null);
     res.json(findUserCatchError)
+  }
+})
+
+/**
+ * API: updateUser
+ * @param userId
+ * @returns User document or null
+ * This route updates a user identified by user ID
+ */
+
+ router.put('/:userId', async(req,res) => {
+  try
+  {
+    User.findOne({'userId': req.params.userId}, function (err, user)
+    {
+      if(err)
+      {
+        //If the database encounters an error, log the error to console and output as an object.
+        console.log(err);
+        const updateUserMongoDBException = new BaseResponse('500',`Internal Server Error ${err.message}`,null);
+        res.status(500).send(updateUserMongoDBException.toObject());
+      }
+      else
+      {
+        //If no error and the user is valid, proceed with updating the user.
+        console.log(user);
+        if(user)
+        {
+          let hashedPassword = bcrypt.hashSync(req.body.passwords, saltRounds); // salting and hashing the password
+          //Set the user's attributes to match those in the request body.
+          user.set({
+            userName: req.body.userName,
+            password: hashedPassword,
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            phoneNumber: req.body.phoneNumber,
+            address: req.body.address,
+            email: req.body.email,
+            isDisabled: req.body.isDisabled,
+            role: req.body.role,
+            securityQuestions: req.body.securityQuestions,
+            date_modified: new Date()
+
+          });
+          //Save the new user data.
+          user.save(function(err, updatedUser){
+            if(err)
+            {
+              //If the database encounters an error while attempting to update, log the error to console and output as an object.
+              console.log(err);
+              const updateUserMongoDBError = new BaseResponse('500',`Internal Server Error ${err.message}`,null);
+              res.status(500).send(updateUserMongoDBError.toObject());
+            }
+            else
+            {
+              //If successful, log and return the updated user document.
+              console.log(updatedUser);
+              const updatedUserSuccessResponse = new BaseResponse('200', 'Query Successful', updatedUser);
+              res.status(200).send(updatedUserSuccessResponse.toObject());
+            }
+          })
+        }
+        else
+        {
+          //if the userId is invalid, log and return null along with error message. 200 code is returned since the request technically succeeded, but lacked a valid user.
+          console.log(`Invalid userId! The passed-in value was ${req.params.userId}`);
+          const invalidUserIdResponse = new BaseResponse('200','Invalid user ID', user);
+          res.status(200).send(invalidUserIdResponse.toObject());
+        }
+      }
+    })
+  }
+  catch (e)
+  {
+    //If the server encounters an error event, catch it, log it and return the error as an object.
+    console.log(e);
+    const updateUserCatchResponse = new BaseResponse('500',`Internal Server Error ${err.message}`,null);
+    res.status(500).send(updateUserCatchResponse.toObject());
+  }
+})
+
+/**
+ * API: DeleteUser
+ * @param userId
+ * @returns User document or null
+ * This route updates a user identified by user ID to be 'disabled' rather than act as a true deletion.
+ */
+
+router.put('/:userId', async(req,res) => {
+  try
+  {
+    User.findOne({'userId': req.params.userId}, function (err, user)
+    {
+      if(err)
+      {
+        //If the database encounters an error, log the error to console and output as an object.
+        console.log(err);
+        const updateUserMongoDBException = new BaseResponse('500',`Internal Server Error ${err.message}`,null);
+        res.status(500).send(updateUserMongoDBException.toObject());
+      }
+      else
+      {
+        //If no error and the user is valid, proceed with updating the user.
+        console.log(user);
+        if(user)
+        {
+          //Set the user's isDisabled attribute to true to disable the user.
+          user.set({
+            isDisabled: true
+          });
+          //Save the new user data.
+          user.save(function(err, updatedUser){
+            if(err)
+            {
+              //If the database encounters an error while attempting to update, log the error to console and output as an object.
+              console.log(err);
+              const updateUserMongoDBError = new BaseResponse('500',`Internal Server Error ${err.message}`,null);
+              res.status(500).send(updateUserMongoDBError.toObject());
+            }
+            else
+            {
+              //If successful, log and return the updated user document.
+              console.log(updatedUser);
+              const updatedUserSuccessResponse = new BaseResponse('200', 'Query Successful', updatedUser);
+              res.status(200).send(updatedUserSuccessResponse.toObject());
+            }
+          })
+        }
+        else
+        {
+          //if the userId is invalid, log and return null along with error message. 200 code is returned since the request technically succeeded, but lacked a valid user.
+          console.log(`Invalid userId! The passed-in value was ${req.params.userId}`);
+          const invalidUserIdResponse = new BaseResponse('200','Invalid user ID', user);
+          res.status(200).send(invalidUserIdResponse.toObject());
+        }
+      }
+    })
+  }
+  catch (e)
+  {
+    //If the server encounters an error event, catch it, log it and return the error as an object.
+    console.log(e);
+    const updateUserCatchResponse = new BaseResponse('500',`Internal Server Error ${err.message}`,null);
+    res.status(500).send(updateUserCatchResponse.toObject());
   }
 })
 
