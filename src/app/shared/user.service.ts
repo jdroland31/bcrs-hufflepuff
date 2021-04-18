@@ -13,12 +13,13 @@ export class UserService {
 
 
   /** FindAll users **/
+  findAllUsers(): Observable<any> {
+    return this.http.get('/api/users');
+  }
 
-
-  /** FindAll users by ID **/
-
-  findAllSecurityQuestion(): Observable<any> {
-    return this.http.get('/api/security-questions');
+  /** Find users by ID **/
+  findUserById(userId: string): Observable<any> {
+    return this.http.get(`/api/users/${userId}`);
   }
 
   /** Create user **/
@@ -34,9 +35,26 @@ export class UserService {
     })
   }
 
-  /** Update SQ **/
+  /** Update User **/
 
+  updateUser(userId: string, user: User): Observable<any> {
 
-  /** Delete SQ **/
+    return this.http.put(`/api/users/${userId}`,
+    {
+      userName: user.firstName,
+      password: user.password,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      phoneNumber: user.phoneNumber,
+      address: user.address,
+      email: user.email
+    })
+
+  }
+  /** Delete User **/
+
+  deleteUser(userId: string): Observable<any> {
+    return this.http.delete(`/api/users/${userId}`);
+  }
 
 }
