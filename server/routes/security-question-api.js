@@ -35,8 +35,31 @@ const router = express.Router();
   * Added by: Marie Nicole Barleta
   * Date: April 15 2021
   */
-
-
+router.get('/:id', async(req, res) => {
+  try
+  {
+    SecurityQuestion.findOne({'_id': req.params.id}, function(err, securityQuestion){
+      if (err)
+      {
+        console.log(err);
+        const findAllMongodbErrorResponse = new ErrorResponse(500, 'Internal server error', err);
+        res.status(500).send(findAllMongodbErrorResponse.toObject());
+      }
+      else
+      {
+        console.log(securityQuestion);
+        const findByIdResponse = new BaseResponse(200, 'Query Successful', securityQuestion);
+        res.json(findByIdResponse.toObject());
+      }
+    })
+  }
+  catch (e)
+  {
+    console.log(e);
+    const findAllCatchErrorResponse = new ErrorResponse(500, 'Internal server error', e.message);
+    res.status(500).send(findAllCatchErrorResponse.toObject());
+  }
+});
  /**
  **
  ** Create SQ
@@ -87,6 +110,47 @@ const router = express.Router();
  ** Delete SQ
  **
  **/
+router.put('/:id', async(req, res) => {
+  try
+  {
+    SecurityQuestion.findOne({'_id': req.params.id}, function(err, securityQuestion){
+      if (err)
+      {
+        console.log(err);
+        const deleteSecurityQuestionMpngpdbErrorResponse = new ErrorResponse(500, 'Internal server error', err);
+        res.status(500).send(deleteSecurityQuestionMpngpdbErrorResponse.toObject());
+      }
+      else
+      {
+        console.log(securityQuestion);
+        securityQuestion.set({
+          isDisabled: true
+        });
+
+        securityQuestion.save(function (err, savedSecurityQuestion){
+          if (err)
+          {
+            console.log(err);
+            const savedSecurityQuestionMongodbErrorResponse = new ErrorResponse(500, 'Internal server error', err);
+            res.status(500).send(savedSecurityQuestionMongodbErrorResponse.toObject());
+          }
+          else
+          {
+            console.log(savedSecurityQuestion);
+            const deleteSecurityQuestionResponse = new BaseResponse (200, 'Query successful', savedSecurityQuestion);
+            res.json(deleteSecurityQuestionResponse.toObject());
+          }
+        })
+      }
+    })
+  }
+  catch (e)
+  {
+    console.log(e);
+    const findAllCatchErrorResponse = new ErrorResponse(500, 'Internal server error', e.message);
+    res.status(500).send(findAllCatchErrorResponse.toObject());
+  }
+});
 
  module.exports = router;
 
