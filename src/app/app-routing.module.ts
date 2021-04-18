@@ -48,10 +48,10 @@ const routes: Routes = [
         path: 'security-questions/create/new',
         component: SecurityQuestionCreateComponent
       },
-      // users - create
+      // users - list
       {
-        path: 'security-questions/create/new',
-        component: SecurityQuestionCreateComponent
+        path: 'users/:userIdd',
+        component: UserListComponent
       },
     ],
     //canActivate: [AuthGuard]
