@@ -9,7 +9,7 @@ User API's
 
 const express = require('express');
 const User = require('../models/user');
-const bcrypt = require('bcryptjs');
+const bcrypt = require('bcrypt');
 const BaseResponse = require('../services/base-response');
 const ErrorResponse = require('../services/error-response');
 
@@ -19,6 +19,39 @@ const saltRounds = 10; // set salt rounds for hashing algorithm
 /**
  * FindAll
  */
+
+ router.get('/', async (req, res) => {
+  try {
+    // get all users that are not disabled
+    User.find({}).where('isDisabled').equals(false).exec(function(err, users){
+
+      // server error message if there is one
+      if (err) {
+        console.log('inside error 500' + err);
+        const findAllMongodbErrorResponse = new ErrorResponse(500, 'Internal server error', err);
+        res.status(500).send(findAllMongodbErrorResponse.toObject());
+      }
+
+      // if query returns resutls
+      else {
+        console.log('inside error 200' + users);
+        const findAllUsersResponse = new BaseResponse(200, 'Query successful!', users);
+        res.json(findAllUsersResponse.toObject());
+      }
+    });
+  }
+   // catch all e
+  catch (e) {
+    console.log('inside catch error' + error);
+    const findAllCatchErrorResponse = new ErrorResponse (500, 'Internal Server Error', error);
+    res.status(500).send(findAllCatchErrorResponse.toObject());
+  }
+
+});
+
+
+
+
 
  /**
   *FindById
@@ -118,38 +151,40 @@ router.get('/:userId', async(req, res) => {
  * This route updates a user identified by user ID
  */
 
- router.put('/:userId', async(req,res) => {
+ router.put('/:id', async(req,res) => {
   try
   {
-    User.findOne({'userId': req.params.userId}, function (err, user)
+    User.findOne({'_id': req.params.id}, function (err, user)
     {
       if(err)
       {
         //If the database encounters an error, log the error to console and output as an object.
-        console.log(err);
+        console.log("inside error 500 if" + err);
         const updateUserMongoDBException = new BaseResponse('500',`Internal Server Error ${err.message}`,null);
         res.status(500).send(updateUserMongoDBException.toObject());
       }
       else
       {
         //If no error and the user is valid, proceed with updating the user.
-        console.log(user);
+        console.log('no error found updating: ' + user);
         if(user)
         {
-          let hashedPassword = bcrypt.hashSync(req.body.passwords, saltRounds); // salting and hashing the password
+          //let hashedPassword = bcrypt.hashSync(req.body.passwords, saltRounds); // salting and hashing the password
           //Set the user's attributes to match those in the request body.
           user.set({
             userName: req.body.userName,
-            password: hashedPassword,
+            /* password: req.body.password,*/
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             phoneNumber: req.body.phoneNumber,
             address: req.body.address,
             email: req.body.email,
+            /*
             isDisabled: req.body.isDisabled,
             role: req.body.role,
             securityQuestions: req.body.securityQuestions,
             date_modified: new Date()
+            */
 
           });
           //Save the new user data.
@@ -256,3 +291,5 @@ router.put('/:userId', async(req,res) => {
 })
 
 module.exports = router;
+
+
