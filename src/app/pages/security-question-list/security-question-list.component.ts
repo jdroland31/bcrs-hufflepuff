@@ -7,6 +7,12 @@
  ***/
 
 import { Component, OnInit } from '@angular/core';
+import { DeleteRecordDialogComponent } from './../../shared/delete-record-dialog/delete-record-dialog.component';
+import { HttpClient } from '@angular/common/http';
+import { MatDialog } from '@angular/material/dialog';
+import { SecurityQuestionService } from './../../shared/security-question.service';
+import { SecurityQuestion } from './../../shared/security-question.interface';
+
 
 @Component({
   selector: 'app-security-question-list',
@@ -15,9 +21,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SecurityQuestionListComponent implements OnInit {
 
-  constructor() { }
+  securityQuestions: SecurityQuestion[];
+  displayedColumns = ['question', 'functions'];
 
-  ngOnInit(): void {
+  constructor(private http: HttpClient, private dialog: MatDialog, private securityQuestionService: SecurityQuestionService) {
+    this.securityQuestionService.findAllSecurityQuestion().subscribe(res => {
+      this.securityQuestions = res['data'];
+    }, err => {
+      console.log(err);
+    })
+   }
+
+  ngOnInit() {
   }
 
+  delete (recordId: string){
+    const dialogRef = this.dialog.open(DeleteRecordDialogComponent, {
+      data: {
+        recordId,
+        dialogHeader: "Delete Record Dialog",
+        dialogBody: `Are you sure you want to delete security question ${recordId}?`
+      },
+      disableClose: true,
+      width: '800px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result === 'confirm'){
+        this.securityQuestionService.deleteSecurityQuestion(recordId).subscribe(res=> {
+          console.log('Security question deleted');
+          this.securityQuestions = this.securityQuestions.filter(q => q._id !==recordId);
+        })
+      }
+    }
+
+    )
+  }
 }

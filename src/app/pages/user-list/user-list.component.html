@@ -1,1 +1,65 @@
-<p>user-list works!</p>
+<div fxLayout='column'>
+  <mat-card>
+    <mat-card-title>
+      Users Configuration
+    </mat-card-title>
+    <button mat-button routerLink="users/create/new" color="accent"> Create </button>
+  <mat-card-content *ngIf="users">
+    <table mat-table [dataSource]="users">
+      <ng-container matcolumnDef="userName">
+        <th mat-header-cell *matHeaderCellDef> Username</th>
+        <td mat-cell *matCellDef="let element">
+          {{element.userName}}
+        </td>
+      </ng-container>
+
+      <ng-container matcolumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef> First Name</th>
+        <td mat-cell *matCellDef="let element">
+          {{element.firstName}}
+        </td>
+      </ng-container>
+
+      <ng-container matcolumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef> Last Name</th>
+        <td mat-cell *matCellDef="let element">
+          {{element.lastName}}
+        </td>
+      </ng-container>
+
+      <ng-container matcolumnDef="phoneNumber">
+        <th mat-header-cell *matHeaderCellDef>Phone Number</th>
+        <td mat-cell *matCellDef="let element">
+          {{element.phoneNumber}}
+        </td>
+      </ng-container>
+
+      <ng-container matcolumnDef="address">
+        <th mat-header-cell *matHeaderCellDef> Address</th>
+        <td mat-cell *matCellDef="let element">
+          {{element.address}}
+        </td>
+      </ng-container>
+
+      <ng-container matcolumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> email</th>
+        <td mat-cell *matCellDef="let element">
+          {{element.email}}
+        </td>
+      </ng-container>
+      <ng-container matcolumnDef="functions">
+        <th mat-header-cell *matHeaderCellDef> Functions</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button routerLink="/users/{{element._id}}">
+            <mat-icon color="accent"> edit</mat-icon>
+          </button>
+          <button mat-icon-button (click)="delete(element._id, element.userName)">
+            <mat-icon color="accent"> delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+    </table>
+  </mat-card-content>
+  </mat-card>
+</div>

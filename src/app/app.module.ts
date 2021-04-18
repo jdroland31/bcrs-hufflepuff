@@ -21,7 +21,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { MatCardModule } from '@angular/material/card';
 
 import { SigninComponent } from './pages/signin/signin.component';
 import { UserCreateComponent } from './pages/user-create/user-create.component';
@@ -45,7 +45,7 @@ import { SecurityQuestionCreateComponent } from './pages/security-question-creat
     UserDetailsComponent,
     UserListComponent,
     DeleteRecordDialogComponent,
-    
+
     SecurityQuestionDetailsComponent,
     SecurityQuestionListComponent,
     SecurityQuestionCreateComponent
@@ -62,6 +62,7 @@ import { SecurityQuestionCreateComponent } from './pages/security-question-creat
     //HttpClient,
     FormsModule,
     ReactiveFormsModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

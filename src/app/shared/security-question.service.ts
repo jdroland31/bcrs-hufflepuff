@@ -21,6 +21,9 @@ export class SecurityQuestionService {
 
   /** FindAll SQ **/
 
+  findAllSecurityQuestion(): Observable<any> {
+    return this.http.get('/api/security-questions');
+  }
 
   /** FindAll SQ by ID **/
 
@@ -36,6 +39,8 @@ export class SecurityQuestionService {
 
 
   /** Delete SQ **/
-
+  deleteSecurityQuestion(_id: string):Observable<any>{
+    return this.http.delete(`/api/security-questions/${_id}`)
+  }
 
 }
