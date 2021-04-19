@@ -1,0 +1,43 @@
+/* .signInContainer{
+  padding: 10px;
+} */
+
+.mat-card{
+  background-color: #f9c02d !important;
+  width: 50%;
+  padding-top: 100px;
+}
+
+input{
+  width: 100%;
+}
+
+button{
+  background-color: #6a4f4b !important;
+  color: #fbc02d !important;
+  width: 50%;
+}
+
+button:hover{
+  background-color: #3e2723 !important;
+}
+
+.login-link {
+  color: gray !important;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+  color: gainsboro !important;
+}
+
+.login-link:visited {
+  text-decoration: underline;
+  color: darkgray !important;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: black !important;
+ }
+

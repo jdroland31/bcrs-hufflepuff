@@ -31,7 +31,11 @@ const router = express.Router();
  router.get('/', async (req, res) => {
   try {
     // Attempt to query for all security questions.
-    SecurityQuestion.find({}, function(err, securityQuestions){
+    SecurityQuestion.find({})
+    .where('isDisabled')
+    .equals(false)
+    .exec(
+     function(err, securityQuestions){
 
       //If the database encounters an error, log the error to the console and output it as an object.
       if (err) {

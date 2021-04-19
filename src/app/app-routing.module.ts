@@ -19,8 +19,10 @@ import { AuthLayoutComponent  } from './shared/auth-layout/auth-layout.component
 
 import { SigninComponent } from './pages/signin/signin.component';
 import { UserCreateComponent  } from './pages/user-create/user-create.component';
-import { UserListComponent  } from './pages/user-list/user-list.component';
+import { UserListComponent } from './pages/user-list/user-list.component';
 import { UserDetailsComponent  } from './pages/user-details/user-details.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { AboutComponent } from './pages/about/about.component';
 
 
 const routes: Routes = [
@@ -28,48 +30,92 @@ const routes: Routes = [
     path: '',
     component: BaseLayoutComponent,
     children: [
-      // home
       {
-        path: '',
+        path: 'services',
         component: HomeComponent
       },
-        // security questions list
       {
-        path: 'security-questions',
-        component: SecurityQuestionListComponent
+        path: 'contact',
+        component: ContactComponent
       },
-      // security question details
       {
-        path: 'security-questions/:id',
-        component: SecurityQuestionDetailsComponent
+        path: 'about',
+        component: AboutComponent
       },
-      // security questions create
       {
-        path: 'security-questions/create/new',
-        component: SecurityQuestionCreateComponent
-      },
-      // users - list
-      {
-        path: 'users/:userIdd',
+        path: 'userlist',
         component: UserListComponent
       },
-    ],
-    //canActivate: [AuthGuard]
-  },
-  {
-    path: 'session',
-    component:AuthLayoutComponent,
-    children: [
       {
         path: 'signin',
         component: SigninComponent
-      },
-      /*{
-        path: 'register',
-        component: UserCreateComponent
-      }*/
+      }
     ]
   }
+
+  // {
+  //   path: 'userlist',
+  //   component: UserListComponent
+  // },
+  // {
+  //   path: 'signin',
+  //   component: SigninComponent
+  // },
+  // {
+  //   path: 'security-questions',
+  //   component: SecurityQuestionListComponent
+  // },
+
+  // {
+  //   path: '',
+  //   component: BaseLayoutComponent,
+  //   children: [
+  //     // home
+  //     {
+  //       path: '',
+  //       component: HomeComponent
+  //     },
+  //       // security questions list
+  //     {
+  //       path: 'security-questions',
+  //       component: SecurityQuestionListComponent
+  //     },
+  //     // security question details
+  //     {
+  //       path: 'security-questions/:id',
+  //       component: SecurityQuestionDetailsComponent
+  //     },
+  //     // security questions create
+  //     {
+  //       path: 'security-questions/create/new',
+  //       component: SecurityQuestionCreateComponent
+  //     },
+  //     // users - list
+  //     {
+  //       path: 'users/:userIdd',
+  //       component: UserListComponent
+  //     },
+  //   ],
+  //   //canActivate: [AuthGuard]
+  // },
+  // {
+  //   path: 'session',
+  //   component:AuthLayoutComponent,
+  //   children: [
+  //     {
+  //       path: 'signin',
+  //       component: SigninComponent
+  //     },
+  //     /*{
+  //       path: 'register',
+  //       component: UserCreateComponent
+  //     }*/
+  //   ]
+  // },
+  // {
+  //   path: 'user-list',
+  //   component: UserListComponent
+  // }
 ];
 
 @NgModule({
