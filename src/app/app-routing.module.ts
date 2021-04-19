@@ -49,6 +49,10 @@ const routes: Routes = [
         component: UserListComponent
       },
       {
+        path: 'users/create/new',
+        component: UserCreateComponent
+      },
+      {
         path: 'signin',
         component: SigninComponent
       },

@@ -9,9 +9,8 @@
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
-import { HttpClient } from '@angular/common/http'
 import { Router } from '@angular/router'
-import { CookieService } from 'ngx-cookie-service'
+
 import { User } from 'src/app/shared/user.interface';
 
 import { UserService } from '../../shared/user.service';
@@ -38,7 +37,7 @@ export class UserCreateComponent implements OnInit {
       lastName: [null, Validators.compose([Validators.required])],
       phoneNumber: [null, Validators.compose([Validators.required])],
       address: [null, Validators.compose([Validators.required])],
-      email: [null, Validators.compose([Validators.required])]
+      email: [null, Validators.compose([Validators.required, Validators.email])]
     });
   }
 
@@ -53,13 +52,13 @@ export class UserCreateComponent implements OnInit {
     newUser.email = this.form.controls.email.value,
 
     this.userService.createUser(newUser).subscribe(res => {
-      this.router.navigate(['/users'])
+      this.router.navigate(['/userlist'])
     },
     err=> {
       console.log(err);
     })
   }
   cancel () {
-    this.router.navigate(['/users']);
+    this.router.navigate(['/userlist']);
   }
 }
