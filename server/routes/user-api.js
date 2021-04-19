@@ -49,16 +49,6 @@ const saltRounds = 10; // set salt rounds for hashing algorithm
 
 });
 
-
-
-
-
- /**
-  *FindById
-  */
-
-
-
   /**
   * CreateUser
   * Added by: Marie Nicole Barleta
@@ -115,11 +105,11 @@ router.post('/', async(req, res) => {
  * This route gets a single user by ID and provides data or error handling as appropriate.
  */
 
-router.get('/:userId', async(req, res) => {
+router.get('/:_id', async(req, res) => {
   try
   {
     //Attempt to query for a single user by id using the findOne() function.
-    User.findOne({'userId':req.params.userId}, function(err, user){
+    User.findOne({'_id':req.params._id}, function(err, user){
       if(err)
       {
         //If the database encounters and error, log the error to the console and output it as an object.

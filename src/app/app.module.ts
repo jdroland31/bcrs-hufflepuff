@@ -48,7 +48,7 @@ import { SecurityQuestionCreateComponent } from './pages/security-question-creat
 
     SecurityQuestionDetailsComponent,
     SecurityQuestionListComponent,
-    SecurityQuestionCreateComponent
+    SecurityQuestionCreateComponent,
   ],
   imports: [
     BrowserModule,
