@@ -49,6 +49,10 @@ const routes: Routes = [
       {
         path: 'signin',
         component: SigninComponent
+      },
+      {
+        path: 'security-questions',
+        component: SecurityQuestionListComponent
       }
     ]
   }

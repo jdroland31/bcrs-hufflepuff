@@ -1,0 +1,32 @@
+
+.security{
+  padding-top: 5rem;
+
+}
+
+.security-title{
+  font-weight: lighter;
+}
+
+.security-questions{
+  padding-top: 2rem;
+  font-weight: lighter;
+}
+
+.questions{
+  background-color: transparent;
+}
+
+.createButton{
+  text-align: center;
+  background-color: transparent;
+  border: 0;
+  margin-right: 7rem;
+}
+
+.tableSecurity{
+  text-align: center;
+  background-color: transparent;
+  margin-left: 10rem;
+  size: 20rem;
+}

@@ -1,0 +1,47 @@
+
+<div fxLayout="column" class="security">
+
+
+    <mat-card-title class="security-title">Security Questions Configuration</mat-card-title>
+    <br/>
+
+    <button class="createButton" mat-button routerLink="/security-question-create">
+      <mat-icon>addition</mat-icon>
+      Add Security Question
+    </button>
+
+    <br />
+    <mat-card-content *ngIf="securityQuestions">
+      <table class="tableSecurity"  mat-table [dataSource]="securityQuestions">
+        <ng-container matColumnDef="question">
+          <th mat-header-cell *matHeaderCellDef>Questions</th>
+          <td mat-cell *matCellDef="let element">
+
+           {{element.text}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="functions">
+          <th mat-header-cell *matHeaderCellDef>Functions</th>
+
+          <td mat-cell *matCellDef="let element">
+            <button mat-icon-button routerLink="/security-questions/{{element._id}}">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button (click)="delete(element._id)">
+              <mat-icon>cancel_presentation</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      </table>
+
+
+    </mat-card-content>
+
+</div>
+
+

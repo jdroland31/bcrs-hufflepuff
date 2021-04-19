@@ -22,7 +22,7 @@ export class SecurityQuestionService {
   /** FindAll SQ **/
 
   findAllSecurityQuestion(): Observable<any> {
-    return this.http.get('/api/security-questions');
+    return this.http.get('/api/security_questions');
   }
 
   /** FindAll SQ by ID **/
@@ -30,7 +30,7 @@ export class SecurityQuestionService {
 
   /** Create SQ **/
   createSecurityQuestion(newSecurityQuestion: SecurityQuestion): Observable<any>{
-    return this.http.post('/api/security-questions', {
+    return this.http.post('/api/security_questions', {
       text: newSecurityQuestion.text
     })
   }
@@ -40,7 +40,7 @@ export class SecurityQuestionService {
 
   /** Delete SQ **/
   deleteSecurityQuestion(_id: string):Observable<any>{
-    return this.http.delete(`/api/security-questions/${_id}`)
+    return this.http.delete(`/api/security_questions/${_id}`)
   }
 
 }
