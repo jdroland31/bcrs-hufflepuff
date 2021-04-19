@@ -33,6 +33,11 @@ const routes: Routes = [
     component: BaseLayoutComponent,
     children: [
       {
+        path: '',
+        component: HomeComponent,
+        canActivate: [SessionGuard]
+      },
+      {
         path: 'services',
         component: HomeComponent
       },
@@ -49,10 +54,6 @@ const routes: Routes = [
         component: UserListComponent
       },
       {
-        path: 'users/create/new',
-        component: UserCreateComponent
-      },
-      {
         path: 'signin',
         component: SigninComponent
       },
@@ -60,8 +61,8 @@ const routes: Routes = [
         path: 'security-questions',
         component: SecurityQuestionListComponent
       }
-    ],
-    canActivate: [SessionGuard]
+    ]
+    // canActivate: [SessionGuard]
   },
   {
     path: 'session',

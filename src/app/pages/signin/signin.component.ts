@@ -26,7 +26,39 @@ export class SigninComponent implements OnInit {
   errorMessage: string;
 
   ngOnInit(): void {
+    //Form validation
+    this.signinForm = this.fb.group({
+      userName: [null, Validators.compose([Validators.required])],
+      password: [null, Validators.compose([Validators.required])]
+    });
+  }
 
+  signin(){
+    const userName = this.signinForm.controls['userName'].value;
+    const password = this.signinForm.controls['password'].value;
+    this.http.post('/api/session/signin',{'userName': userName,'password': password}).subscribe(res => {
+      console.log(res);
+      if(res['data'])//If the result returns an attribute named 'data' we can set the user's session cookie and navigate to the home route.
+      {
+        this.cookieService.set('session_user', userName, 1);
+        this.router.navigate(['/']);
+      }
+      else if(!(res['data']) && (res['httpCode'] === '200')) //If we do not get user data but return a 200 code, we have an invalid ID and should alert the user.
+      {
+        this.openSnackBar('Invalid username or password, please try again', 'WARNING');
+      }
+      else{//A result which returns an error is displayed.
+        this.openSnackBar(res['message'], 'ERROR');
+      }
+    })
+  }
+
+  openSnackBar(message: string, notificationType: string) : void
+  {
+    this.snackBar.open(message, notificationType, {
+      duration: 3000,
+      verticalPosition: 'top'
+    })
   }
 
 }

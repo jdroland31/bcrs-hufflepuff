@@ -12,7 +12,7 @@ export class SessionGuard implements CanActivate, CanDeactivate<unknown> {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
 
-    const isAuthenticated = this.cookieService.get('sessionuser');
+    const isAuthenticated = this.cookieService.get('session_user');
 
     if (isAuthenticated) {
       return true;
@@ -22,6 +22,7 @@ export class SessionGuard implements CanActivate, CanDeactivate<unknown> {
       return false;
     }
   }
+
   canDeactivate(
     component: unknown,
     currentRoute: ActivatedRouteSnapshot,
