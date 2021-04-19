@@ -7,11 +7,7 @@
  ***/
 
 import { Component, OnInit } from '@angular/core';
-
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
-import { HttpClient } from '@angular/common/http'
-import { Router } from '@angular/router'
-import { CookieService } from 'ngx-cookie-service'
+import { HttpClient } from '@angular/common/http';
 import { User } from 'src/app/shared/user.interface';
 import { MatDialog } from '@angular/material/dialog';
 import { UserService } from '../../shared/user.service';
@@ -24,38 +20,55 @@ import { DeleteRecordDialogComponent } from './../../shared/delete-record-dialog
 })
 export class UserListComponent implements OnInit {
 
-// variables
-users: User[];
-displayedColumns: any = [ 'username', 'fistName', 'lastName', 'phoneNumber', 'address','email','functions'];
+  users: User[];
+  displayedColumns = ['username', 'firstname', 'lastname', 'phoneNumber', 'address', 'email', 'functions'];
 
-constructor(private http: HttpClient, private dialog: MatDialog, private userService: UserService) {
+  constructor(private dialog: MatDialog, private userService: UserService) {
 
-  // findAll Users
-  this.userService.findAllUsers().subscribe(res => {
-    this.users = res['data'];
-    console.log(this.users);
-  }, err => {
-    console.log(err);
-  });
+    /**
+     * This will find all the users
+     */
+    this.userService.findAllUsers().subscribe(res => {
+      this.users = res['data'];
+      console.log(this.users);
+    }, err => {
+      console.log(err)
+    })
   }
 
-  ngOnInit() {}
+  ngOnInit(): void {
+  }
 
-  delete (userId, recordId){
-   const dialogRef = this.dialog.open(DeleteRecordDialogComponent, {
-    data: {
-      recordId,
-      dialogHeader: 'Delete Record Dialog',
-      dialogBody: `Are you sure you want to delete user ${recordId}?`
-    },
+/**
+ *
+ * @param userId
+ * @param recordId
+ * delete user function
+ */
+  delete(userId, recordId): void {
+    const dialogRef = this.dialog.open(DeleteRecordDialogComponent, {
+      data: {
+        recordId,
+        dialogHeader: 'Delete Record Dialog',
+        dialogBody: `Are you sure you want to delete user ${recordId}?`
+      },
       disableClose: true,
-      width:'800px'});
+      width: '800px'
+    });
 
+    /**
+     * if the confirm button is clicked, user will be deleted
+     */
     dialogRef.afterClosed().subscribe(result => {
-      if (result === 'confirm'){
-        this.userService.deleteUser(userId).subscribe(result => {
-        this.users = this.users.filter(u => u._id !== userId);
-         })
+      if (result === 'confirm') {
+        this.userService.deleteUser(userId).subscribe(res => {
+          console.log('User deleted');
+          /**
+            This will return a new array of users not matching
+            the one currently deleted
+          */
+          this.users = this.users.filter(u => u._id !== userId)
+        })
       }
     });
   }

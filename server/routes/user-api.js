@@ -9,7 +9,7 @@ User API's
 
 const express = require('express');
 const User = require('../models/user');
-//const bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt');
 const BaseResponse = require('../services/base-response');
 const ErrorResponse = require('../services/error-response');
 
@@ -32,7 +32,7 @@ const saltRounds = 10; // set salt rounds for hashing algorithm
         res.status(500).send(findAllMongodbErrorResponse.toObject());
       }
 
-      // if query returns resutls
+      // if query returns results
       else {
         console.log('inside error 200' + users);
         const findAllUsersResponse = new BaseResponse(200, 'Query successful!', users);
