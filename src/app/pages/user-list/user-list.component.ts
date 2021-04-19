@@ -38,12 +38,12 @@ export class UserListComponent implements OnInit {
   }
 
 
-  delete(userId, recordId): void {
+  delete(userId: string, recordId: string): void {
     const dialogRef = this.dialog.open(DeleteRecordDialogComponent, {
       data: {
         recordId,
         dialogHeader: 'Delete Record Dialog',
-        dialogBody: `Are you sure you want to delete user ${recordId}?`
+        dialogBody: `Are you sure you want to delete user ${userId}?`
       },
       disableClose: true,
       width: '800px'

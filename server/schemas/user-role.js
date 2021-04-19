@@ -9,7 +9,7 @@
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
+//the schema for user roles
 let userRoleSchema = new Schema({
   role: {type: String, default: 'standard'}
 })

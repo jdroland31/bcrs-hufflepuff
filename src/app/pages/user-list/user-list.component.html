@@ -1,4 +1,4 @@
-<div fxLayout='column' class="userList">
+<div fxLayout='column' class="userList" fxLayoutAlign="center center">
 
 
     <mat-card-title class="userList-title">Users Configuration</mat-card-title>
@@ -29,7 +29,7 @@
 
         <ng-container matColumnDef='phoneNumber'>
           <th mat-header-cell *matHeaderCellDef>Phone Number</th>
-          <td class="text" mat-cell *matCellDef='let element'> {{ element.phoneNumber || phoneFormat }}</td>
+          <td class="text" mat-cell *matCellDef='let element'> {{ element.phoneNumber }}</td>
         </ng-container>
 
         <ng-container matColumnDef='address'>
@@ -50,7 +50,7 @@
               <mat-icon color='accent'>edit</mat-icon>
             </button>
 
-            <button mat-icon-button (click)='delete(element._id, element.username)'>
+            <button mat-icon-button (click)='delete(element._id)'>
               <mat-icon color='accent'>cancel_presentation</mat-icon>
             </button>
 

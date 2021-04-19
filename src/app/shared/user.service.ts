@@ -39,7 +39,7 @@ export class UserService {
 
   updateUser(userId: string, user: User): Observable<any> {
 
-    return this.http.put(`/api/users/${userId}`,
+    return this.http.put(`/api/users/` + userId,
     {
       userName: user.firstName,
       password: user.password,
@@ -54,7 +54,7 @@ export class UserService {
   /** Delete User **/
 
   deleteUser(userId: string): Observable<any> {
-    return this.http.delete(`/api/users/${userId}`);
+    return this.http.delete(`/api/users/` + userId);
   }
 
 }

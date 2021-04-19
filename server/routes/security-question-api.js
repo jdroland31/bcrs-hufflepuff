@@ -196,13 +196,14 @@ router.put('/:_id', async(req,res) => {
 })
 
  /**
- **
- ** Delete SQ
- **
+  * Security Questions - Delete
+  * Added by: Marie Nicole Barleta
+  * Date: April 19 2021
  **/
-router.put('/:id', async(req, res) => {
+router.delete('/:id', async(req, res) => {
   try
   {
+    //Finds the specific id to delete the specific security question
     SecurityQuestion.findOne({'_id': req.params.id}, function(err, securityQuestion){
       if (err)
       {
@@ -212,6 +213,9 @@ router.put('/:id', async(req, res) => {
       }
       else
       {
+        /** if there's no error the security question will be set as Disabled
+         *  and in the read code all disabled items will not be shown.
+         * */
         console.log(securityQuestion);
         securityQuestion.set({
           isDisabled: true
@@ -226,6 +230,7 @@ router.put('/:id', async(req, res) => {
           }
           else
           {
+            //Successful query if everything worked well
             console.log(savedSecurityQuestion);
             const deleteSecurityQuestionResponse = new BaseResponse (200, 'Query successful', savedSecurityQuestion);
             res.json(deleteSecurityQuestionResponse.toObject());

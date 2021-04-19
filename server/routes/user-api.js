@@ -221,10 +221,10 @@ router.get('/:_id', async(req, res) => {
  * This route updates a user identified by user ID to be 'disabled' rather than act as a true deletion.
  */
 
-router.put('/:userId', async(req,res) => {
+router.delete('/:id', async(req,res) => {
   try
   {
-    User.findOne({'userId': req.params.userId}, function (err, user)
+    User.findOne({'_id': req.params.id}, function (err, user)
     {
       if(err)
       {
@@ -250,21 +250,21 @@ router.put('/:userId', async(req,res) => {
               //If the database encounters an error while attempting to update, log the error to console and output as an object.
               console.log(err);
               const updateUserMongoDBError = new BaseResponse('500',`Internal Server Error ${err.message}`,null);
-              res.status(500).send(updateUserMongoDBError.toObject());
+              res.json(updateUserMongoDBError.toObject());
             }
             else
             {
               //If successful, log and return the updated user document.
               console.log(updatedUser);
               const updatedUserSuccessResponse = new BaseResponse('200', 'Query Successful', updatedUser);
-              res.status(200).send(updatedUserSuccessResponse.toObject());
+              res.json(updatedUserSuccessResponse.toObject());
             }
           })
         }
         else
         {
           //if the userId is invalid, log and return null along with error message. 200 code is returned since the request technically succeeded, but lacked a valid user.
-          console.log(`Invalid userId! The passed-in value was ${req.params.userId}`);
+          console.log(`Invalid userId! The passed-in value was ${req.params.id}`);
           const invalidUserIdResponse = new BaseResponse('200','Invalid user ID', user);
           res.status(200).send(invalidUserIdResponse.toObject());
         }

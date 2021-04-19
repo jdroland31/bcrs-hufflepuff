@@ -1,3 +1,14 @@
+/*
+ ============================================
+; Title:  about.component.ts
+; Author: Professor Krasso
+; Date: 19 April 2021
+; Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+; Description: About component ts file
+;===========================================
+ */
+
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({

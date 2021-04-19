@@ -1,1 +1,14 @@
-<p>delete-record-dialog works!</p>
+<h2 mat-dialog-title> {{ dialogHeader }} </h2>
+
+
+<div mat-dialog-content>
+  <p> {{ dialogBody }} </p>
+  <small style="color: red;">WARNING: THIS CANNOT BE UNDONE. </small>
+</div>
+
+<hr/>
+
+<div mat-dialog-actions align='end'>
+  <button mat-raised-button matDialogClose="cancel" color="accent"> Cancel </button>
+  <button mat-raised-button matDialogClose="confirm" color="primary" cdkFocusInitial>Delete</button>
+</div>
