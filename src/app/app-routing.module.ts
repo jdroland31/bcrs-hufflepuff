@@ -46,6 +46,10 @@ const routes: Routes = [
         component: ContactComponent
       },
       {
+        path: 'users/create/new',
+        component: UserCreateComponent
+      },
+      {
         path: 'about',
         component: AboutComponent
       },
@@ -79,69 +83,7 @@ const routes: Routes = [
     ]
   }
 
-  // {
-  //   path: 'userlist',
-  //   component: UserListComponent
-  // },
-  // {
-  //   path: 'signin',
-  //   component: SigninComponent
-  // },
-  // {
-  //   path: 'security-questions',
-  //   component: SecurityQuestionListComponent
-  // },
 
-  // {
-  //   path: '',
-  //   component: BaseLayoutComponent,
-  //   children: [
-  //     // home
-  //     {
-  //       path: '',
-  //       component: HomeComponent
-  //     },
-  //       // security questions list
-  //     {
-  //       path: 'security-questions',
-  //       component: SecurityQuestionListComponent
-  //     },
-  //     // security question details
-  //     {
-  //       path: 'security-questions/:id',
-  //       component: SecurityQuestionDetailsComponent
-  //     },
-  //     // security questions create
-  //     {
-  //       path: 'security-questions/create/new',
-  //       component: SecurityQuestionCreateComponent
-  //     },
-  //     // users - list
-  //     {
-  //       path: 'users/:userIdd',
-  //       component: UserListComponent
-  //     },
-  //   ],
-  //   //canActivate: [AuthGuard]
-  // },
-  // {
-  //   path: 'session',
-  //   component:AuthLayoutComponent,
-  //   children: [
-  //     {
-  //       path: 'signin',
-  //       component: SigninComponent
-  //     },
-  //     /*{
-  //       path: 'register',
-  //       component: UserCreateComponent
-  //     }*/
-  //   ]
-  // },
-  // {
-  //   path: 'user-list',
-  //   component: UserListComponent
-  // }
 ];
 
 @NgModule({
