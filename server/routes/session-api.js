@@ -8,7 +8,7 @@
 
 const express = require('express');
 const User = require('../models/user');
-//const bcrypt = require('bcryptjs');
+const bcrypt = require('bcryptjs');
 const BaseResponse = require('../services/base-response');
 const ErrorResponse = require('../services/error-response');
 const RoleSchema = require('../schemas/user-role');
@@ -21,10 +21,14 @@ const router = express.Router();
  */
 
 router.post('/signin', async(req, res) => {
+  console.log('This is the Session Sign In API call');
+  console.log(req.body.userName);
+  console.log(req.body.password);
+  // console.log(res);
   try
   {
     //Attempt to find the user with the username given in the request body.
-    User.findOne({'username': req.body.userName}, function(err, user){
+    User.findOne({'userName': req.body.userName}, function(err, user){
       //If there is a server side error log it.
       if(err)
       {
@@ -51,9 +55,14 @@ router.post('/signin', async(req, res) => {
           //If the password is invalid return 401
           else{
             console.log(`Invalid password for user: ${user.userName}`);
-            const invalidPasswordResponse = new BaseResponse(401, 'Invalid username and/or password. Please check your entry and try again.');
+            const invalidPasswordResponse = new BaseResponse(401, 'Invalid password. Please check your entry and try again.');
             res.status(401).send(invalidPasswordResponse.toObject());
           }
+        }
+        else{
+          console.log('user not found');
+          const invalidUserNameResponse = new BaseResponse(401, 'Invalid userName. Please check your entry and try again.');
+          res.status(401).send(invalidUserNameResponse.toObject());
         }
       }
     })

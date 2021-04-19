@@ -15,6 +15,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthLayoutComponent implements OnInit {
 
+  year: number = Date.now();
+
   constructor() { }
 
   ngOnInit(): void {

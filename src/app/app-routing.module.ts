@@ -16,6 +16,7 @@ import { SecurityQuestionCreateComponent } from './pages/security-question-creat
 
 import { AuthLayoutComponent  } from './shared/auth-layout/auth-layout.component';
 //import { AuthGuard } from './shared/auth.guard';
+import { SessionGuard } from './shared/session.guard';
 
 import { SigninComponent } from './pages/signin/signin.component';
 import { UserCreateComponent  } from './pages/user-create/user-create.component';
@@ -25,11 +26,17 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { AboutComponent } from './pages/about/about.component';
 
 
+
 const routes: Routes = [
   {
     path: '',
     component: BaseLayoutComponent,
     children: [
+      {
+        path: '',
+        component: HomeComponent,
+        canActivate: [SessionGuard]
+      },
       {
         path: 'services',
         component: HomeComponent
@@ -47,10 +54,6 @@ const routes: Routes = [
         component: UserListComponent
       },
       {
-        path: 'users/create/new',
-        component: UserCreateComponent
-      },
-      {
         path: 'signin',
         component: SigninComponent
       },
@@ -58,6 +61,21 @@ const routes: Routes = [
         path: 'security-questions',
         component: SecurityQuestionListComponent
       }
+    ]
+    // canActivate: [SessionGuard]
+  },
+  {
+    path: 'session',
+    component:AuthLayoutComponent,
+    children: [
+      {
+        path: 'signin',
+        component: SigninComponent
+      },
+      /*{
+        path: 'register',
+        component: UserCreateComponent
+      }*/
     ]
   }
 

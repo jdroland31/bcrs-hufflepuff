@@ -1,2 +1,32 @@
 <!-- router outlet tags render routed pages -->
-<router-outlet></router-outlet>
+
+<div fxLayout="column">
+  <!-- navigation -->
+  <nav fxFlex>
+
+    <mat-toolbar color="accent">
+      <mat-toolbar-row class="bcrs-title">
+        <span>Bob's Computer Repair Shop</span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </nav>
+
+  <!-- main content -->
+  <div fxFlex>
+    <main class="main-content" fxFlex="100%;" >
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+
+  <!-- footer -->
+  <div fxFlex>
+    <footer class="footer">
+      <mat-toolbar class="footer-content" color="accent">
+        <p class="bcrs-footer-content">
+          &copy; {{year | date: 'yyyy'}} - Bob's Computer Repair Shop - <a href="https://www.bellevue.edu/" class="bu-link" target="_blank">Bellevue University</a>
+        </p>
+      </mat-toolbar>
+    </footer>
+  </div>
+</div>
+
