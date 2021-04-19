@@ -3,27 +3,26 @@
 
     <mat-card-title class="userList-title">Users Configuration</mat-card-title>
 
-    <button class="createButton" mat-button routerLink="/user-create">
+    <button class="createButton" mat-button routerLink="/users/create/new">
       <mat-icon>addition</mat-icon>
       Add New User
     </button>
 
 
-
     <mat-card-content *ngIf="users">
       <table mat-table class="usersTable" [dataSource]='users'>
 
-        <ng-container  matColumnDef='username'>
+        <ng-container  matColumnDef='userName'>
           <th mat-header-cell *matHeaderCellDef>Username</th>
           <td class="text" mat-cell *matCellDef='let element'> {{ element.userName }}</td>
         </ng-container>
 
-        <ng-container matColumnDef='firstname'>
+        <ng-container matColumnDef='firstName'>
           <th mat-header-cell *matHeaderCellDef>First Name</th>
           <td class="text" mat-cell *matCellDef='let element'> {{ element.firstName }}</td>
         </ng-container>
 
-        <ng-container matColumnDef='lastname'>
+        <ng-container matColumnDef='lastName'>
           <th mat-header-cell *matHeaderCellDef>Last Name</th>
           <td class="text" mat-cell *matCellDef='let element'> {{ element.lastName }}</td>
         </ng-container>

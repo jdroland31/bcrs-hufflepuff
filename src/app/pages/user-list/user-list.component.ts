@@ -21,13 +21,11 @@ import { DeleteRecordDialogComponent } from './../../shared/delete-record-dialog
 export class UserListComponent implements OnInit {
 
   users: User[];
-  displayedColumns = ['username', 'firstname', 'lastname', 'phoneNumber', 'address', 'email', 'functions'];
+  displayedColumns = ['userName', 'firstName', 'lastName', 'phoneNumber', 'address', 'email', 'functions'];
 
   constructor(private dialog: MatDialog, private userService: UserService) {
 
-    /**
-     * This will find all the users
-     */
+
     this.userService.findAllUsers().subscribe(res => {
       this.users = res['data'];
       console.log(this.users);
@@ -39,12 +37,7 @@ export class UserListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-/**
- *
- * @param userId
- * @param recordId
- * delete user function
- */
+
   delete(userId, recordId): void {
     const dialogRef = this.dialog.open(DeleteRecordDialogComponent, {
       data: {
@@ -56,17 +49,12 @@ export class UserListComponent implements OnInit {
       width: '800px'
     });
 
-    /**
-     * if the confirm button is clicked, user will be deleted
-     */
+
     dialogRef.afterClosed().subscribe(result => {
       if (result === 'confirm') {
         this.userService.deleteUser(userId).subscribe(res => {
           console.log('User deleted');
-          /**
-            This will return a new array of users not matching
-            the one currently deleted
-          */
+
           this.users = this.users.filter(u => u._id !== userId)
         })
       }
