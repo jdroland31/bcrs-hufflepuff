@@ -22,6 +22,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSelectModule } from '@angular/material/select';
 
 import { SigninComponent } from './pages/signin/signin.component';
 import { UserCreateComponent } from './pages/user-create/user-create.component';
@@ -32,6 +38,8 @@ import { DeleteRecordDialogComponent } from './shared/delete-record-dialog/delet
 import { SecurityQuestionDetailsComponent } from './pages/security-question-details/security-question-details.component';
 import { SecurityQuestionListComponent } from './pages/security-question-list/security-question-list.component';
 import { SecurityQuestionCreateComponent } from './pages/security-question-create/security-question-create.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { AboutComponent } from './pages/about/about.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +57,8 @@ import { SecurityQuestionCreateComponent } from './pages/security-question-creat
     SecurityQuestionDetailsComponent,
     SecurityQuestionListComponent,
     SecurityQuestionCreateComponent,
+    ContactComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +73,12 @@ import { SecurityQuestionCreateComponent } from './pages/security-question-creat
     FormsModule,
     ReactiveFormsModule,
     MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSnackBarModule,
+    MatMenuModule,
+    MatDialogModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
