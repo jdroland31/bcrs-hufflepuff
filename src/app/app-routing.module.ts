@@ -68,6 +68,10 @@ const routes: Routes = [
       {
         path: 'security-questions',
         component: SecurityQuestionListComponent
+      },
+      {
+        path: 'security-question-create',
+        component: SecurityQuestionCreateComponent
       }
     ]
     // canActivate: [SessionGuard]

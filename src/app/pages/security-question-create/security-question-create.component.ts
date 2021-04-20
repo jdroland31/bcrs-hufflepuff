@@ -34,13 +34,13 @@ create ()
   newSecurityQuestion.text = this.form.controls.text.value;
 
   this.securityQuestionService.createSecurityQuestion(newSecurityQuestion).subscribe(res => {
-    this.router.navigate(['/security_questions']);
+    this.router.navigate(['/security-questions']);
   }, err =>{
       console.log(err);
     })
 }
 
 cancel(){
-  this.router.navigate(['/security_questions']);
+  this.router.navigate(['/security-questions']);
 }
 }
