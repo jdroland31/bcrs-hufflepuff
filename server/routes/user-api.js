@@ -162,19 +162,12 @@ router.get('/:_id', async(req, res) => {
           //let hashedPassword = bcrypt.hashSync(req.body.passwords, saltRounds); // salting and hashing the password
           //Set the user's attributes to match those in the request body.
           user.set({
-            userName: req.body.userName,
-            /* password: req.body.password,*/
+
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             phoneNumber: req.body.phoneNumber,
             address: req.body.address,
-            email: req.body.email,
-            /*
-            isDisabled: req.body.isDisabled,
-            role: req.body.role,
-            securityQuestions: req.body.securityQuestions,
-            date_modified: new Date()
-            */
+            email: req.body.email
 
           });
           //Save the new user data.
@@ -191,7 +184,7 @@ router.get('/:_id', async(req, res) => {
               //If successful, log and return the updated user document.
               console.log(updatedUser);
               const updatedUserSuccessResponse = new BaseResponse('200', 'Query Successful', updatedUser);
-              res.status(200).send(updatedUserSuccessResponse.toObject());
+              res.json(updatedUserSuccessResponse.toObject());
             }
           })
         }
@@ -200,7 +193,7 @@ router.get('/:_id', async(req, res) => {
           //if the userId is invalid, log and return null along with error message. 200 code is returned since the request technically succeeded, but lacked a valid user.
           console.log(`Invalid userId! The passed-in value was ${req.params.userId}`);
           const invalidUserIdResponse = new BaseResponse('200','Invalid user ID', user);
-          res.status(200).send(invalidUserIdResponse.toObject());
+          res.json(invalidUserIdResponse.toObject());
         }
       }
     })
