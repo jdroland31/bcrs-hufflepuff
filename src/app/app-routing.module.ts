@@ -72,6 +72,10 @@ const routes: Routes = [
       {
         path: 'security-question-create',
         component: SecurityQuestionCreateComponent
+      },
+      {
+        path: 'security-questions/:questionId',
+        component: SecurityQuestionDetailsComponent
       }
     ]
     // canActivate: [SessionGuard]
