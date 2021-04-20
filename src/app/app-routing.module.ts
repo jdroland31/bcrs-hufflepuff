@@ -50,6 +50,10 @@ const routes: Routes = [
         component: UserCreateComponent
       },
       {
+        path: 'users/:id',
+        component: UserDetailsComponent
+      },
+      {
         path: 'about',
         component: AboutComponent
       },
