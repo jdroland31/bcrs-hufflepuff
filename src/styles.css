@@ -1,4 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+/*
+ ============================================
+; Title:  styles.css
+; Author: Professor Krasso
+; Date: 19 April 2021
+; Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+; Description: top level/global styling for the application
+;===========================================
+**/
 
 html, body {
   height: 100%;

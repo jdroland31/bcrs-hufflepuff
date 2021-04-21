@@ -1,14 +1,22 @@
+/*
+ ============================================
+; Title:  home.component.css
+; Author: Professor Krasso
+; Date: 19 April 2021
+; Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+; Description: home page styling
+;===========================================
+**/
 .main-welcome {
     margin-top: 30px;
   }
-  
+
   .title {
     text-align: center;
     font-weight: lighter;
   }
-  
+
   .subtitle {
     text-align: center;
     font-size: 14px;
   }
-  

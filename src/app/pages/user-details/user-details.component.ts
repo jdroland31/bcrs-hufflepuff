@@ -57,7 +57,7 @@ export class UserDetailsComponent implements OnInit {
   }
 
   saveUser() {
-    console.log("saveUser() was called");
+    // console.log("saveUser() was called");
     const updatedUser = {} as User;
     updatedUser.firstName = this.form.controls.firstName.value;
     updatedUser.lastName = this.form.controls.lastName.value;
