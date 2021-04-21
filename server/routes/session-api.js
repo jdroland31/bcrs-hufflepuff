@@ -8,7 +8,7 @@
 
 const express = require('express');
 const User = require('../models/user');
-const bcrypt = require('bcryptjs');
+const bcrypt = require('bcrypt');
 const BaseResponse = require('../services/base-response');
 const ErrorResponse = require('../services/error-response');
 const RoleSchema = require('../schemas/user-role');
