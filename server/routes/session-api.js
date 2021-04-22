@@ -76,4 +76,81 @@ router.post('/signin', async(req, res) => {
   }
 })
 
+/**
+ * Register
+ *
+ */
+
+
+/**
+ * Verify User
+ *
+ */
+
+/**
+ * Verify Security Questions
+ *
+ */
+
+/**
+ * Reset Password,
+ * Post request to create a new password
+ */
+router.post('/users/userName/reset-password', async(req, res) => {
+
+  try
+  {
+    const password = req.body.password;
+    //finds the specific username
+    User.findOne({'userName': req.params.userName}, function(err, user){
+      if (err)
+      {
+        //error trapping if the mongodb does not respond
+        console.log(err);
+        const resetPasswordMongodbErrorResponse = new ErrorResponse('500', 'Internal server error', err);
+        res.status(500).send(resetPasswordMongodbErrorResponse.toObject());
+      }
+      else
+      {
+        /**
+         * If it's connected successfully it will get the password
+         * and the new set of password will be hashed, it will then be set
+         * and saved as a new password  if the connections are right.
+         */
+          console.log(user);
+
+          let hashedPassword = bcrypt.hashSync(password, saltRounds);
+
+          user.set({
+            password: hashedPassword
+          });
+
+          user.save(function(err, updatedUser)
+          {
+              if (err)
+              {
+                console.log(err);
+                const updatedUserMongodbErrorResponse = new ErrorResponse('500', 'Internal server error', err);
+                res.status(500).send(updatedUserMongodbErrorResponse.toObject());
+              }
+              else
+              {
+                  console.log(updatedUser);
+                  const updatedPasswordResponse = new BaseResponse('200', 'Query Successful', updatedUser);
+                  res.json(updatedPasswordResponse.toObject());
+              }
+          })
+      }
+    })
+  }
+  //Error message if the server is not responding
+  catch (e)
+  {
+    console.log(e);
+    const resetPasswordCatchError = new ErrorResponse('500', 'Internal server error', e);
+    res.status(500).send(resetPasswordCatchError.toObject());
+  }
+});
+
+
 module.exports = router;
