@@ -209,7 +209,7 @@ router.get('/:_id', async(req, res) => {
 
 /**
  * API: DeleteUser
- * @param userId
+ * @param _id
  * @returns User document or null
  * This route updates a user identified by user ID to be 'disabled' rather than act as a true deletion.
  */
