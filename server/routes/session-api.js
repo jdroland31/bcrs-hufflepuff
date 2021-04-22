@@ -14,6 +14,7 @@ const ErrorResponse = require('../services/error-response');
 const RoleSchema = require('../schemas/user-role');
 
 const router = express.Router();
+const saltRounds = 10; // set salt rounds for hashing algorithm
 
 /**
  * API: SignIn
@@ -73,6 +74,74 @@ router.post('/signin', async(req, res) => {
     console.log(e);
     const userSignInCatchResponse = new BaseResponse('500',`Internal Server Error ${err.message}`,null);
     res.status(500).send(userSignInCatchResponse.toObject());
+  }
+})
+
+/**
+ * API: Register
+ * This route creates a user from provided data in the request body if the user does not exist
+ */
+
+router.post('/register', async(req, res) => {
+  try
+  {
+    User.findOne({'userName': req.body.userName}, function(err, user){
+      if(err)
+      {
+        console.log(err);
+        const registerUserMongoDbErrorResponse = new ErrorResponse('500', 'Internal server error', err);
+        res.status(500).send(newUserMongoDbErrorResponse.toObject());
+      }
+      else
+      {
+        if(!user)
+        {
+          let hashedPassword = bcrypt.hashSync(req.body.password, saltRounds); //salt and hash the password
+          standardRole = {
+            role: 'standard'
+          }
+
+          let registeredUser = {
+            userName: req.body.userName,
+            password: hashedPassword,
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            phoneNumber: req.body.phoneNumber,
+            address: req.body.address,
+            email: req.body.email,
+            role: standardRole,
+            selectedSecurityQuestions: req.body.selectedSecurityQuestions
+          }
+
+          User.create(registeredUser, function(err, newUser){
+            if(err)
+            {
+              console.log(err);
+              const newUserMongoDbErrorResponse = new ErrorResponse('500','Internal server error', err);
+              res.status(500).send(newUserMongoDbErrorResponse.toObject());
+            }
+            else
+            {
+              console.log(newUser);
+              const registeredUserResponse = new BaseResponse('200','Query successful', newUser);
+              res.json(registeredUserResponse.toObject());
+            }
+          })
+        }
+        else
+        {
+          console.log('The requested username is already allocated in the system.');
+          const userAlreadyExistsErrorResponse = new ErrorResponse('500', 'User already exists in our system', null);
+          res.status(500).send(userAlreadyExistsErrorResponse.toObject());
+        }
+      }
+    })
+  }
+  catch(e)
+  {
+    console.log(e);
+    const registerUserCatchErrorResponse = new ErrorResponse('500','Internal server error', e.message);
+    res.status(500).send(registerUserCatchErrorResponse.toObject());
   }
 })
 
