@@ -1,18 +1,17 @@
-<div fxLayout="column">
+<div fxLayout="column" class="main-container">
   <div class="logo-group">
-  <div class=logo>
-    <img class="logo-img" src="./assets/images/bcrs-logo.png">
-  </div>
-  <mat-toolbar-row class="nav-row">
-    <h1 class="bcrs-title">Bob's</h1>
-  </mat-toolbar-row>
-  <mat-toolbar-row class="nav-row">
-    <h2 class="subtitle">Computer Repair Shop</h2>
-  </mat-toolbar-row>
+    <div class="logo">
+      <img class="logo-img" src="./assets/images/bcrs-logo.png">
+    </div>
+    <mat-toolbar-row class="nav-row">
+      <h1 class="bcrs-title">Bob's</h1>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="nav-row">
+      <h2 class="subtitle">Computer Repair Shop</h2>
+    </mat-toolbar-row>
   </div>
   <!-- navigation -->
   <nav fxFlex>
-
     <mat-toolbar class="nav-bar">
       <mat-toolbar-row>
         <span class="bcrs-nav-spacer"></span>
@@ -40,8 +39,8 @@
   </div>
 
   <!-- footer -->
-  <div fxFlex>
-    <footer class="footer">
+  <div fxFlex class="footer">
+    <footer>
       <mat-toolbar class="footer-content" color="accent">
         <p class="bcrs-footer-content">
           &copy; {{year | date: 'yyyy'}} - Bob's Computer Repair Shop - <a href="https://www.bellevue.edu/" class="bu-link" target="_blank">Bellevue University</a>

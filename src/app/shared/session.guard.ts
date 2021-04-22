@@ -1,3 +1,11 @@
+/***
+** Title: Bob's Computer Repair Shop
+** Author:  Professor Krasso
+** Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+** Date: April 15 2021
+** Description: API - Sprint 1
+ ***/
+
 import { Injectable } from '@angular/core';
 import { CanActivate, CanDeactivate, ActivatedRouteSnapshot, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';

@@ -24,8 +24,8 @@ import { UserListComponent } from './pages/user-list/user-list.component';
 import { UserDetailsComponent  } from './pages/user-details/user-details.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AboutComponent } from './pages/about/about.component';
-
-
+import { ErrorComponent } from './pages/error/error.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 const routes: Routes = [
   {
@@ -76,6 +76,14 @@ const routes: Routes = [
       {
         path: 'security-questions/:questionId',
         component: SecurityQuestionDetailsComponent
+      },
+      {
+        path: '500',
+        component: ErrorComponent
+      },
+      {
+        path: 'register',
+        component: RegisterComponent
       }
     ]
     // canActivate: [SessionGuard]
@@ -88,9 +96,22 @@ const routes: Routes = [
         path: 'signin',
         component: SigninComponent
       },
-      /*{
+      {
+        path: '500',
+        component: ErrorComponent
+      },
+      {
         path: 'register',
-        component: UserCreateComponent
+        component: RegisterComponent
+      }/*,
+      ,
+      {
+        path: 'reset-password',
+        component: ResetPasswordFormComponent
+      },
+      {
+        path: '404',
+        component: NotFoundComponent
       }*/
     ]
   }

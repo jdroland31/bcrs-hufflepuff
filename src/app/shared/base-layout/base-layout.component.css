@@ -1,5 +1,9 @@
 /* **** Header styling *****/
-body {  background-color:white;}
+body {  background-color:white; min-height: 100%;}
+.main-container{
+  position:relative;
+  height: 100%;
+}
 .bcrs-title {
   text-transform: uppercase;
   font-family: 'Trebuchet MS';
@@ -21,8 +25,9 @@ body {  background-color:white;}
     font-size: 18px;
     letter-spacing: 0px;
     color:#fff;
-    padding: 0;
+    padding: 0 0 20px 0;
     margin-top: -10px;
+    margin-bottom: 10px;
   }
   .logo{
     display: block;
@@ -76,8 +81,8 @@ body {  background-color:white;}
     background-color: white;
   }
   .footer {
-    bottom: 0;
-    position: absolute;
+    /*bottom: 0;
+    position: absolute;*/
     width: 100%;
   }
 

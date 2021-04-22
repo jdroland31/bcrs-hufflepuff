@@ -41,6 +41,13 @@ import { SecurityQuestionListComponent } from './pages/security-question-list/se
 import { SecurityQuestionCreateComponent } from './pages/security-question-create/security-question-create.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AboutComponent } from './pages/about/about.component';
+import { ErrorComponent } from './pages/error/error.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ResetPasswordFormComponent } from './pages/reset-password-form/reset-password-form.component';
+import { MatListModule } from '@angular/material/list';
+import { MatStepperModule } from '@angular/material/stepper';
+import { RegisterComponent } from './pages/register/register.component';
+
 
 @NgModule({
   declarations: [
@@ -60,6 +67,10 @@ import { AboutComponent } from './pages/about/about.component';
     SecurityQuestionCreateComponent,
     ContactComponent,
     AboutComponent,
+    ErrorComponent,
+    NotFoundComponent,
+    ResetPasswordFormComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -79,9 +90,11 @@ import { AboutComponent } from './pages/about/about.component';
     MatMenuModule,
     MatDialogModule,
     MatSelectModule,
-    MatTableModule
+    MatTableModule,
+    MatListModule,
+    MatStepperModule
   ],
-  providers: [],
+  providers: [/*provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true*/],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
