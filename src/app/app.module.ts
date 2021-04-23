@@ -19,7 +19,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -47,6 +47,7 @@ import { ResetPasswordFormComponent } from './pages/reset-password-form/reset-pa
 import { MatListModule } from '@angular/material/list';
 import { MatStepperModule } from '@angular/material/stepper';
 import { RegisterComponent } from './pages/register/register.component';
+import { ErrorInterceptor } from './error.interceptor';
 
 
 @NgModule({
@@ -94,7 +95,11 @@ import { RegisterComponent } from './pages/register/register.component';
     MatListModule,
     MatStepperModule
   ],
-  providers: [/*provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true*/],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
