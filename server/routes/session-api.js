@@ -96,9 +96,11 @@ router.post('/signin', async(req, res) => {
  *
  */
 router.post('/register', async(req, res) => {
+  //Attempt to look up the user.
   try
   {
     User.findOne({'userName': req.body.userName}, function(err, user){
+      //If the user lookup fails due to an error, log and handle it.
       if(err)
       {
         console.log(err);
@@ -107,13 +109,14 @@ router.post('/register', async(req, res) => {
       }
       else
       {
+        //If the user lookup fails to find the user, we can proceed with registering this new user.
         if(!user)
         {
           let hashedPassword = bcrypt.hashSync(req.body.password, saltRounds); //salt and hash the password
           standardRole = {
-            role: 'standard'
+            role: 'standard'//The default role is standard
           }
-
+          //Set the request body for user creation to the values provided.
           let registeredUser = {
             userName: req.body.userName,
             password: hashedPassword,
@@ -125,14 +128,16 @@ router.post('/register', async(req, res) => {
             role: standardRole,
             selectedSecurityQuestions: req.body.selectedSecurityQuestions
           }
-
+          //Create this new user
           User.create(registeredUser, function(err, newUser){
+            //Handle any error encountered when attempting to create user.
             if(err)
             {
               console.log(err);
               const newUserMongoDbErrorResponse = new ErrorResponse('500','Internal server error', err);
               res.status(500).send(newUserMongoDbErrorResponse.toObject());
             }
+            //If user creation is successful log the response and return the response object.
             else
             {
               console.log(newUser);
@@ -141,6 +146,7 @@ router.post('/register', async(req, res) => {
             }
           })
         }
+        //If the user lookup returns a user, we know that userName is taken. We return a response that reflects that issue.
         else
         {
           console.log('The requested username is already allocated in the system.');
@@ -150,11 +156,92 @@ router.post('/register', async(req, res) => {
       }
     })
   }
+  //If a server side error occurs, log it out and handle it.
   catch(e)
   {
     console.log(e);
     const registerUserCatchErrorResponse = new ErrorResponse('500','Internal server error', e.message);
     res.status(500).send(registerUserCatchErrorResponse.toObject());
+  }
+})
+
+/**
+ * API: VerifySecurityQuestions
+ * @param userName
+ * This route attempts to verify a user's answers to their security questions.
+*/
+
+router.post('/verify/users/:userName/security-questions', async(req, res) => {
+  try
+  {
+    //Attempt to find the user matching the userName in the request body.
+    User.findOne({'userName': req.params.userName}, function(err, user)
+    {
+      //If an error is encountered, log it out and handle it.
+      if(err)
+      {
+        console.log(err);
+        const verifySecurityQuestionsMongoDbErrorResponse = new ErrorResponse('500', 'Internal server error', err);
+        res.status(500).send(verifySecurityQuestionsMongoDbErrorResponse.toObject());
+      }
+      //Otherwise, compare the answers provided with the stored answers.
+      else
+      {
+        console.log(user);
+
+        //Compare the security questions to those the user selected during registration.
+        const selectedSecurityQuestionOne = user.selectedSecurityQuestions.find(q => q.questionText === req.body.questionText1);
+        const selectedSecurityQuestionTwo = user.selectedSecurityQuestions.find(q => q.questionText === req.body.questionText2);
+        const selectedSecurityQuestionThree = user.selectedSecurityQuestions.find(q => q.questionText === req.body.questionText3);
+        //Compare the user's answers to those recorded during registration. Answer strings are flattened to lowercase to prevent case-sensitive failure.
+        const isValidAnswerOne = selectedSecurityQuestionOne.answerText.toLowerCase() === req.body.answerText1.toLowerCase();
+        const isValidAnswerTwo = selectedSecurityQuestionTwo.answerText.toLowerCase() === req.body.answerText2.toLowerCase();
+        const isValidAnswerThree = selectedSecurityQuestionThree.answerText.toLowerCase() === req.body.answerText3.toLowerCase();
+
+        //If all three answers are valid then return success along with the user object.
+        if (isValidAnswerOne && isValidAnswerTwo && isValidAnswerThree)
+        {
+          console.log(`User ${user.userName} answered their security questions correctly`);
+          const validSecurityQuestionsResponse = new BaseResponse('200', 'success', user);
+          res.json(validSecurityQuestionsResponse.toObject());
+        }
+        //If all three questions were not answered correctly, the user is not verified. Return the user object and not verified response.
+        else
+        {
+          //Identify each incorrect answer.
+          let invalidAnswers = [];
+          if(!isValidAnswerOne)
+          {
+            invalidAnswers.push(req.body.answerText1)
+          }
+          if(!isValidAnswerTwo)
+          {
+            invalidAnswers.push(req.body.answerText2);
+          }
+          if(!isValidAnswerThree)
+          {
+            invalidAnswers.push(req.body.answerText3);
+          }
+          //Send back the invalid answer(s) along with the user object.
+          let r = {'invalidAnswers':invalidAnswers,user};
+
+          console.log(`User ${user.userName} did not answer their security questions correctly`);
+          const invalidSecurityQuestionsResponse = new BaseResponse('200', 'error', r);
+          res.json(invalidSecurityQuestionsResponse.toObject());
+
+          // console.log(`User ${user.userName} did not answer their security questions correctly`);
+          // const invalidSecurityQuestionsResponse = new BaseResponse('200', 'error', user);
+          // res.json(invalidSecurityQuestionsResponse.toObject());
+        }
+      }
+    })
+  }
+  //If a server side error occurs, log it out and handle it.
+  catch(e)
+  {
+    console.log(e);
+    const verifySecurityQuestionsCatchErrorResponse = new ErrorResponse('500', 'Internal server error', e.message);
+    res.status(500).send(verifySecurityQuestionsCatchErrorResponse.toObject());
   }
 })
 
