@@ -273,6 +273,53 @@ router.delete('/:id', async(req,res) => {
   }
 })
 
+/**
+ * Add your API here
+ *
+ *
+ */
+
+
+
+ /**
+  * FindSelectedSecurityQuestions
+  * Get request to retrieve user's selected
+  * security questions for request password validation
+  */
+router.get('/:userName/security-questions', async (req, res) => {
+  try
+  {
+    //Find query to find specific username
+    User.findOne({'userName': req.params.userName}, function(err, user){
+      if (err)
+      {
+        console.log(err);
+        const findSelectedSecurityQuestionsMongodbErrorResponse = new ErrorResponse('500', 'Internal server error', err);
+        res.status(500).send(findSelectedSecurityQuestionsMongodbErrorResponse.toObject());
+      }
+      /**
+       * if it connects properly to the database the console
+       * will respond successful query and the data objects
+       * that was found
+       */
+      else
+      {
+        console.log(user);
+        const findSelectedSecurityQuestionsResponse = new BaseResponse('200', 'Query successful', user.selectedSecurityQuestions);
+        res.json(findSelectedSecurityQuestionsResponse.toObject());
+      }
+    })
+  }
+  catch (e)
+  {
+    //the catch response when the node server didn't work
+    console.log(e);
+    const findSelectedSecurityQuestionsCatchErrorResponse = new ErrorResponse('500', 'Internal server error', e);
+    res.status(500).send(findSelectedSecurityQuestionsCatchErrorResponse.toObject());
+  }
+});
+
+
 module.exports = router;
 
 
