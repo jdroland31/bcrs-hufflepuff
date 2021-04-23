@@ -26,12 +26,11 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { RegisterComponent } from './pages/register/register.component';
-<<<<<<< Updated upstream
-import { NotFoundComponent } from './pages/not-found/not-found.component';
-=======
+
+
 import { NotFoundComponent } from './pages/not-found/not-found.component'
 import { ResetPasswordFormComponent } from './pages/reset-password-form/reset-password-form.component';
->>>>>>> Stashed changes
+
 
 const routes: Routes = [
   {
@@ -99,7 +98,7 @@ const routes: Routes = [
         component: SigninComponent
       },
       {
-<<<<<<< Updated upstream
+
         path: '500',
         component: ErrorComponent
       },
@@ -107,12 +106,7 @@ const routes: Routes = [
         path: '404',
         component: NotFoundComponent
       },
-      {
-=======
->>>>>>> Stashed changes
-        path: 'register',
-        component: RegisterComponent
-      },
+
       // {
       //   path: 'forgot',
       //   component: VerifyUsernameFormComponent
