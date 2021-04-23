@@ -1,8 +1,17 @@
-
+/***
+** Title: Bob's Computer Repair Shop
+** Author:  Professor Krasso
+** Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+** Date: April 22 2021
+** Description: API - Sprint 1
+ ***/
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
+//import { SecurityQuestionService } from './../../shared/security-question.service';
+import { SecurityQuestion } from './../../shared/security-question.interface';
 
+import { SecurityQuestionService } from './../../shared/security-question.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
@@ -12,13 +21,13 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  securityQuestions: any;
+  securityQuestions: SecurityQuestion[];
   form: FormGroup;
   registrationForm: FormGroup;
   errorMessage: string;
 
-  constructor(private http: HttpClient, private router: Router, private fb: FormBuilder, private cookieService: CookieService) {
-    this.http.get('/api/security-questions').subscribe(res => {
+  constructor(private http: HttpClient, private router: Router, private fb: FormBuilder, private cookieService: CookieService, private securityQuestionService: SecurityQuestionService) {
+    this.securityQuestionService.findAllSecurityQuestion().subscribe(res => {
       this.securityQuestions = res['data'];
     }, err => {
       console.log(err);
