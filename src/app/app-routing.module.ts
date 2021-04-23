@@ -26,6 +26,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -78,10 +79,6 @@ const routes: Routes = [
         component: SecurityQuestionDetailsComponent
       },
       {
-        path: '500',
-        component: ErrorComponent
-      },
-      {
         path: 'register',
         component: RegisterComponent
       }
@@ -99,6 +96,10 @@ const routes: Routes = [
       {
         path: '500',
         component: ErrorComponent
+      },
+      {
+        path: '404',
+        component: NotFoundComponent
       },
       {
         path: 'register',
