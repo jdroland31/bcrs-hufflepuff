@@ -283,10 +283,13 @@ router.delete('/:id', async(req,res) => {
 
  /**
   * FindSelectedSecurityQuestions
+  * Get request to retrieve user's selected
+  * security questions for request password validation
   */
 router.get('/:userName/security-questions', async (req, res) => {
   try
   {
+    //Find query to find specific username
     User.findOne({'userName': req.params.userName}, function(err, user){
       if (err)
       {
@@ -294,6 +297,11 @@ router.get('/:userName/security-questions', async (req, res) => {
         const findSelectedSecurityQuestionsMongodbErrorResponse = new ErrorResponse('500', 'Internal server error', err);
         res.status(500).send(findSelectedSecurityQuestionsMongodbErrorResponse.toObject());
       }
+      /**
+       * if it connects properly to the database the console
+       * will respond successful query and the data objects
+       * that was found
+       */
       else
       {
         console.log(user);
@@ -304,6 +312,7 @@ router.get('/:userName/security-questions', async (req, res) => {
   }
   catch (e)
   {
+    //the catch response when the node server didn't work
     console.log(e);
     const findSelectedSecurityQuestionsCatchErrorResponse = new ErrorResponse('500', 'Internal server error', e);
     res.status(500).send(findSelectedSecurityQuestionsCatchErrorResponse.toObject());
