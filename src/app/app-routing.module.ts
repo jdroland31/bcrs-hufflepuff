@@ -15,7 +15,7 @@ import { SecurityQuestionListComponent } from './pages/security-question-list/se
 import { SecurityQuestionCreateComponent } from './pages/security-question-create/security-question-create.component';
 
 import { AuthLayoutComponent  } from './shared/auth-layout/auth-layout.component';
-//import { AuthGuard } from './shared/auth.guard';
+import { AuthGuard } from './shared/auth.guard';
 import { SessionGuard } from './shared/session.guard';
 
 import { SigninComponent } from './pages/signin/signin.component';
@@ -85,7 +85,11 @@ const routes: Routes = [
       {
         path: 'register',
         component: RegisterComponent
-      }
+      },
+      {
+         path: 'verify-users/:username',
+         component: VerifyUsersComponent
+       }
     ]
     // canActivate: [SessionGuard] //TODO: reactivate the SessionGuard BEFORE deployment to master or assignment submission!
   },
@@ -113,6 +117,10 @@ const routes: Routes = [
       // },
       // {
       //   path: 'verify-security-questions',
+      //   component: VerifySecurityQuestionsFormComponent
+      // },
+      // {
+      //   path: 'verify-users/:username',
       //   component: VerifySecurityQuestionsFormComponent
       // },
       {
