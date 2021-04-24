@@ -49,6 +49,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { RegisterComponent } from './pages/register/register.component';
 import { ErrorInterceptor } from './error.interceptor';
 
+import { VerifyUsernameFormComponent } from './pages/verify-username-form/verify-username-form.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { ErrorInterceptor } from './error.interceptor';
     NotFoundComponent,
     ResetPasswordFormComponent,
     RegisterComponent,
+    VerifyUsernameFormComponent,
   ],
   imports: [
     BrowserModule,
