@@ -81,8 +81,8 @@ body {  background-color:white; min-height: 100%;}
     background-color: white;
   }
   .footer {
-    /*bottom: 0;
-    position: absolute;*/
+    bottom: 0;
+    position: sticky;
     width: 100%;
   }
 
