@@ -17,7 +17,7 @@ import { SecurityQuestionCreateComponent } from './pages/security-question-creat
 import { AuthLayoutComponent  } from './shared/auth-layout/auth-layout.component';
 import { AuthGuard } from './shared/auth.guard';
 import { SessionGuard } from './shared/session.guard';
-
+import { VerifyUsernameFormComponent } from './pages/verify-username-form/verify-username-form.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { UserCreateComponent  } from './pages/user-create/user-create.component';
 import { UserListComponent } from './pages/user-list/user-list.component';
@@ -27,8 +27,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { RegisterComponent } from './pages/register/register.component';
 
-
-import { NotFoundComponent } from './pages/not-found/not-found.component'
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ResetPasswordFormComponent } from './pages/reset-password-form/reset-password-form.component';
 
 
@@ -88,7 +87,7 @@ const routes: Routes = [
       },
       {
          path: 'verify-users/:username',
-         component: VerifyUsersComponent
+         component: VerifyUsernameFormComponent
        }
     ]
     // canActivate: [SessionGuard] //TODO: reactivate the SessionGuard BEFORE deployment to master or assignment submission!
@@ -110,8 +109,7 @@ const routes: Routes = [
         path: '404',
         component: NotFoundComponent
       },
-
-      // {
+      /*/ {
       //   path: 'forgot',
       //   component: VerifyUsernameFormComponent
       // },
@@ -119,10 +117,10 @@ const routes: Routes = [
       //   path: 'verify-security-questions',
       //   component: VerifySecurityQuestionsFormComponent
       // },
-      // {
-      //   path: 'verify-users/:username',
-      //   component: VerifySecurityQuestionsFormComponent
-      // },
+      {
+         path: 'verify-users/:username',
+         component: VerifyUsernameFormComponent
+      }*/
       {
         path: 'reset-password',
         component: ResetPasswordFormComponent
