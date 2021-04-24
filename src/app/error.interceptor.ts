@@ -38,7 +38,9 @@ export class ErrorInterceptor implements HttpInterceptor {
          * user goes to a wrong path or route within
          * the web application server
          */
+
         if ([404].indexOf(err.status) !== -1) {
+          console.log('Error: ', err.error)
           this.router.navigate(['/session/404']);
         }
 
@@ -49,6 +51,7 @@ export class ErrorInterceptor implements HttpInterceptor {
          * or code 500 code, this usually happens when the server is not working
          */
         if ([500].indexOf(err.status) !== -1) {
+          console.log('Error: ', err.error)
           this.router.navigate(['/session/500']);
         }
 
