@@ -83,7 +83,25 @@ router.post('/signin', async(req, res) => {
  * Verify User
  *
  */
-
+ router.get('/verify/users/:userName', async (req, res) => {
+  try {
+    User.findOne({'userName': req.params.userName}, function(err, user){
+      if (err) {
+        console.log( err);
+        const verifyUserMongodbErrorResponse = new ErrorResponse(500, 'Internal server error', err);
+        res.status(500).send(verifyUserMongoErrorResponse.toObject());
+      } else {
+        console.log(user);
+        const verifyUserMongoResponse = new BaseResponse(200, "Query successful", user);
+        res.json(verifyUserResponse.toObject());
+      }
+    })
+  } catch (e) {
+    console.log(e);
+    const verifyUserCatchErrorResponse = new ErrorResponse(500, 'Internal server error', e.message);
+    res.status(500).send(verifyUserCatchErrorResponse.toObject());
+  }
+});
 /**
  * Verify Security Questions
  *
