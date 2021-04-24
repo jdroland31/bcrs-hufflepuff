@@ -15,7 +15,7 @@ import { SecurityQuestionListComponent } from './pages/security-question-list/se
 import { SecurityQuestionCreateComponent } from './pages/security-question-create/security-question-create.component';
 
 import { AuthLayoutComponent  } from './shared/auth-layout/auth-layout.component';
-import { AuthGuard } from './shared/auth.guard';
+//import { AuthGuard } from './shared/auth.guard';
 import { SessionGuard } from './shared/session.guard';
 import { VerifyUsernameFormComponent } from './pages/verify-username-form/verify-username-form.component';
 import { SigninComponent } from './pages/signin/signin.component';
@@ -29,7 +29,6 @@ import { RegisterComponent } from './pages/register/register.component';
 
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ResetPasswordFormComponent } from './pages/reset-password-form/reset-password-form.component';
-
 
 const routes: Routes = [
   {
@@ -101,13 +100,8 @@ const routes: Routes = [
         component: SigninComponent
       },
       {
-
-        path: '500',
-        component: ErrorComponent
-      },
-      {
-        path: '404',
-        component: NotFoundComponent
+        path: 'register',
+        component: RegisterComponent
       },
       /*/ {
       //   path: 'forgot',
