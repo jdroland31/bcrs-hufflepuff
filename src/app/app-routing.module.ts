@@ -27,6 +27,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ResetPasswordFormComponent } from './pages/reset-password-form/reset-password-form.component';
 
 const routes: Routes = [
   {
@@ -104,16 +105,11 @@ const routes: Routes = [
       {
         path: 'register',
         component: RegisterComponent
-      }/*,
-      ,
+      },
       {
         path: 'reset-password',
         component: ResetPasswordFormComponent
-      },
-      {
-        path: '404',
-        component: NotFoundComponent
-      }*/
+      }
     ]
   }
 
