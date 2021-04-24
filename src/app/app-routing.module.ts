@@ -88,8 +88,8 @@ const routes: Routes = [
          path: 'verify-users/:username',
          component: VerifyUsernameFormComponent
        }
-    ]
-    // canActivate: [SessionGuard] //TODO: reactivate the SessionGuard BEFORE deployment to master or assignment submission!
+    ],
+    canActivate: [SessionGuard] //TODO: reactivate the SessionGuard BEFORE deployment to master or assignment submission!
   },
   {
     path: 'session',
