@@ -15,7 +15,7 @@ import { SecurityQuestionListComponent } from './pages/security-question-list/se
 import { SecurityQuestionCreateComponent } from './pages/security-question-create/security-question-create.component';
 
 import { AuthLayoutComponent  } from './shared/auth-layout/auth-layout.component';
-import { AuthGuard } from './shared/auth.guard';
+//import { AuthGuard } from './shared/auth.guard';
 import { SessionGuard } from './shared/session.guard';
 
 import { SigninComponent } from './pages/signin/signin.component';
@@ -26,11 +26,8 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { RegisterComponent } from './pages/register/register.component';
-
-
 import { NotFoundComponent } from './pages/not-found/not-found.component'
 import { ResetPasswordFormComponent } from './pages/reset-password-form/reset-password-form.component';
-
 
 const routes: Routes = [
   {
@@ -85,13 +82,9 @@ const routes: Routes = [
       {
         path: 'register',
         component: RegisterComponent
-      },
-      {
-         path: 'verify-users/:username',
-         component: VerifyUsersComponent
-       }
-    ]
-    // canActivate: [SessionGuard] //TODO: reactivate the SessionGuard BEFORE deployment to master or assignment submission!
+      }
+    ],
+    canActivate: [SessionGuard] //TODO: reactivate the SessionGuard BEFORE deployment to master or assignment submission!
   },
   {
     path: 'session',
@@ -102,25 +95,15 @@ const routes: Routes = [
         component: SigninComponent
       },
       {
-
-        path: '500',
-        component: ErrorComponent
+        path: 'register',
+        component: RegisterComponent
       },
-      {
-        path: '404',
-        component: NotFoundComponent
-      },
-
       // {
       //   path: 'forgot',
       //   component: VerifyUsernameFormComponent
       // },
       // {
       //   path: 'verify-security-questions',
-      //   component: VerifySecurityQuestionsFormComponent
-      // },
-      // {
-      //   path: 'verify-users/:username',
       //   component: VerifySecurityQuestionsFormComponent
       // },
       {
