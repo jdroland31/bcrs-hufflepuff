@@ -89,10 +89,10 @@ router.post('/signin', async(req, res) => {
       if (err) {
         console.log( err);
         const verifyUserMongodbErrorResponse = new ErrorResponse(500, 'Internal server error', err);
-        res.status(500).send(verifyUserMongoErrorResponse.toObject());
+        res.status(500).send(verifyUserMongodbErrorResponse.toObject());
       } else {
         console.log(user);
-        const verifyUserMongoResponse = new BaseResponse(200, "Query successful", user);
+        const verifyUserResponse = new BaseResponse(200, "Query successful", user);
         res.json(verifyUserResponse.toObject());
       }
     })
