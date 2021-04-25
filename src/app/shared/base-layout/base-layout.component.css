@@ -82,7 +82,7 @@ body {  background-color:white; min-height: 100%;}
   }
   .footer {
     bottom: 0;
-    position: sticky;
+    /* position: sticky; */
     width: 100%;
   }
 
@@ -121,5 +121,3 @@ body {  background-color:white; min-height: 100%;}
     text-decoration: underline;
     color: #b68900 !important;
   }
-
-
