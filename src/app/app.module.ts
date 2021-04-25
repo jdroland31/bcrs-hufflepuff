@@ -50,6 +50,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ErrorInterceptor } from './shared/error.interceptor';
 
 import { VerifyUsernameFormComponent } from './pages/verify-username-form/verify-username-form.component';
+import { VerifySecurityQuestionsFormComponent } from './pages/verify-security-questions-form/verify-security-questions-form.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { VerifyUsernameFormComponent } from './pages/verify-username-form/verify
     ResetPasswordFormComponent,
     RegisterComponent,
     VerifyUsernameFormComponent,
+    VerifySecurityQuestionsFormComponent,
   ],
   imports: [
     BrowserModule,

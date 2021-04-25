@@ -29,6 +29,8 @@ import { RegisterComponent } from './pages/register/register.component';
 
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ResetPasswordFormComponent } from './pages/reset-password-form/reset-password-form.component';
+import { VerifySecurityQuestionsFormComponent } from './pages/verify-security-questions-form/verify-security-questions-form.component';
+
 
 const routes: Routes = [
   {
@@ -99,10 +101,10 @@ const routes: Routes = [
          path: 'forgot',
          component: VerifyUsernameFormComponent
        },
-      // {
-      //   path: 'verify-security-questions',
-      //   component: VerifySecurityQuestionsFormComponent
-      // },
+      {
+        path: 'verify-security-questions',
+        component: VerifySecurityQuestionsFormComponent
+      },
       {
          path: 'verify-users/:username',
          component: VerifyUsernameFormComponent
