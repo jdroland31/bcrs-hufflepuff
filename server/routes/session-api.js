@@ -89,10 +89,10 @@ router.post('/signin', async(req, res) => {
       if (err) {
         console.log( err);
         const verifyUserMongodbErrorResponse = new ErrorResponse(500, 'Internal server error', err);
-        res.status(500).send(verifyUserMongoErrorResponse.toObject());
+        res.status(500).send(verifyUserMongodbErrorResponse.toObject());
       } else {
         console.log(user);
-        const verifyUserMongoResponse = new BaseResponse(200, "Query successful", user);
+        const verifyUserResponse = new BaseResponse(200, "Query successful", user);
         res.json(verifyUserResponse.toObject());
       }
     })
@@ -266,7 +266,6 @@ router.post('/verify/users/:userName/security-questions', async(req, res) => {
 /**
  * Reset Password,
  * Post request to create a new password
- * Not tested yet
  */
 router.post('/users/:userName/reset-password', async(req, res) => {
 
