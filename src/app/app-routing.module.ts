@@ -103,18 +103,18 @@ const routes: Routes = [
         path: 'register',
         component: RegisterComponent
       },
-      /*/ {
-      //   path: 'forgot',
-      //   component: VerifyUsernameFormComponent
-      // },
+       {
+         path: 'forgot',
+         component: VerifyUsernameFormComponent
+       },
       // {
       //   path: 'verify-security-questions',
       //   component: VerifySecurityQuestionsFormComponent
       // },
-      {
-         path: 'verify-users/:username',
-         component: VerifyUsernameFormComponent
-      }*/
+      // {
+      //    path: 'verify-users/:username',
+      //    component: VerifyUsernameFormComponent
+      // }
       {
         path: 'reset-password',
         component: ResetPasswordFormComponent

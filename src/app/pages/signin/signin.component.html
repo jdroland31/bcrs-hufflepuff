@@ -1,7 +1,7 @@
 <div fxLayout="column" fxLayoutAlign="center center">
   <mat-card class="mat-elevation-z0">
     <mat-card-title>Log In</mat-card-title>
-    <mat-card-subtitle><a routerLink="/registration" class="login-link" fxLayoutAlign="end">New User?</a></mat-card-subtitle>
+    <mat-card-subtitle><a routerLink="/session/register" class="login-link" fxLayoutAlign="end">New User?</a></mat-card-subtitle>
     <mat-card-content>
         <form [formGroup]="signinForm" (ngSubmit)="signin(); signinForm.reset()">
           <mat-card-content fxLayout="column">
@@ -24,7 +24,7 @@
             <button type="submit" fxFlex mat-raised-button [disabled] color="primary">Submit</button>
           </mat-card-actions>
         </form>
-        <a routerLink="/reset-password" class="login-link" fxLayoutAlign="end">Forgot your password?</a>
+        <a routerLink="/session/forgot" class="login-link" fxLayoutAlign="end">Forgot your password?</a>
     </mat-card-content>
   </mat-card>
 </div>
