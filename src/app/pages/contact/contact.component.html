@@ -9,4 +9,41 @@
 -->
 
 
-<p>contact works!</p>
+<!--
+; The mat-card from material angular is inside the flex layout
+; which will provide a responsive layout to this page.
+; mat-card elements have a shadow effect that shows a texture to each content
+-->
+<div fxLayout="row wrap">
+
+  <!-- Right side of contact page -->
+  <div fxFlex class="right">
+    <mat-card class="mat-elevation-z0">
+      <mat-card-title class="card-title-icon">
+        <mat-card-title>Find Us</mat-card-title>
+        <mat-icon color="primary">location_on</mat-icon>
+       </mat-card-title>
+    <br />
+    <mat-card-content class="align-center">
+      <p>505 Main street</p>
+      <p>Omaha, Nebraska</p>
+    </mat-card-content>
+    </mat-card>
+  </div>
+<!-- Left side of contact page -->
+  <div fxFlex class="left">
+    <mat-card class="mat-elevation-z0">
+
+    <mat-card-title class="card-title-icon">
+      <mat-card-title>Give Us a Call</mat-card-title>
+      <mat-icon color="primary">contact_phone</mat-icon>
+    </mat-card-title>
+    <br />
+    <mat-card-content class="align-center">
+      <p>Direct: 555-555-5555</p>
+      <p>Toll-free: 1-888-555-5555</p>
+      <p>Fax: 555-555-5555</p>
+    </mat-card-content>
+    </mat-card>
+  </div>
+</div>
