@@ -1,3 +1,11 @@
+/***
+** Title: Bob's Computer Repair Shop
+** Author:  Professor Krasso
+** Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+** Date: April 15 2021
+** Description: API - Sprint 1
+ ***/
+
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
@@ -21,7 +29,9 @@ export class ResetPasswordFormComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.fb.group({
-      password: [null, Validators.compose([Validators.required])]
+      password: [null, Validators.required,
+        Validators.minLength(8),
+        Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[A-Za-z\d$@$!%*?&].{8,}')]
     });
   }
 
@@ -29,12 +39,11 @@ export class ResetPasswordFormComponent implements OnInit {
     this.http.post('/api/session/users/' + this.username + '/reset-password', {
       password: this.form.controls['password'].value
     }).subscribe(res => {
-      /**
-       * User is authenticated and we can grant them access
-       */
+      // User is authenticated and we can be granted access
       this.cookieService.set('sessionuser', this.username, 1);
       this.router.navigate(['/']);
-    })
+    }, err => {
+      console.log(err);
+    });
   }
-
 }

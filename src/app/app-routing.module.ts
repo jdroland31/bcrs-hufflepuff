@@ -87,7 +87,6 @@ const routes: Routes = [
       {
          path: 'verify-users/:username',
          component: VerifyUsernameFormComponent
-<<<<<<< HEAD
        },
        {
          path: '404',
@@ -103,11 +102,6 @@ const routes: Routes = [
       }
     ]
     // canActivate: [SessionGuard] //TODO: reactivate the SessionGuard BEFORE deployment to master or assignment submission!
-=======
-       }
-    ],
-    canActivate: [SessionGuard] //TODO: reactivate the SessionGuard BEFORE deployment to master or assignment submission!
->>>>>>> 088559ffd2817d972705f0f64617380bf29c0f2c
   },
   {
     path: 'session',

@@ -267,17 +267,21 @@ router.post('/verify/users/:userName/security-questions', async(req, res) => {
  * Reset Password,
  * Post request to create a new password
  */
+
+
 router.post('/users/:userName/reset-password', async(req, res) => {
 
   try
   {
     const password = req.body.password;
     //finds the specific username
-    User.findOne({'userName': req.params.userName}, function(err, user){
+    User.findOne({'userName': req.params.userName}, function(err, user){console.log(user);
       if (err)
       {
         //error trapping if the mongodb does not respond
-        console.log(err);
+
+        console.log("User not found"  + err);
+
         const resetPasswordMongodbErrorResponse = new ErrorResponse('500', 'Internal server error', err);
         res.status(500).send(resetPasswordMongodbErrorResponse.toObject());
       }
@@ -289,7 +293,7 @@ router.post('/users/:userName/reset-password', async(req, res) => {
          * and saved as a new password  if the connections are right.
          */
           console.log(user);
-
+          console.log("User found");
           let hashedPassword = bcrypt.hashSync(password, saltRounds);
 
           user.set({
@@ -300,7 +304,7 @@ router.post('/users/:userName/reset-password', async(req, res) => {
           {
               if (err)
               {
-                console.log(err);
+                console.log("Update User:" + err);
                 const updatedUserMongodbErrorResponse = new ErrorResponse('500', 'Internal server error', err);
                 res.status(500).send(updatedUserMongodbErrorResponse.toObject());
               }
