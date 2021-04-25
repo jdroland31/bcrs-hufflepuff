@@ -33,7 +33,7 @@ export class VerifyUsernameFormComponent implements OnInit {
     this.http.get('/api/session/verify/users/' + username).subscribe(res => {
       // console.log(res);
       if (res) {
-        // this.router.navigate(['/session/verify-security-questions'], {queryParams: {username: username}, skipLocationChange: true});
+        this.router.navigate(['/session/verify-security-questions'], {queryParams: {username: username}, skipLocationChange: true});
       } else {
         console.log("Username does not match our records");
       }
