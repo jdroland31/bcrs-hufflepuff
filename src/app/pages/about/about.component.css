@@ -7,3 +7,33 @@
 ; Description: The about component styling
 ;===========================================
 **/
+
+img{
+  border-radius: 50%;
+  /* height: 300px;
+  width: 300px; */
+}
+
+mat-card-title{
+  margin-top: 20px;
+}
+
+.about-container{
+  margin-top: 50px !important;
+  margin-bottom: 50px;
+}
+
+.main-text{
+  /* text-align: center; */
+}
+
+a{
+  color: #3e2622;
+  text-decoration: none;
+}
+
+a:hover{
+  color: #6a4f4b;
+}
+
+
