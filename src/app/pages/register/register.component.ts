@@ -95,7 +95,7 @@ export class RegisterComponent implements OnInit {
     }).subscribe(res => {
       debugger;
       if (res['data']) { // user is authenticated and we grant them access
-        this.cookieService.set('sessionUser', credentials.userName, 1);
+        this.cookieService.set('session_user', credentials.userName, 1);
         this.router.navigate(['/']);
       } else {
         // user is not authenticated and we return error msg

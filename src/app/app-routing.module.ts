@@ -65,10 +65,6 @@ const routes: Routes = [
         component: UserListComponent
       },
       {
-        path: 'signin',
-        component: SigninComponent
-      },
-      {
         path: 'security-questions',
         component: SecurityQuestionListComponent
       },
@@ -79,10 +75,6 @@ const routes: Routes = [
       {
         path: 'security-questions/:questionId',
         component: SecurityQuestionDetailsComponent
-      },
-      {
-        path: 'register',
-        component: RegisterComponent
       },
       {
          path: 'verify-users/:username',
