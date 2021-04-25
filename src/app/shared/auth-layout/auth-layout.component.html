@@ -1,15 +1,38 @@
 <!-- router outlet tags render routed pages -->
 
 <div fxLayout="column">
+  <div class="logo-group">
+    <div class="logo">
+      <img class="logo-img" src="./assets/images/bcrs-logo.png">
+    </div>
+    <mat-toolbar-row class="nav-row">
+      <h1 class="bcrs-title">Bob's</h1>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="nav-row">
+      <h2 class="subtitle">Computer Repair Shop</h2>
+    </mat-toolbar-row>
+  </div>
   <!-- navigation -->
   <nav fxFlex>
+    <mat-toolbar class="nav-bar">
+      <mat-toolbar-row>
+        <span class="bcrs-nav-spacer"></span>
+        <!-- navbar container -->
+        <div class="navbar-container">
+          <div class="nav-bar-items-container">
+            <button class="navbar-link ml-auto" routerLink="/services" mat-button>Services</button>
+            <button class="navbar-link ml-auto" routerLink="/about" mat-button>About</button>
+            <button class="navbar-link ml-auto" routerLink="/contact" mat-button>Contact</button>
+            <button class="navbar-link ml-auto" routerLink="/userlist" mat-button>Users Configuration</button>
+            <button class="navbar-link ml-auto" routerLink="/security-questions" mat-button>Security Questions Configuration</button>
 
-    <mat-toolbar color="accent">
-      <mat-toolbar-row class="bcrs-title">
-        <span>Bob's Computer Repair Shop</span>
+          <!-- <button class="navbar-link ml-auto" routerLink="/logout" mat-button>Log Out</button> -->
+          </div>
+        </div>
       </mat-toolbar-row>
     </mat-toolbar>
   </nav>
+
 
   <!-- main content -->
   <div fxFlex>

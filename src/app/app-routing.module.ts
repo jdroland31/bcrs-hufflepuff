@@ -87,9 +87,27 @@ const routes: Routes = [
       {
          path: 'verify-users/:username',
          component: VerifyUsernameFormComponent
+<<<<<<< HEAD
+       },
+       {
+         path: '404',
+         component: NotFoundComponent
+       },
+       {
+         path: '500',
+         component: ErrorComponent
+       },
+       {
+        path: 'reset-password',
+        component: ResetPasswordFormComponent
+      }
+    ]
+    // canActivate: [SessionGuard] //TODO: reactivate the SessionGuard BEFORE deployment to master or assignment submission!
+=======
        }
     ],
     canActivate: [SessionGuard] //TODO: reactivate the SessionGuard BEFORE deployment to master or assignment submission!
+>>>>>>> 088559ffd2817d972705f0f64617380bf29c0f2c
   },
   {
     path: 'session',

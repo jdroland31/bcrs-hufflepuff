@@ -47,7 +47,7 @@ import { ResetPasswordFormComponent } from './pages/reset-password-form/reset-pa
 import { MatListModule } from '@angular/material/list';
 import { MatStepperModule } from '@angular/material/stepper';
 import { RegisterComponent } from './pages/register/register.component';
-import { ErrorInterceptor } from './error.interceptor';
+import { ErrorInterceptor } from './shared/error.interceptor';
 
 import { VerifyUsernameFormComponent } from './pages/verify-username-form/verify-username-form.component';
 

@@ -13,6 +13,7 @@ h2{
 }
 .error-text-box{
   width: 550px;
+  max-width: 100%;
   margin: 40px auto;
 }
 .mat-raised-button{
