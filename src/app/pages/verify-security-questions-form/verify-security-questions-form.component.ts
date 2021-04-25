@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SecurityQuestion } from 'src/app/shared/security-question.interface';
 
 @Component({
   selector: 'app-verify-security-questions-form',
@@ -10,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class VerifySecurityQuestionsFormComponent implements OnInit {
 
-  selectedSecurityQuestions: any;
+  selectedSecurityQuestions: SecurityQuestion[];
   question1: string;
   question2: string;
   question3: string;
@@ -22,7 +23,7 @@ export class VerifySecurityQuestionsFormComponent implements OnInit {
     console.log(this.username);
 
     //FindSelectedSecurityQuestions
-    this.http.get('/api/users' + this.username + '/security-questions').subscribe(res => {
+    this.http.get('/api/users/' + this.username + '/security-questions').subscribe(res => {
       this.selectedSecurityQuestions = res['data'];
       console.log(this.selectedSecurityQuestions);
       console.log(res);
@@ -56,7 +57,7 @@ export class VerifySecurityQuestionsFormComponent implements OnInit {
     console.log(answerToSecurityQuestion2);
     console.log(answerToSecurityQuestion3);
 
-    this.http.post('/api/session/verify/users'+this.username+'/security-questions', {
+    this.http.post('/api/session/verify/users/'+this.username+'/security-questions', {
       questionText1: this.question1,
       questionText2: this.question2,
       questionText3: this.question3,
