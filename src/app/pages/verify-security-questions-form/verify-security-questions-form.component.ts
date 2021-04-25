@@ -21,6 +21,21 @@ export class VerifySecurityQuestionsFormComponent implements OnInit {
     this.username = this.route.snapshot.queryParamMap.get('username');
     console.log(this.username);
 
+    //FindSelectedSecurityQuestions
+    this.http.get('/api/users' + this.username + '/security-questions').subscribe(res => {
+      this.selectedSecurityQuestions = res['data'];
+      console.log(this.selectedSecurityQuestions);
+      console.log(res);
+    }, err => {
+      console.log(err);
+    }, () => {
+      this.question1 = this.selectedSecurityQuestions[0].questionText;
+      this.question2 = this.selectedSecurityQuestions[1].questionText;
+      this.question3 = this.selectedSecurityQuestions[2].questionText;
+      console.log(this.question1);
+      console.log(this.question2);
+      console.log(this.question3);
+    })
 
    }
 
