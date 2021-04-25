@@ -102,11 +102,6 @@ router.post('/signin', async(req, res) => {
     res.status(500).send(verifyUserCatchErrorResponse.toObject());
   }
 });
-/**
- * Verify Security Questions
- *
- */
-
 
  /**
  * API: Register
