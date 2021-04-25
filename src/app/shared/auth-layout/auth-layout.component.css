@@ -1,5 +1,120 @@
+.bcrs-title {
+  text-transform: uppercase;
+  font-family: 'Trebuchet MS';
+  font-size: 60px;
+  letter-spacing: 5px;
+  height: auto;
+  padding: 10px 0;
+  color:  #f9c02d !important;
+  font-weight: normal;
+  margin-top: 0px;
+  }
+  .nav-row{
+    display: block;
+    text-align: center;
+    height: auto;
+  }
+  .subtitle{
+    text-transform: uppercase;
+    font-family: 'Trebuchet MS';
+    font-size: 18px;
+    letter-spacing: 0px;
+    color:#fff;
+    padding: 0 0 20px 0;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+  .logo{
+    display: block;
+    text-align: center;
+  }
+  img.logo-img{
+    margin-top: 15px;
+    margin-bottom: 0;
+    width: 80px;
+
+  }
+
+  .logo-group{
+    background-color: #3e2622;
+  }
+  .bcrs-title .title-accent{
+  color:  #f9c02d !important;
+  font-weight: bold;
+  }
+  mat-toolbar.nav-bar{
+    background-color: #f9c02d;
+  }
+  .nav-bar-items-container{
+    display: inline-block;
+    width: auto;
+    margin: 20px auto;
+  }
+  .navbar-container {
+    padding: 15px 0;
+    width: 100%;
+    text-align: center;
+  }
+  .nav button span,
+  nav button.navbar-link{
+    font-size: 16px;
+    color: #3e2622 !important;
+    letter-spacing: -.5px;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+  .navbar-link {
+    font-size: 24px;
+    font-weight: lighter;
+    color: #f9c02d !important;
+  }
+  body{
+    background-color: white;
+  }
+  .footer {
+    bottom: 0;
+    position: sticky;
+    width: 100%;
+  }
+
+  .footer-content {
+    font-size: 16px;
+    font-weight: lighter;
+    padding-left: 100px;
+    letter-spacing: 3px;
+    background: #000;
+  }
+  .footer p{
+    margin: 0px auto;
+    font-family: 'Trebuchet MS';
+  }
+  .bcrs-footer-content{
+    color: #f9c02d !important;
+  }
+
+  .bcrs-nav-spacer{
+    flex: 1 1 auto;
+  }
+
+
+
+  .bu-link {
+    text-decoration: none;
+    color: #f9c02d !important;
+  }
+
+  .bu-link:hover {
+    text-decoration: underline;
+    color: #ffeb6b !important;
+  }
+
+  .bu-link:visited {
+    text-decoration: underline;
+    color: #b68900 !important;
+  }
+
 .logo {
-  margin-left: 75px;
+
   font-size: 24px;
   font-weight: lighter;;
 }
@@ -15,7 +130,7 @@
 }
 
 .main-content {
-  padding-left: 30px;
+
 }
 
 .footer {
@@ -43,10 +158,8 @@
 .bcrs-title{
   justify-content: center;
   font-size: 64px;
-  margin-top: 20px;
-  margin-bottom: 20px;
   padding-top: 20px;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
   color: #f9c02d !important;
   word-wrap: break-word;
 }
