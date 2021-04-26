@@ -3,7 +3,7 @@
 ** Author:  Professor Krasso
 ** Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
 ** Date: April 15 2021
-** Description: API - Sprint 1
+** Description: Sign In - Sprint 1
  ***/
 
 import { Component, OnInit } from '@angular/core';
@@ -34,6 +34,7 @@ export class SigninComponent implements OnInit {
   }
 
   signin(){
+    //Get the username and password from the form.
     const userName = this.signinForm.controls['userName'].value;
     const password = this.signinForm.controls['password'].value;
     this.http.post('/api/session/signin',{'userName': userName,'password': password}).subscribe(res => {

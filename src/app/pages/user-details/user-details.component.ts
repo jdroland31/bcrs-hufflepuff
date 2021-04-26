@@ -3,7 +3,7 @@
 ** Author:  Professor Krasso
 ** Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
 ** Date: April 15 2021
-** Description: API - Sprint 1
+** Description: User Details - Sprint 1
  ***/
 
 import { HttpClient } from '@angular/common/http';
@@ -29,7 +29,7 @@ export class UserDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private http: HttpClient, private fb: FormBuilder, private router: Router, private userService: UserService) {
     this.userId = this.route.snapshot.paramMap.get('id');
     // console.log(this.userId);
-
+    //Get the current values of the user's editable field via the passed in userId.
     this.userService.findUserById(this.userId).subscribe(res => {
       this.user = res['data'];
     }, err => {
@@ -46,7 +46,7 @@ export class UserDetailsComponent implements OnInit {
 
 
   ngOnInit(): void {
-
+    //Set the validation standards on the field forms.
     this.form = this.fb.group({
       firstName: [null, Validators.compose([Validators.required])],
       lastName: [null, Validators.compose([Validators.required])],
@@ -55,7 +55,7 @@ export class UserDetailsComponent implements OnInit {
       email: [null, Validators.compose([Validators.required, Validators.email])]
     });
   }
-
+  //When called, this collects the values in the editable fields and updates the user, then returns them to the user list.
   saveUser() {
     console.log("saveUser() was called");
     const updatedUser = {} as User;
@@ -71,7 +71,7 @@ export class UserDetailsComponent implements OnInit {
       console.log(err);
     })
   }
-
+  //If the user cancels editing, they are navigated back to the user list component.
   cancel () {
     this.router.navigate(['/userlist']);
   }

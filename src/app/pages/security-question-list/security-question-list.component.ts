@@ -3,8 +3,8 @@
 ** Author:  Professor Krasso
 ** Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
 ** Date: April 15 2021
-** Description: API - Sprint 1
- ***/
+** Description: Security Question List - Sprint 1
+***/
 
 import { Component, OnInit } from '@angular/core';
 import { DeleteRecordDialogComponent } from './../../shared/delete-record-dialog/delete-record-dialog.component';
@@ -25,6 +25,7 @@ export class SecurityQuestionListComponent implements OnInit {
   displayedColumns = ['question', 'functions'];
 
   constructor(private http: HttpClient, private dialog: MatDialog, private securityQuestionService: SecurityQuestionService) {
+    //Call the security questions service to get all security questions and set securityQuestions to this value.
     this.securityQuestionService.findAllSecurityQuestion().subscribe(res => {
       this.securityQuestions = res['data'];
     }, err => {
@@ -34,7 +35,7 @@ export class SecurityQuestionListComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  //This function populates a dialog with the DeleteRecordDialogComponent and allows the user to call to the API to delete a specified security question.
   delete (recordId: string){
     const dialogRef = this.dialog.open(DeleteRecordDialogComponent, {
       data: {

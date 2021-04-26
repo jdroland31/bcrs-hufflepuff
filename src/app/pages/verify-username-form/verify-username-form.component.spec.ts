@@ -1,3 +1,11 @@
+/***
+** Title: Bob's Computer Repair Shop
+** Author:  Professor Krasso
+** Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+** Date: April 23 2021
+** Description: Verify Username Form spec file - Sprint 2
+ ***/
+
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { VerifyUsernameFormComponent } from './verify-username-form.component';

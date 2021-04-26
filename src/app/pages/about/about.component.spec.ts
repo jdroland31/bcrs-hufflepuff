@@ -1,3 +1,13 @@
+/*
+ ============================================
+; Title:  about.component.ts
+; Author: Professor Krasso
+; Date: 19 April 2021
+; Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+; Description: About component ts file - Sprint 2
+;===========================================
+ */
+
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AboutComponent } from './about.component';

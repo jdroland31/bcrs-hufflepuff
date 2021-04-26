@@ -3,7 +3,7 @@
 ** Author:  Professor Krasso
 ** Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
 ** Date: April 15 2021
-** Description: API - Sprint 1
+** Description: Security Question Create - Sprint 1
  ***/
 
 import { Component, OnInit } from '@angular/core';
@@ -27,7 +27,7 @@ export class SecurityQuestionCreateComponent implements OnInit {
       text: [null, Validators.compose([Validators.required])],
     });
   }
-
+//Create a new security question from the provided text.
 create ()
 {
   const newSecurityQuestion = {} as SecurityQuestion;
@@ -39,7 +39,7 @@ create ()
       console.log(err);
     })
 }
-
+//Exit the create menu and navigate back to security questions.
 cancel(){
   this.router.navigate(['/security-questions']);
 }

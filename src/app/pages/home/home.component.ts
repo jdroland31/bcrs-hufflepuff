@@ -3,7 +3,7 @@
 ** Author:  Professor Krasso
 ** Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
 ** Date: April 15 2021
-** Description: API - Sprint 1
+** Description: Home - Sprint 1
  ***/
 
 import { Component, OnInit } from '@angular/core';
