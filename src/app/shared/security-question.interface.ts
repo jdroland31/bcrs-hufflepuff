@@ -8,6 +8,7 @@
 
 
 export interface SecurityQuestion {
+  questionText: string;
   _id: string;
   text: string;
 

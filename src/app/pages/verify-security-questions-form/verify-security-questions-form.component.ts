@@ -11,6 +11,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SecurityQuestion } from 'src/app/shared/security-question.interface';
 
 @Component({
   selector: 'app-verify-security-questions-form',
@@ -19,7 +20,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class VerifySecurityQuestionsFormComponent implements OnInit {
 
-  selectedSecurityQuestions: any;
+  selectedSecurityQuestions: SecurityQuestion[];
   question1: string;
   question2: string;
   question3: string;
