@@ -129,8 +129,8 @@
   color: #f9c02d !important;
 }
 
-.main-content {
-
+body {
+  background: white;
 }
 
 .footer {

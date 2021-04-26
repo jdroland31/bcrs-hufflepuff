@@ -44,8 +44,8 @@ body {  background-color:white; min-height: 100%;}
     background-color: #3e2622;
   }
   .bcrs-title .title-accent{
-  color:  #f9c02d !important;
-  font-weight: bold;
+    color:  #f9c02d !important;
+    font-weight: bold;
   }
   mat-toolbar.nav-bar{
     background-color: #f9c02d;
@@ -75,7 +75,7 @@ body {  background-color:white; min-height: 100%;}
   }
 
   .main-content {
-    padding-left: 30px;
+    background: white;
   }
   body{
     background-color: white;
@@ -121,3 +121,7 @@ body {  background-color:white; min-height: 100%;}
     text-decoration: underline;
     color: #b68900 !important;
   }
+nav
+{
+  flex:0 !important;
+}
