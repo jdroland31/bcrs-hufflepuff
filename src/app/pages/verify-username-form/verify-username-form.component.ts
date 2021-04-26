@@ -33,9 +33,18 @@ export class VerifyUsernameFormComponent implements OnInit {
     console.log(username);
     //Call the Verify Users API.
     this.http.get('/api/session/verify/users/' + username).subscribe(res => {
-      //If this is a verified user, continue the process by navigating to the verify security questions component and passing the username, but do not change the displayed URL.
+      // console.log(res);
       if (res) {
-        this.router.navigate(['/session/verify-security-questions'], {queryParams: {username: username}, skipLocationChange: true});
+        // console.log(res['data']);
+        //If the response data is null, the username does not match our records.
+        if(res['data'] === null)
+        {
+          console.log("Username does not match our records");
+        }
+        //If this is a verified user, continue the process by navigating to the verify security questions component and passing the username, but do not change the displayed URL.
+        else{
+          this.router.navigate(['/session/verify-security-questions'], {queryParams: {username: username}, skipLocationChange: true});
+        }
       } else {
         //If the username provided does not match records, log the error.
         console.log("Username does not match our records");
