@@ -3,7 +3,7 @@
 ** Author:  Professor Krasso
 ** Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
 ** Date: April 23 2021
-** Description: API - Sprint 1
+** Description: Verify Username Form - Sprint 2
  ***/
 
 import { HttpClient } from '@angular/common/http';
@@ -26,18 +26,22 @@ export class VerifyUsernameFormComponent implements OnInit {
       username: [null, Validators.compose([Validators.required])]
     });
   }
-
+  //This function is called when the user clicks Submit.
   validateUsername() {
+    //Get the username provided in the form.
     const username = this.form.controls['username'].value;
     console.log(username);
+    //Call the Verify Users API.
     this.http.get('/api/session/verify/users/' + username).subscribe(res => {
-      // console.log(res);
+      //If this is a verified user, continue the process by navigating to the verify security questions component and passing the username, but do not change the displayed URL.
       if (res) {
         this.router.navigate(['/session/verify-security-questions'], {queryParams: {username: username}, skipLocationChange: true});
       } else {
+        //If the username provided does not match records, log the error.
         console.log("Username does not match our records");
       }
     }, err => {
+      //If an error occurs during the API call, log it.
       console.log(err);
 
     });

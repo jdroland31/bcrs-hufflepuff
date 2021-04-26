@@ -1,3 +1,10 @@
+/***
+** Title: Bob's Computer Repair Shop
+** Author:  Professor Krasso
+** Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+** Date: April 25 2021
+** Description: Not Found spec file- Sprint 2
+ ***/
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NotFoundComponent } from './not-found.component';

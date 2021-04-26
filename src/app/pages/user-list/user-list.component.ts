@@ -3,7 +3,7 @@
 ** Author:  Professor Krasso
 ** Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
 ** Date: April 15 2021
-** Description: API - Sprint 1
+** Description: User List - Sprint 1
  ***/
 
 import { Component, OnInit } from '@angular/core';
@@ -25,7 +25,7 @@ export class UserListComponent implements OnInit {
 
   constructor(private dialog: MatDialog, private userService: UserService) {
 
-
+    //The user service is called to get all users and set the users variable to that data.
     this.userService.findAllUsers().subscribe(res => {
       this.users = res['data'];
       console.log(this.users);
@@ -37,7 +37,7 @@ export class UserListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
+  //If the user click on the Delete icon, a dialog hosting the Delete Dialog component appears. If the user confirms, the deleteUser API is called via the user service.
   delete(userId: string, recordId: string): void {
     const dialogRef = this.dialog.open(DeleteRecordDialogComponent, {
       data: {

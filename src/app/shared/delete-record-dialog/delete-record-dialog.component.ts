@@ -3,7 +3,7 @@
 ** Author:  Professor Krasso
 ** Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
 ** Date: April 15 2021
-** Description: API - Sprint 1
+** Description: Delete Record Dialog - Sprint 1
  ***/
 
 import { Component, OnInit, Inject } from '@angular/core';

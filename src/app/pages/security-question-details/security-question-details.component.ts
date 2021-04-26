@@ -3,8 +3,9 @@
 ** Author:  Professor Krasso
 ** Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
 ** Date: April 15 2021
-** Description: API - Sprint 1
+** Description: Security Question Details - Sprint 1
  ***/
+
 /* file import*/
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -53,7 +54,7 @@ export class SecurityQuestionDetailsComponent implements OnInit {
   saveQuestion() {
     const updatedSecurityQuestion = {} as SecurityQuestion;
     updatedSecurityQuestion.text = this.form.controls.text.value;
-
+    //call the security question service to up date the security question text.
     this.securityQuestionService.updateSecurityQuestion( this.questionId, updatedSecurityQuestion ).subscribe(result => {
         this.router.navigate(['/security-questions']);
       });
@@ -61,6 +62,7 @@ export class SecurityQuestionDetailsComponent implements OnInit {
 
   //cancel button
   cancel() {
+    //Go back to the security questions component.
     this.router.navigate(['/security-questions']);
   }
 }

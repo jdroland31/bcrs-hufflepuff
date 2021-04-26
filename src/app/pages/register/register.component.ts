@@ -3,7 +3,7 @@
 ** Author:  Professor Krasso
 ** Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
 ** Date: April 22 2021
-** Description: API - Sprint 1
+** Description: Register - Sprint 2
  ***/
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
@@ -35,6 +35,7 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    //Set required on all form fields and enforce password standards.
     this.registrationForm = new FormGroup({
       contactInformation: new FormGroup({
         firstName: new FormControl(null, Validators.required),
@@ -62,7 +63,9 @@ export class RegisterComponent implements OnInit {
     });
     console.log(this.registrationForm)
   }
+
   register(form) {
+    //Set the user's values to those provided in the form.
     const contactInformation = form.contactInformation;
     const securityQuestions = form.securityQuestions;
     const credentials = form.credentials;
@@ -82,7 +85,7 @@ export class RegisterComponent implements OnInit {
       },
     ];
     console.log(selectedSecurityQuestions)
-
+    //Post the new user's provided values and create a user.
     this.http.post('/api/session/register', {
       userName: credentials.userName,
       password: credentials.password,
