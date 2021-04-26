@@ -27,9 +27,9 @@ export class ResetPasswordFormComponent implements OnInit {
     this.username = this.route.snapshot.queryParamMap.get('username');
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.form = this.fb.group({
-      password: [null, Validators.required,
+        password: [null, Validators.required,
         Validators.minLength(8),
         Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[A-Za-z\d$@$!%*?&].{8,}')]
     });
