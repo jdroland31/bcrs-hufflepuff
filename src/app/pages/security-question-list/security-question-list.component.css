@@ -26,6 +26,14 @@
 
 .tableSecurity{
   text-align: left;
-  background-color: transparent;
+  background-color: white;
   size: 20rem;
+}
+table{
+  margin: 20px auto 80px auto;
+}
+.mat-button{
+  background: black;
+    color: white;
+    margin: 15px auto 0;
 }

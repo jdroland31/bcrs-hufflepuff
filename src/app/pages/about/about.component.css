@@ -35,5 +35,8 @@ a{
 a:hover{
   color: #6a4f4b;
 }
-
-
+.bios img{
+  min-width: 180px;
+  width: 250px;
+  max-width: 28%;
+}

@@ -4,10 +4,11 @@
 
 .mat-card{
   background-color: #f9c02d !important;
-  width: 50%;
-  margin-top: 50px;
+  width: 550px;
+  padding: 40px 20px;
+  max-width: 80%;
+  margin: 40px auto;
 }
-
 input{
   width: 100%;
 }
@@ -20,10 +21,6 @@ button{
 
 button:hover{
   background-color: #3e2723 !important;
-}
-
-.login-link {
-  color: gray !important;
 }
 
 .login-link:hover {
@@ -40,4 +37,11 @@ button:hover{
   /*change color of label*/
   color: black !important;
  }
+.mat-input-element{
+  padding: 8px 0;
+}
+a.login-link,
+.mat-card-subtitle a {
+  color: rgba(0,0,0,1) !important;
+}
 

@@ -16,3 +16,14 @@
 .text{
   padding-right: 3rem;
 }
+.mat-card-content table{
+  background-color: white;
+}
+table{
+  margin: 40px auto;
+}
+.mat-button{
+  background: black;
+    color: white;
+    margin: 15px auto 0;
+}
