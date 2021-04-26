@@ -32,7 +32,7 @@ export class VerifySecurityQuestionsFormComponent implements OnInit {
     console.log(this.username);
 
     //This is the FindSelectedSecurityQuestions functionality. It queries the user's object to get their stored security questions and answers.
-    this.http.get('/api/users' + this.username + '/security-questions').subscribe(res => {
+    this.http.get('/api/users/' + this.username + '/security-questions').subscribe(res => {
       this.selectedSecurityQuestions = res['data'];
       console.log(this.selectedSecurityQuestions);
       console.log(res);
@@ -68,7 +68,7 @@ export class VerifySecurityQuestionsFormComponent implements OnInit {
     console.log(answerToSecurityQuestion2);
     console.log(answerToSecurityQuestion3);
     //The verify security questions API is called with the provided information.
-    this.http.post('/api/session/verify/users'+this.username+'/security-questions', {
+    this.http.post('/api/session/verify/users/'+this.username+'/security-questions', {
       questionText1: this.question1,
       questionText2: this.question2,
       questionText3: this.question3,
