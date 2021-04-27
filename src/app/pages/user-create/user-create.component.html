@@ -8,13 +8,14 @@
 ;===========================================
 -->
 
+<!-- This template allows a new user to be created. -->
 <mat-card-title class="newUserTitle">Add New User</mat-card-title>
 
 
 <div fxLayout="columns">
 
     <br>
-
+    <!-- This form provides all needed fields for user creation. -->
     <form class="addUserForm" [formGroup]="form" (ngSubmit)="createUser()" #userForm>
 
           <div fxLayout="column">
@@ -53,7 +54,7 @@
 
 
       <br>
-
+        <!-- The user can choose to create a new user or navigate back to the Users list. -->
       <mat-card-actions align="end">
         <button mat-raised-button (click)="cancel()" color="warn">Cancel</button>
         <button type="submit" mat-raised-button color="accent">Submit</button>

@@ -6,6 +6,7 @@
 ** Description: Error - Sprint 2
  ***/
 
+// The Error component provides a custom display to gracefully handle 500 errors.
 
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';

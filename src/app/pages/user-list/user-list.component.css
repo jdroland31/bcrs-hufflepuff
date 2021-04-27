@@ -1,8 +1,17 @@
+/***
+** Title: Bob's Computer Repair Shop
+** Author:  Professor Krasso
+** Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+** Date: April 15 2021
+** Description: User List - Sprint 1
+ ***/
+
+
+ /* This sets the styling for the User List component. */
 .userList{
   padding-top: 3rem;
 
 }
-
 
 .userList-title{
   font-weight: lighter;

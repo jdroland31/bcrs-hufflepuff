@@ -23,6 +23,7 @@ export class SecurityQuestionCreateComponent implements OnInit {
   constructor(private fb: FormBuilder, private router: Router, private securityQuestionService: SecurityQuestionService) { }
 
   ngOnInit() {
+    //Enforce the text field as required.
     this.form = this.fb.group({
       text: [null, Validators.compose([Validators.required])],
     });
@@ -32,7 +33,7 @@ create ()
 {
   const newSecurityQuestion = {} as SecurityQuestion;
   newSecurityQuestion.text = this.form.controls.text.value;
-
+  //Call the security question service to create the security question from the provided text.
   this.securityQuestionService.createSecurityQuestion(newSecurityQuestion).subscribe(res => {
     this.router.navigate(['/security-questions']);
   }, err =>{

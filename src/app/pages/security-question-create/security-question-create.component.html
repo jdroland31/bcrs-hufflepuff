@@ -11,7 +11,7 @@
 <div fxLayout="column">
   <mat-card class="mat-elevation-z8">
     <mat-card-title> Create Security Questions</mat-card-title>
-
+    <!-- This formGroup provides a field to enter the text for a new security question. The user can utilize the enter key to submit. -->
     <form [formGroup]="form" (ngSubmit)="create()" #securityQuestionForm>
       <mat-card-content>
         <div fxLayout="column" fxLayout="10px">
@@ -21,6 +21,7 @@
           </mat-form-field>
         </div>
       </mat-card-content>
+      <!-- The user can cancel the new question creation or submit. -->
       <mat-card-actions align="end">
         <button mat-raised-button (click)="cancel()" color="warm">Cancel</button>
         <button type="submit" mat-raised-button color="accent"> Submit</button>

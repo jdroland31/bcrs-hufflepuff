@@ -5,6 +5,8 @@
 ** Date: April 25 2021
 ** Description: Not Found - Sprint 2
  ***/
+
+// This component provides a custom display for gracefully handling 404 errors.
 import { Component, OnInit } from '@angular/core';
 
 @Component({

@@ -49,7 +49,7 @@ export class UserListComponent implements OnInit {
       width: '800px'
     });
 
-
+    //When the dialog closes, if the user confirmed the deletion the user service is called to process the deletion.
     dialogRef.afterClosed().subscribe(result => {
       if (result === 'confirm') {
         this.userService.deleteUser(userId).subscribe(res => {

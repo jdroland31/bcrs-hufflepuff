@@ -6,6 +6,7 @@
 ** Description: API - Sprint 1
  ***/
 
+//Import the required modules for the application.
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -53,6 +54,7 @@ import { VerifyUsernameFormComponent } from './pages/verify-username-form/verify
 import { VerifySecurityQuestionsFormComponent } from './pages/verify-security-questions-form/verify-security-questions-form.component';
 
 @NgModule({
+  //Declare the components used in the application.
   declarations: [
     AppComponent,
     HomeComponent,
@@ -77,6 +79,7 @@ import { VerifySecurityQuestionsFormComponent } from './pages/verify-security-qu
     VerifyUsernameFormComponent,
     VerifySecurityQuestionsFormComponent,
   ],
+  //Declare the imported modules being used.
   imports: [
     BrowserModule,
     AppRoutingModule,

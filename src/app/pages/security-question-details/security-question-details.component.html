@@ -14,7 +14,7 @@
   <mat-card class="mat-elevation-z8">
     <mat-card-title>Security Question Details</mat-card-title>
 
-
+<!-- This formGroup allows the specified security question text to be changed. -->
     <form [formGroup]="form" (ngSubmit)="saveQuestion()" #questionForm>
       <mat-card-content>
         <div fxLayout="column" fxLayoutGap="10px">
@@ -24,7 +24,7 @@
         </div>
       </mat-card-content>
 
-
+<!-- The user can choose to save the edit or return to the security questions list. -->
       <mat-card-actions align="end">
         <button mat-raised-button (click)="cancel()" color="warn"> Cancel </button>
         <button type="submit" mat-raised-button color="accent"> Submit </button>

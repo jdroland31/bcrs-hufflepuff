@@ -6,6 +6,8 @@
 ** Description: Security Question Details - Sprint 1
  ***/
 
+// This component displays the text for a particular security question to allow it to be edited.
+
 /* file import*/
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';

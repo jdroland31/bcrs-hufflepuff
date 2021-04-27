@@ -9,7 +9,7 @@
 ;===========================================
  */
 
-
+//This file intercepts 404 and 500 errors. The user will be re routed to a custom page rather than a plain text error page.
 
 import {Injectable} from '@angular/core';
 import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';

@@ -1,6 +1,15 @@
+ /***
+** Title: Bob's Computer Repair Shop
+** Author:  Professor Krasso
+** Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+** Date: April 25 2021
+** Description: Verify Username Form - Sprint 2
+ ***/
+
 body{
   background: white;
 }
+/* set the card margins */
 .mat-card{
   margin: 40px auto 80px;
 }

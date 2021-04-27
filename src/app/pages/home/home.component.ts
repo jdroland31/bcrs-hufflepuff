@@ -6,6 +6,7 @@
 ** Description: Home - Sprint 1
  ***/
 
+// The home component provides the services selection menu for the user.
 import { Component, OnInit } from '@angular/core';
 
 @Component({

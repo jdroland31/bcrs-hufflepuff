@@ -175,7 +175,7 @@
                               </mat-form-field>
                           </mat-list-item>
                       </mat-list>
-
+                      <!-- If the user has finished filling in their information they can click submit to create their profile. -->
                       <div fxLayoutAlign="end">
                           <button mat-raised-button color="accent" matStepperPrevious>Back</button>
                           <button mat-raised-button (click)="register(registrationForm.value)" color="accent"
@@ -185,6 +185,7 @@
                       </div>
                   </mat-step>
               </mat-horizontal-stepper>
+              <!-- The return button allows the user to navigate back to home (which will be the sign in page due to the SessionGuard) -->
               <a routerLink="/" class="return">Return</a>
           </mat-card-content>
       </form>

@@ -8,6 +8,8 @@
 ;===========================================
  */
 
+// The Contact component provides contact information for customers to get in touch with Bob's Computer Repair Shop.
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
