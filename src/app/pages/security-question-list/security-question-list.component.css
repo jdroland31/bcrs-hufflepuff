@@ -11,11 +11,11 @@
   padding-top: 5rem;
 
 }
-
+/* Header */
 .security-title{
   font-weight: lighter;
 }
-
+/* Title */
 .security-questions{
   padding-top: 2rem;
   font-weight: lighter;
@@ -24,14 +24,14 @@
 .questions{
   background-color: transparent;
 }
-
+/* Create button */
 .createButton{
   text-align: center;
   background-color: transparent;
   border: 0;
   margin-right: 7rem;
 }
-
+/* Table styling */
 .tableSecurity{
   text-align: left;
   background-color: white;
@@ -40,6 +40,7 @@
 table{
   margin: 20px auto 80px auto;
 }
+/* Button */
 .mat-button{
   background: black;
     color: white;

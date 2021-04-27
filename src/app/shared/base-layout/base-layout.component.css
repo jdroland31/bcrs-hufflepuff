@@ -6,13 +6,15 @@
 ** Description: Base Layout - Sprint 1
  ***/
 
-/* **** Header styling *****/
+
 body {  background-color:white; min-height: 100%;}
 .main-container{
   position:relative;
   height: 100%;
 }
 /* This is the styling for the title and navigation sections. */
+/* **** Header styling *****/
+/* title*/
   .bcrs-title {
     text-transform: uppercase;
     font-family: 'Trebuchet MS';
@@ -23,11 +25,13 @@ body {  background-color:white; min-height: 100%;}
     color:  #f9c02d !important;
     font-weight: normal;
   }
+  /* nav bar */
   .nav-row{
     display: block;
     text-align: center;
     height: auto;
   }
+  /* logo subtitle */
   .subtitle{
     text-transform: uppercase;
     font-family: 'Trebuchet MS';
@@ -38,6 +42,7 @@ body {  background-color:white; min-height: 100%;}
     margin-top: -10px;
     margin-bottom: 10px;
   }
+  /* logo styling */
   .logo{
     display: block;
     text-align: center;
@@ -105,6 +110,7 @@ body {  background-color:white; min-height: 100%;}
     letter-spacing: 3px;
     background: #000;
   }
+  /* Footer styling */
   .footer p{
     margin: 0px auto;
     font-family: 'Trebuchet MS';
@@ -116,9 +122,7 @@ body {  background-color:white; min-height: 100%;}
   .bcrs-nav-spacer{
     flex: 1 1 auto;
   }
-
-
-
+/* link styling */
   .bu-link {
     text-decoration: none;
     color: #f9c02d !important;

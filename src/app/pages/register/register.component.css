@@ -27,11 +27,13 @@
 .mat-stepper-previous{
   margin-top: 25px;
 }
+/* Stepper background */
 .mat-step-header .mat-step-icon,
 .mat-step-icon.mat-step-icon-state-number {
   background-color: rgba(0, 0, 0, 0.14) !important;
 
 }
+/* prev button */
 .mat-stepper-previous
 {
   line-height: 0;

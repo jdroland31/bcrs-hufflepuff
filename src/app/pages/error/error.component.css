@@ -9,20 +9,24 @@
 **/
 
 /* This is the style sheet for the Error component. */
-
+/* Center element */
 .center {text-align: center;}
 .error-badger {
 
 }
+
+/*image styling*/
 .error-badger img{
   width: 300px;
   max-width: 80%;
   margin: 40px auto;
 }
+/* header*/
 h2{
   font-size: 32px;
   margin-top: 40px;
 }
+/* Main container */
 .error-text-box{
   width: 550px;
   max-width: 100%;
@@ -32,6 +36,7 @@ h2{
   margin: 60px 0 80px 0 !important;
   display: inline-block;
 }
+/* subtitle under each team member bio header*/
 .tiny{
   font-size: 12px;
 }

@@ -12,14 +12,17 @@
   padding-top: 3rem;
 
 }
-
+/* Header */
 .userList-title{
   font-weight: lighter;
 }
-
+/* table styling */
 .usersTable{
   background-color: transparent;
   margin-left: 3rem;
+}
+table{
+  margin: 40px auto;
 }
 
 .text{
@@ -28,9 +31,7 @@
 .mat-card-content table{
   background-color: white;
 }
-table{
-  margin: 40px auto;
-}
+/* button */
 .mat-button{
   background: black;
     color: white;

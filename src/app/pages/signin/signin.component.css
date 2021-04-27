@@ -11,7 +11,7 @@
 /* .signInContainer{
   padding: 10px;
 } */
-
+/* sign in form container */
 .mat-card{
   background-color: #f9c02d !important;
   width: 550px;
@@ -19,10 +19,11 @@
   max-width: 80%;
   margin: 40px auto;
 }
+/* input boxes*/
 input{
   width: 100%;
 }
-
+/* button styling */
 button{
   background-color: #6a4f4b !important;
   color: #fbc02d !important;
@@ -32,7 +33,7 @@ button{
 button:hover{
   background-color: #3e2723 !important;
 }
-
+/* log in link styling */
 .login-link:hover {
   text-decoration: underline;
   color: gainsboro !important;
