@@ -18,7 +18,8 @@
     <mat-card style="width: 80%;" class="mat-card-top pa-0">
       <mat-card-title class="mat-headline"> Verify Security Questions </mat-card-title>
       <br/><br/>
-
+      <!-- The user's selected security questions are used to fill in this form.
+        When the user submits the form, the provided answers are compared to those stored for these security questions. -->
       <form *ngIf="selectedSecurityQuestions" [formGroup]="form" (ngSubmit)="verifySecurityQuestions()" #usernameForm>
         <mat-card-content fxFlex fxLayout="column">
           <mat-list>
@@ -53,6 +54,7 @@
           <br/><br/>
 
           <div fxFlex fxLayoutAlign="end">
+            <!-- The user can navigate back to the username lookup with the Back button. -->
             <button mat-raised-button routerLink="/session/forgot">
               Back
             </button>

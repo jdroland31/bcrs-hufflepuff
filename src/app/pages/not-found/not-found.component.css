@@ -8,11 +8,11 @@
 ;===========================================
 **/
 
-
+/* This is the style sheet for the not-found component */
 .center {text-align: center;}
-.not-found-badger {
+/* .not-found-badger {
 
-}
+} */
 .not-found-badger img{
   width: 250px;
   max-width: 80%;

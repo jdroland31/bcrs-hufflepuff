@@ -6,6 +6,7 @@
 ** Description: API - Sprint 1
  ***/
 
+//These imports are the components that the application will route to as specified below.
 import { HomeComponent } from './pages/home/home.component';
 import { BaseLayoutComponent } from './shared/base-layout/base-layout.component';
 import { NgModule } from '@angular/core';
@@ -31,7 +32,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ResetPasswordFormComponent } from './pages/reset-password-form/reset-password-form.component';
 import { VerifySecurityQuestionsFormComponent } from './pages/verify-security-questions-form/verify-security-questions-form.component';
 
-
+//This variable defines the routes used in the application.
 const routes: Routes = [
   {
     path: '',
@@ -83,10 +84,10 @@ const routes: Routes = [
          component: VerifyUsernameFormComponent
        }
     ],
-    canActivate: [SessionGuard] //TODO: reactivate the SessionGuard BEFORE deployment to master or assignment submission!
+    canActivate: [SessionGuard] //The SessionGuard can be called by the BaseLayout to prevent unauthorized users from accessing the routes within it's hierarchy.
   },
   {
-    path: 'session',
+    path: 'session', //The session routes are those accessible to users who have not yet signed in.
     component:AuthLayoutComponent,
     children: [
       {

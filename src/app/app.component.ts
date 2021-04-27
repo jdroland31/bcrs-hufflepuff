@@ -6,6 +6,7 @@
 ** Description: API - Sprint 1
  ***/
 
+//This is the core component for the application.
 import { Component } from '@angular/core';
 
 @Component({

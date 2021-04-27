@@ -37,5 +37,5 @@ class BaseResponse {
     }
   }
 }
-
+//Export the ErrorResponse.
 module.exports = BaseResponse;

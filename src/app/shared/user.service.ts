@@ -6,6 +6,7 @@
 ** Description: API - Sprint 1
  ***/
 
+//This component provides an interface for the User API.
 import { Injectable } from '@angular/core';
 import { User } from './user.interface';
 

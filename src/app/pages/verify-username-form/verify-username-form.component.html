@@ -21,7 +21,8 @@
         Verify User
       </mat-card-title>
       <br/> <br/>
-
+      <!-- This formGroup provides a simple textbox and submit button to allow users to begin the password reset process by verifying their username.
+        The validateUsername() function is called on submission-->
       <form [formGroup]="form" (ngSubmit)="validateUsername()" id="usernameForm">
         <mat-card-content fxLayout="column">
           <mat-form-field fxFlex>

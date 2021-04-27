@@ -14,7 +14,7 @@
 <div fxLayout="column" fxLayoutAlign="center center">
 
     <br>
-
+  <!-- This form is filled with the data of the specified user. These fields are editable to assist in editing the user's information. -->
     <form class="addUserForm" [formGroup]="form" (ngSubmit)="saveUser()" #userForm>
       <div fxLayout="column">
         <mat-card>
@@ -42,7 +42,7 @@
       </div>
 
       <br>
-
+      <!-- The user viewing this component can choose to go back or save edits. -->
       <mat-card-actions align="end">
         <button mat-raised-button (click)="cancel()" color="warn">Cancel</button>
         <button type="submit" mat-raised-button color="accent">Submit</button>

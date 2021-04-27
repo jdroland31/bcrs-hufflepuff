@@ -6,6 +6,8 @@
 ** Description: Auth Layout - Sprint 1
  ***/
 
+// This component provides the layout for users who are not yet signed in.
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({

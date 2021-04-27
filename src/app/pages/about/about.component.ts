@@ -8,6 +8,7 @@
 ;===========================================
  */
 
+// The About component provides some information about our team.
 
 import { Component, OnInit } from '@angular/core';
 

@@ -8,13 +8,14 @@ This is where the error response is so
 the response can be used all throughout the APIs
  ***/
 
+//The class has httpcode, message and data attributes.
  class ErrorResponse {
    constructor(httpCode, message, data) {
      this.httpCode = httpCode;
      this.message = message;
      this.data = data;
    }
-
+   //This function allows us to convert a provided http response into an object.
    toObject() {
       return {
         'httpCode': this.httpCode,
@@ -24,5 +25,5 @@ the response can be used all throughout the APIs
       }
    }
  }
-
+//Export the ErrorResponse.
  module.exports = ErrorResponse;

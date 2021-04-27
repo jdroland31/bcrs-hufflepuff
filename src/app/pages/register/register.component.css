@@ -8,16 +8,21 @@
 ;===========================================
 **/
 
+/* This is the style sheet for the Register component */
+
+/* Container styling. */
 .register-container
 {
   width: 600px;
   max-width: 90%;
   margin: 40px auto;
 }
+/* Input styling. */
 .mat-input-element
 {
   margin-bottom:10px;
 }
+/* Material Stepper styling. */
 .mat-stepper-next,
 .mat-stepper-previous{
   margin-top: 25px;

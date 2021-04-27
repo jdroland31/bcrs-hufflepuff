@@ -6,6 +6,8 @@
 ** Description: Security Question List - Sprint 1
 ***/
 
+// This component lists security questions that new users may pick when creating their account. Security questions must be answered correctly to reset their password.
+
 import { Component, OnInit } from '@angular/core';
 import { DeleteRecordDialogComponent } from './../../shared/delete-record-dialog/delete-record-dialog.component';
 import { HttpClient } from '@angular/common/http';
@@ -46,7 +48,7 @@ export class SecurityQuestionListComponent implements OnInit {
       disableClose: true,
       width: '800px'
     });
-
+    //Once the dialog is closed, if the user picked 'confirm' the security question service is called to handle question deletion.
     dialogRef.afterClosed().subscribe(result => {
       if (result === 'confirm'){
         this.securityQuestionService.deleteSecurityQuestion(recordId).subscribe(res=> {

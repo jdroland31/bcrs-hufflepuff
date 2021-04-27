@@ -6,6 +6,8 @@
 ** Description: Delete Record Dialog - Sprint 1
  ***/
 
+//This component loads a single record's information for display so a user can choose to delete it.
+
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 

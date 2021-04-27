@@ -1,18 +1,27 @@
+/***
+** Title: Bob's Computer Repair Shop
+** Author:  Professor Krasso
+** Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+** Date: April 15 2021
+** Description: Base Layout - Sprint 1
+ ***/
+
 /* **** Header styling *****/
 body {  background-color:white; min-height: 100%;}
 .main-container{
   position:relative;
   height: 100%;
 }
-.bcrs-title {
-  text-transform: uppercase;
-  font-family: 'Trebuchet MS';
-  font-size: 60px;
-  letter-spacing: 5px;
-  height: auto;
-  padding: 10px 0;
-  color:  #f9c02d !important;
-  font-weight: normal;
+/* This is the styling for the title and navigation sections. */
+  .bcrs-title {
+    text-transform: uppercase;
+    font-family: 'Trebuchet MS';
+    font-size: 60px;
+    letter-spacing: 5px;
+    height: auto;
+    padding: 10px 0;
+    color:  #f9c02d !important;
+    font-weight: normal;
   }
   .nav-row{
     display: block;
@@ -73,13 +82,16 @@ body {  background-color:white; min-height: 100%;}
     font-weight: lighter;
     color: #f9c02d !important;
   }
-
+/* This is the styling for the main content and body sections. */
   .main-content {
     background: white;
   }
   body{
     background-color: white;
   }
+
+  /* This is the footer styling section. */
+
   .footer {
     bottom: 0;
     /* position: sticky; */
@@ -121,7 +133,7 @@ body {  background-color:white; min-height: 100%;}
     text-decoration: underline;
     color: #b68900 !important;
   }
-nav
-{
-  flex:0 !important;
-}
+  nav
+  {
+    flex:0 !important;
+  }

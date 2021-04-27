@@ -8,6 +8,9 @@
 ;===========================================
 **/
 
+/* This is the style sheet for the About component. */
+
+/* Images have a border radius of 50% to provide circular profile images. */
 img{
   border-radius: 50%;
   /* height: 300px;
@@ -27,6 +30,7 @@ mat-card-title{
   /* text-align: center; */
 }
 
+/* Some styling was done for the links. */
 a{
   color: #3e2622;
   text-decoration: none;
@@ -35,6 +39,7 @@ a{
 a:hover{
   color: #6a4f4b;
 }
+/* Further sizing rules for the bio pics. */
 .bios img{
   min-width: 180px;
   width: 250px;

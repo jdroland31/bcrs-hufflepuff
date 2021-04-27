@@ -14,5 +14,5 @@ let selectedSecurityQuestionSchema = new Schema ({
     questionText: { type: String },
     answerText: { type: String }
 })
-
+//Export the selectedSecurityQuestionsSchema.
 module.exports = selectedSecurityQuestionSchema;

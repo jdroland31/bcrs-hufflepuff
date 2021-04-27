@@ -6,6 +6,8 @@
 ** Description: API - Sprint 1
  ***/
 
+
+//This interface defines a User object.
 export interface User {
   _id: string;
   userName:  string;
