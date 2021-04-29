@@ -13,16 +13,17 @@
 .main-welcome {
     margin-top: 30px;
   }
-
+/* Title*/
   .title {
     text-align: center;
     font-weight: lighter;
   }
-
+/* Subitle*/
   .subtitle {
     text-align: center;
     font-size: 14px;
   }
+  /* body */
   body {
     background: white;
   }

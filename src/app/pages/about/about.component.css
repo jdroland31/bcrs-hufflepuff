@@ -16,11 +16,11 @@ img{
   /* height: 300px;
   width: 300px; */
 }
-
+/* header*/
 mat-card-title{
   margin-top: 20px;
 }
-
+/* about container*/
 .about-container{
   margin-top: 50px !important;
   margin-bottom: 50px;
@@ -35,7 +35,7 @@ a{
   color: #3e2622;
   text-decoration: none;
 }
-
+/*link styling*/
 a:hover{
   color: #6a4f4b;
 }
