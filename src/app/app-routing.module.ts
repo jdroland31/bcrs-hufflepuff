@@ -82,7 +82,7 @@ const routes: Routes = [
       {
          path: 'verify-users/:username',
          component: VerifyUsernameFormComponent
-       }
+       },
     ],
     canActivate: [SessionGuard] //The SessionGuard can be called by the BaseLayout to prevent unauthorized users from accessing the routes within it's hierarchy.
   },

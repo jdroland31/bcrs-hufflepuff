@@ -39,7 +39,7 @@ export class ErrorInterceptor implements HttpInterceptor {
          * the web application server
          */
 
-        if ([404].indexOf(err.status) !== -1) {
+        if ([400, 404, 405, 407, 410].indexOf(err.status) !== -1) {
           console.log('Error: ', err.error)
           this.router.navigate(['/session/404']);
         }
