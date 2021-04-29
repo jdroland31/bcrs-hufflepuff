@@ -4,7 +4,7 @@
 ; Author: Professor Krasso
 ; Date: 28 April 2021
 ; Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
-; Description: The role schema to be able to populate roles
+; Description: The role model to be able to populate roles
 ; Sprint - 3
 ;===========================================
  */

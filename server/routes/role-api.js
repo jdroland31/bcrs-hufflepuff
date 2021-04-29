@@ -32,6 +32,7 @@ const router = express.Router();
 
 /**
  * CreateRole Api
+ * This API uses post request to add the role as a text
  */
 router.post('/', async (req, res) => {
   try

@@ -319,7 +319,40 @@ router.get('/:userName/security-questions', async (req, res) => {
   }
 });
 
-
+/**
+ * findUserRole Api
+ * This API uses get request to get the role of a specific username
+ */
+router.get('/:userName/role', async (req, res) => {
+  try
+  {
+    //Finds the username, but gets the role based on the query
+      User.findOne({'userName': req.params.userName}, function(err, user)
+      {
+          if (err)
+          {
+            //The error response if the mongodb is not connected
+            console.log(err);
+            const findUserRoleMongoDbErrorResponse = new ErrorResponse('500', 'Internal server error', err);
+            res.status(500).send(findUserRoleMongoDbErrorResponse.toObject());
+          }
+          else
+          {
+            //The successful response if the query ran
+              console.log(user);
+              const findUserRoleResponse = new BaseResponse('200', 'Query successful', user.role);
+              res.json(findUserRoleResponse.toObject());
+          }
+      })
+  }
+  catch (e)
+  {
+    //The catch response if the server is not working
+      console.log(e);
+      const findUserRoleCatchErrorResponse = new ErrorResponse('500', 'Internal server error', e.message);
+      res.status(500).send(findUserRoleCatchErrorResponse.toObject());
+  }
+})
 module.exports = router;
 
 
