@@ -52,6 +52,7 @@ import { ErrorInterceptor } from './shared/error.interceptor';
 
 import { VerifyUsernameFormComponent } from './pages/verify-username-form/verify-username-form.component';
 import { VerifySecurityQuestionsFormComponent } from './pages/verify-security-questions-form/verify-security-questions-form.component';
+import { RoleCreateComponent } from './pages/role-create/role-create.component';
 
 @NgModule({
   //Declare the components used in the application.
@@ -78,6 +79,7 @@ import { VerifySecurityQuestionsFormComponent } from './pages/verify-security-qu
     RegisterComponent,
     VerifyUsernameFormComponent,
     VerifySecurityQuestionsFormComponent,
+    RoleCreateComponent,
   ],
   //Declare the imported modules being used.
   imports: [

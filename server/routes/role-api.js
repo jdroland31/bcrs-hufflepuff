@@ -24,6 +24,36 @@ const router = express.Router();
  * FindAllRole Api
  */
 
+ router.get('/', async (req, res) => {
+  try {
+    Role.find({})
+      .where('isDisabled')
+      .equals(false)
+      .exec(function(err, roles)
+      {
+        if (err)
+        {
+          console.log(err);
+          const findAllRolesMongodbErrorResponse = new ErrorResponse(500, 'Internal server error', err);
+          res.status(500).send(findAllRolesMongodbErrorResponse.toObject());
+        }
+        else
+        {
+          console.log(roles);
+          const findAllRolesResponse = new BaseResponse(200, 'Query is successful', roles);
+          res.json(findAllRolesResponse.toObject());
+        }
+      })
+  }
+  catch (e)
+  {
+    console.log(e);
+    const findAllRolesCatchErrorResponse = new ErrorResponse(500, 'Internal server error', e.message);
+    res.status(500).send(findAllRolesCatchErrorResponse.toObject());
+  }
+});
+
+
 
  /**
   * FindById API
