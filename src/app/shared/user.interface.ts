@@ -6,6 +6,7 @@
 ** Description: API - Sprint 1
  ***/
 
+import { Role } from './interfaces/role.interface';
 
 //This interface defines a User object.
 export interface User {
@@ -17,4 +18,5 @@ export interface User {
   phoneNumber:  string;
   address:  string;
   email:  string;
+  role: Role;
 }

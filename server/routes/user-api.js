@@ -168,8 +168,10 @@ router.get('/:_id', async(req, res) => {
             phoneNumber: req.body.phoneNumber,
             address: req.body.address,
             email: req.body.email
-
           });
+
+          user.role.set({role: re.body.role});
+
           //Save the new user data.
           user.save(function(err, updatedUser){
             if(err)

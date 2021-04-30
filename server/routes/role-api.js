@@ -134,6 +134,51 @@ router.post('/', async (req, res) => {
  * UpdateRole Api
  */
 
+ router.put('/:roleId', async (req, res) => {
+  try
+  {
+    Role.findOne({ '_id': req.params.roleId }, function(err, role)
+    {
+      if (err)
+      {
+          console.log(err);
+          const updateRoleMongodbErrorResponse = new ErrorResponse(500, "Internal server error", err);
+          res.status(500).send(updateRoleMongodbErrorResponse.toObject());
+      }
+      else
+      {
+          console.log(role);
+
+          role.set(
+          {
+            text: req.body.text
+          });
+
+          role.save(function(err, updatedRole) {
+            if (err)
+            {
+              console.log(err);
+              const updatedRoleCatchErrorResponse = new ErrorResponse(500, "Internal server error", err);
+              res.status(500).send(updatedRoleCatchErrorResponse.toObject());
+            }
+            else
+            {
+              console.log(updatedRole)
+              const updatedRoleResponse = new BaseResponse(200, "Query Successful", updatedRole);
+              res.json(updatedRoleResponse.toObject());
+            }
+          })
+        }
+    })
+  }
+  catch (e)
+  {
+    console.log(e);
+    const updateRoleCatchErrorResponse = new ErrorResponse(500, 'Internal server error', e.message);
+    res.status(500).send(updateRoleCatchErrorResponse.toObject());
+  }
+});
+
  /**
   * DeleteRole Api
   */
