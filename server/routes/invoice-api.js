@@ -72,6 +72,58 @@ router.post('/:userName', async(req, res) => {
   }
 });
 
+// findPurchasesByService
+
+router.get('/purchases-graph', async (req,res) => {
+  try {
+    Invoice.aggregate([
+      { // un-nest invoice items
+        $unwind: '$lineItems'
+      },
+      { // group items
+        $group:
+        {
+          '_id':
+          {
+            'title': '$lineItems.title',
+            'price': '$lineItems.price'
+          }, // items counter
+          'count':
+          {
+            $sum: 1
+          }
+        }
+      },
+      { // sort items by title
+        $sort:
+        {
+          '_id.title': 1
+        }
+      }
+    ],
+    function(err, purchaseGraph) {
+      if (err)
+      {
+        console.log(err);
+        const findPurchasesByServiceGraphMongodbErrorResponse = new ErrorResponse(500, 'Internal server error', err);
+        res.status(500).send(findPurchasesByServiceGraphMongodbErrorResponse.toObject());
+      }
+      else
+      {
+        console.log(purchaseGraph);
+        const findPurchasesByServiceGraphResponse = new BaseResponse(200, 'Query successful', purchaseGraph);
+        res.json(findPurchasesByServiceGraphResponse.toObject());
+      }
+    })
+  }
+  catch (e)
+  {
+    console.log(e);
+    const findPurchasesByServiceCatchErrorResponse = new ErrorResponse(500, 'Internal server error', e.message);
+    res.status(500).send(findPurchasesByServiceCatchErrorResponse.toObject());
+  }
+});
+
 
 //Export statement
 module.exports = router;
