@@ -14,6 +14,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
 import { CookieService } from 'ngx-cookie-service';
 import { ServiceRepairService } from '../../shared/services/service-repair.service';
 import { LineItem } from '../../shared/interfaces/line-item.interface';

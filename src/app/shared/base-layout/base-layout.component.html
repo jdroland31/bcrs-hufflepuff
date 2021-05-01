@@ -19,6 +19,14 @@
     <mat-toolbar-row class="nav-row">
       <h2 class="subtitle">Computer Repair Shop</h2>
     </mat-toolbar-row>
+    <div class="navbar-icons-container">
+      <button mat-icon-button>
+        <mat-icon class="nav-icon">shopping_cart</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon class="nav-icon">account_circle</mat-icon>
+      </button>
+    </div>
   </div>
   <!-- navigation -->
   <nav fxFlex>
@@ -31,10 +39,11 @@
             <button class="navbar-link ml-auto" routerLink="/services" mat-button>Services</button>
             <button class="navbar-link ml-auto" routerLink="/about" mat-button>About</button>
             <button class="navbar-link ml-auto" routerLink="/contact" mat-button>Contact</button>
-            <button class="navbar-link ml-auto" routerLink="/userlist" mat-button>Users Configuration</button>
+            <!-- <button class="navbar-link ml-auto" routerLink="/userlist" mat-button>Users Configuration</button>
             <button class="navbar-link ml-auto" routerLink="/security-questions" mat-button>Security Questions Configuration</button>
             <button class="navbar-link ml-auto" routerLink="/chart" mat-button>Chart</button>
-            <button  class="navbar-link ml-auto" (click)="signOut()" mat-button>Sign Out</button> <!-- The signOut() function allows the user to destroy their session and navigate back to the sign in page. -->
+            <button  class="navbar-link ml-auto" (click)="signOut()" mat-button>Sign Out</button> The signOut() function allows the user to destroy their session and navigate back to the sign in page. -->
+
 
           </div>
         </div>

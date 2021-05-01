@@ -4,7 +4,92 @@
   </h1>
 </div>
 
-<mat-card class="mat-elevation-z0" style="width: 65%; margin: 0 auto;">
+
+<div fxLayout="column" fxLayoutAlign="center center">
+  <div fxLayout="row">
+    <mat-card class="service-card">
+      <mat-card-title>Password Reset <span class="material-icons">lock_open</span></mat-card-title>
+      <hr>
+      <mat-card-subtitle>Locked out of your computer? Let us do a reset for you!</mat-card-subtitle>
+      <br>
+      <mat-card-content>
+        <div fxLayoutAlign="center center">
+          <mat-checkbox>Select</mat-checkbox>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="service-card">
+      <mat-card-title>Spyware Removal <span class="material-icons">remove_red_eye</span></mat-card-title>
+      <hr>
+      <mat-card-subtitle>Get rid of pesky spyware!</mat-card-subtitle>
+      <br>
+      <mat-card-content>
+        <div fxLayoutAlign="center center">
+          <mat-checkbox>Select</mat-checkbox>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="service-card">
+      <mat-card-title>Software Installation <span class="material-icons">computer</span></mat-card-title>
+      <hr>
+      <mat-card-subtitle>Let us handle that tricky installation for you!</mat-card-subtitle>
+      <br>
+      <mat-card-content>
+        <div fxLayoutAlign="center center">
+          <mat-checkbox>Select</mat-checkbox>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="service-card">
+      <mat-card-title>PC Tune-up <span class="material-icons">build</span></mat-card-title>
+      <hr>
+      <mat-card-subtitle>Let's get your PC in top shape!</mat-card-subtitle>
+      <br>
+      <mat-card-content>
+        <div fxLayoutAlign="center center">
+          <mat-checkbox>Select</mat-checkbox>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div fxLayout="row">
+    <mat-card class="service-card">
+      <mat-card-title>RAM Upgrade <span class="material-icons">fast_forward</span></mat-card-title>
+      <hr>
+      <mat-card-subtitle>Improve performance with a RAM upgrade!</mat-card-subtitle>
+      <br>
+      <mat-card-content>
+        <div fxLayoutAlign="center center">
+          <mat-checkbox>Select</mat-checkbox>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="service-card">
+      <mat-card-title>Keyboard Cleaning <span class="material-icons">keyboard</span></mat-card-title>
+      <hr>
+      <mat-card-subtitle>Let us vacuum up those crumbs!</mat-card-subtitle>
+      <br>
+      <mat-card-content>
+        <div fxLayoutAlign="center center">
+          <mat-checkbox>Select</mat-checkbox>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="service-card">
+      <mat-card-title>Disk Cleanup <span class="material-icons">storage</span></mat-card-title>
+      <hr>
+      <mat-card-subtitle>We can get your hard drive sorted!</mat-card-subtitle>
+      <br>
+      <mat-card-content>
+        <div fxLayoutAlign="center center">
+          <mat-checkbox>Select</mat-checkbox>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<!-- <mat-card class="mat-elevation-z0" style="width: 65%; margin: 0 auto;">
   <form #serviceRepairForm="ngForm" (ngSubmit)="submit(serviceRepairForm.value); serviceRepairForm.reset();">
     <mat-card-content>
 
@@ -20,10 +105,10 @@
 
       <br/><br/>
       <mat-divider></mat-divider>
-      <br/><br/>
+      <br/><br/> -->
 
       <!-- parts & labor-->
-      <div fxLayout="column">
+      <!-- <div fxLayout="column">
         <h4 fxFlex>Standard Fees</h4>
         <mat-form-field fxFlex style="width: 300px !important;">
           <input matInput
@@ -39,10 +124,10 @@
                 placeholder="Number of hours @ $50.00/hr" />
         </mat-form-field>
       </div>
-    </mat-card-content>
+    </mat-card-content> -->
 
     <!--Form Actions-->
-    <br/><br/>
+    <!-- <br/><br/>
     <mat-divider></mat-divider>
     <br/><br/>
 
@@ -52,4 +137,4 @@
     </mat-card-actions>
   </form>
 </mat-card>
-
+ -->

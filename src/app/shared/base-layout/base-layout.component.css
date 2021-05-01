@@ -87,6 +87,14 @@ body {  background-color:white; min-height: 100%;}
     font-weight: lighter;
     color: #f9c02d !important;
   }
+  .navbar-icons-container{
+    float: right;
+    margin-bottom: -50px;
+    margin-right: 50px;
+  }
+  .nav-icon{
+    font-size: 36px;
+  }
 /* This is the styling for the main content and body sections. */
   .main-content {
     background: white;

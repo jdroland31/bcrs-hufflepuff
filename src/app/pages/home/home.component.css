@@ -27,3 +27,25 @@
   body {
     background: white;
   }
+  /* Card */
+  .service-card{
+    margin: 10px;
+    width: 375px;
+  }
+
+  /* Icons */
+  .service-icon{
+      color: black;
+      font-size: 36px;
+      visibility: visible;
+    }
+
+  .material-icons{
+    float: right;
+  }
+  /* Checkbox */
+  mat-checkbox{
+    background-color: #f9c02d;
+    padding: 10px;
+    /* border-radius: 25px; */
+  }

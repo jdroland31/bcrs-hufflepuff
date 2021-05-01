@@ -29,6 +29,7 @@
     "body-parser": "^1.19.0",
     "chart.js": "^3.2.0",
     "express": "^4.17.1",
+    "material-design-icons": "^3.0.1",
     "mongoose": "^5.10.5",
     "morgan": "^1.10.0",
     "ngx-cookie-service": "^11.0.2",
