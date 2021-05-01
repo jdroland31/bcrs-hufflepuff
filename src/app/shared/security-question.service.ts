@@ -28,7 +28,7 @@ export class SecurityQuestionService {
   /** FindAll SQ by ID **/
 
   findSecurityQuestionById(_id: string): Observable<any> {
-    return this.http.get(`/api/security-questions/${ _id }`);
+    return this.http.get(`/api/security_questions/${ _id }`);
   }
   /** Create SQ **/
   createSecurityQuestion(newSecurityQuestion: SecurityQuestion): Observable<any>{

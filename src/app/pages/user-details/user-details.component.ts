@@ -10,11 +10,11 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Role } from 'src/app/shared/interfaces/role.interface';
+import { RoleService} from 'src/app/shared/services/role.service';
 import { User } from 'src/app/shared/user.interface';
 import { UserService } from '../../shared/user.service';
 
-import { RoleService } from 'src/app/shared/services/role.service';
-import { Role } from '../../shared/interfaces/role.interface';
 
 @Component({
   selector: 'app-user-details',
@@ -28,7 +28,7 @@ export class UserDetailsComponent implements OnInit {
   roles: Role[];
 
   constructor(private route: ActivatedRoute, private http: HttpClient, private fb: FormBuilder, private router: Router, private userService: UserService, private roleService: RoleService) {
-    this.userId = this.route.snapshot.paramMap.get('UserId');
+    this.userId = this.route.snapshot.paramMap.get('id');
     // console.log(this.userId);
     //Get the current values of the user's editable field via the passed in userId.
     this.userService.findUserById(this.userId).subscribe(res => {
@@ -41,15 +41,18 @@ export class UserDetailsComponent implements OnInit {
       this.form.controls.phoneNumber.setValue(this.user.phoneNumber);
       this.form.controls.address.setValue(this.user.address);
       this.form.controls.email.setValue(this.user.email);
-      this.form.controls.role.setValue(this.user.role['role']);
+      this.form.controls.role.setValue(this.user.role);
 
       this.roleService.findAllRoles().subscribe(res => {
+        console.log(res);
         this.roles = res['data'];
       }, err => {
         console.log(err);
       })
     })
    }
+
+
 
   ngOnInit(): void {
     //Set the validation standards on the field forms.
@@ -59,7 +62,7 @@ export class UserDetailsComponent implements OnInit {
       phoneNumber: [null, Validators.compose([Validators.required])],
       address: [null, Validators.compose([Validators.required])],
       email: [null, Validators.compose([Validators.required, Validators.email])],
-      role: [null, Validators.compose([Validators.required])],
+      role: [null, Validators.compose([Validators.required])]
     });
   }
   //When called, this collects the values in the editable fields and updates the user, then returns them to the user list.
@@ -72,9 +75,6 @@ export class UserDetailsComponent implements OnInit {
     updatedUser.address = this.form.controls.address.value;
     updatedUser.email = this.form.controls.email.value;
     updatedUser.role = this.form.controls.role.value;
-
-    console.log('savedUser Object');
-    console.log(updatedUser);
 
     this.userService.updateUser(this.userId, updatedUser).subscribe(res => {
       this.router.navigate(['/userlist'])

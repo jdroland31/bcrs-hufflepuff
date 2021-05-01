@@ -9,17 +9,17 @@
 -->
 
 <!-- This template allows a new user to be created. -->
-<mat-card-title class="newUserTitle">Add New User</mat-card-title>
 
 
-<div fxLayout="columns">
 
+<div fxLayout="column" fxLayoutAlign="center center" fxFill>
+  <mat-card-title class="newUserTitle" fxLayoutAlign="center center">Add New User</mat-card-title>
     <br>
+
     <!-- This form provides all needed fields for user creation. -->
     <form class="addUserForm" [formGroup]="form" (ngSubmit)="createUser()" #userForm>
-
-          <div fxLayout="column">
-          <mat-card>
+      <div fxLayout="column">
+        <mat-card>
           <mat-form-field>
             <input type="text" matInput [formControl]="form.controls['userName']" placeholder="Username">
           </mat-form-field>

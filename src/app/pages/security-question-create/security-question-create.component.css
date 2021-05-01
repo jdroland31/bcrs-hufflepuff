@@ -7,3 +7,7 @@
  ***/
 
  /* This is the style sheet for the security question create component. */
+
+mat-form-field{
+  width: 600px;
+}

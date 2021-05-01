@@ -8,12 +8,13 @@
 ;===========================================
 -->
 
-<mat-card-title class="editUserTitle">Edit User</mat-card-title>
 
 
-<div fxLayout="column" fxLayoutAlign="center center">
 
+<div fxLayout="column" fxLayoutAlign="center center" fxFill>
+  <mat-card-title class="editUserTitle" fxLayoutAlign="start">Edit User</mat-card-title>
     <br>
+
   <!-- This form is filled with the data of the specified user. These fields are editable to assist in editing the user's information. -->
     <form class="addUserForm" [formGroup]="form" (ngSubmit)="saveUser()" #userForm>
       <div fxLayout="column">
@@ -24,6 +25,14 @@
 
           <mat-form-field>
             <input type="text" matInput [formControl]="form.controls['lastName']" placeholder="Last name">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-select [formControl]="form.controls['role']" placeholder="Role">
+              <mat-option *ngFor="let role of roles" [value]="role.text">
+                {{role.text}}
+              </mat-option>
+            </mat-select>
           </mat-form-field>
 
           <mat-form-field>

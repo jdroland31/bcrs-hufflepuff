@@ -33,6 +33,11 @@
           <td class="text" mat-cell *matCellDef='let element'> {{ element.firstName }}</td>
         </ng-container>
 
+        <ng-container matColumnDef='role'>
+          <th mat-header-cell *matHeaderCellDef>Role</th>
+          <td class="text" mat-cell *matCellDef='let element'> {{ element.role.text }}</td>
+        </ng-container>
+
         <ng-container matColumnDef='lastName'>
           <th mat-header-cell *matHeaderCellDef>Last Name</th>
           <td class="text" mat-cell *matCellDef='let element'> {{ element.lastName }}</td>
