@@ -32,6 +32,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ResetPasswordFormComponent } from './pages/reset-password-form/reset-password-form.component';
 import { VerifySecurityQuestionsFormComponent } from './pages/verify-security-questions-form/verify-security-questions-form.component';
 import { RoleCreateComponent } from './pages/role-create/role-create.component';
+import { PurchasesByServiceGraphComponent } from './pages/purchases-by-service-graph/purchases-by-service-graph.component';
 
 //This variable defines the routes used in the application.
 const routes: Routes = [
@@ -86,7 +87,11 @@ const routes: Routes = [
        },
        {
         path: 'roles/create/new',
-        component: RoleCreateComponent,
+        component: RoleCreateComponent
+       },
+       {
+         path:'chart',
+         component: PurchasesByServiceGraphComponent
        }
     ],
     canActivate: [SessionGuard] //The SessionGuard can be called by the BaseLayout to prevent unauthorized users from accessing the routes within it's hierarchy.
