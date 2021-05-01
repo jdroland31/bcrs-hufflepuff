@@ -1,19 +1,55 @@
-<!---
- ============================================
-; Title:  home.component.html
-; Author: Professor Krasso
-; Date: 15 April 2021
-; Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
-; Description: home page html file
-;===========================================
--->
-
-<!-- The home component currently is not completed and displays this stock code. This will be changed in Sprint 3. -->
 <div fxLayout="column" class="main-welcome">
-  <h1 class="title">
-    Welcome to WEB 450's - Bob's Computer Repair Shop <br />
-    <span class="subtitle">
-      Pay close attention to the requirements, double and triple check the files for code attribution, and do not wait unitl the last minute to begin working on each item.
-    </span>
+  <h1 class="title"> Welcome to Bob's Computer Repair Shop <br />
+      <span class="subtitle">Service Repair Form</span>
   </h1>
 </div>
+
+<mat-card class="mat-elevation-z0" style="width: 65%; margin: 0 auto;">
+  <form #serviceRepairForm="ngForm" (ngSubmit)="submit(serviceRepairForm.value); serviceRepairForm.reset();">
+    <mat-card-content>
+
+      <div fxLayout="column">
+        <h3 fxFlex>Services</h3>
+        <div ngModelGroup="checkGroup" *ngFor="let service of services">
+          <mat-checkbox name="{{service.id}}" ngModel>
+            {{service.title}} ({{service.price | currency}})
+          </mat-checkbox>
+          <br />
+        </div>
+      </div>
+
+      <br/><br/>
+      <mat-divider></mat-divider>
+      <br/><br/>
+
+      <!-- parts & labor-->
+      <div fxLayout="column">
+        <h4 fxFlex>Standard Fees</h4>
+        <mat-form-field fxFlex style="width: 300px !important;">
+          <input matInput
+          name="parts"
+          ngModel="0"
+          placeholder="Parts" />
+        </mat-form-field>
+
+        <mat-form-field fxFlex style="width: 300px !important;">
+          <input matInput
+                name="labor"
+                ngModel="0"
+                placeholder="Number of hours @ $50.00/hr" />
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+
+    <!--Form Actions-->
+    <br/><br/>
+    <mat-divider></mat-divider>
+    <br/><br/>
+
+    <mat-card-actions align="end">
+      <button mat-raised-button type="reset">Clear</button>
+      <button mat-raised-button color="accent">Submit</button>
+    </mat-card-actions>
+  </form>
+</mat-card>
+
