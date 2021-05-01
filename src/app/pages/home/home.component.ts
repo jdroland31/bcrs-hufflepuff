@@ -9,6 +9,7 @@
 // The home component provides the services selection menu for the user.
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
