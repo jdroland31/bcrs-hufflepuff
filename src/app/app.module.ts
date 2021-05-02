@@ -61,6 +61,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list';
 import { MatStepperModule } from '@angular/material/stepper';
 import { PurchasesByServiceGraphComponent } from './pages/purchases-by-service-graph/purchases-by-service-graph.component';
+import { RoleListComponent } from './pages/role-list/role-list.component';
 
 
 
@@ -92,6 +93,7 @@ import { PurchasesByServiceGraphComponent } from './pages/purchases-by-service-g
     RoleCreateComponent,
     InvoiceSummaryDialogComponent,
     PurchasesByServiceGraphComponent,
+    RoleListComponent,
   ],
   //Declare the imported modules being used.
   imports: [
