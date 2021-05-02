@@ -1,9 +1,9 @@
 <div fxLayout="column">
-
+  <!-- Create Role Form -->
   <mat-card class="mat-elevation-z8">
     <mat-card-title> Create User Role</mat-card-title> <br />
 
-    <form [formGroup]="form" ngSubmit="create()" #roleForm>
+    <form [formGroup]="form" (ngSubmit)="create()" #roleForm>
 
       <mat-card-content>
         <div fxLayout="column" fxLayoutGap="10px">

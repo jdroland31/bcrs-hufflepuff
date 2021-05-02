@@ -5,7 +5,7 @@
 ** Date: April 15 2021
 ** Description: User List - Sprint 1
  ***/
-
+// this component displays a list with the existing users
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from 'src/app/shared/user.interface';

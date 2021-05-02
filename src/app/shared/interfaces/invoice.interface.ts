@@ -8,7 +8,7 @@
 
 
 import { LineItem } from './line-item.interface';
-
+//This interface defines an invoice object.
 export interface Invoice {
   userName: string;
   lineItems: LineItem[];

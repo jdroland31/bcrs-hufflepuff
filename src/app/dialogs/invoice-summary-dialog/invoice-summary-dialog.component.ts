@@ -7,7 +7,7 @@
  ***/
 
 // file import
-
+/* This component displays a summary of the user selected items along with totals*/
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Invoice } from '../../shared/interfaces/invoice.interface';

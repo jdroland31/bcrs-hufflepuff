@@ -67,7 +67,7 @@ router.post('/signin', async(req, res) => {
         }
       }
     })
-  }
+  }// If there is an error with the server, return a 500 code and the error.
   catch(e)
   {
     //If the server encounters an error event, catch it, log it and return the error as an object.
@@ -95,7 +95,7 @@ router.post('/signin', async(req, res) => {
         const verifyUserResponse = new BaseResponse(200, "Query successful", user);
         res.json(verifyUserResponse.toObject());
       }
-    })
+    })// If there is an error with the server, return a 500 code and the error.
   } catch (e) {
     console.log(e);
     const verifyUserCatchErrorResponse = new ErrorResponse(500, 'Internal server error', e.message);

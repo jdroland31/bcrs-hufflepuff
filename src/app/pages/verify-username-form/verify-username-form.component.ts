@@ -5,6 +5,8 @@
 ** Date: April 23 2021
 ** Description: Verify Username Form - Sprint 2
  ***/
+//this component is part of the password reset process - it verifies username against db before
+// serving the security questions
 
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';

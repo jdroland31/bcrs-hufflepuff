@@ -32,8 +32,9 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ResetPasswordFormComponent } from './pages/reset-password-form/reset-password-form.component';
 import { VerifySecurityQuestionsFormComponent } from './pages/verify-security-questions-form/verify-security-questions-form.component';
 import { RoleCreateComponent } from './pages/role-create/role-create.component';
+import { RoleListComponent } from './pages/role-list/role-list.component';
 import { PurchasesByServiceGraphComponent } from './pages/purchases-by-service-graph/purchases-by-service-graph.component';
-
+import { RoleDetailsComponent } from './pages/role-details/role-details.component';
 //This variable defines the routes used in the application.
 const routes: Routes = [
   {
@@ -82,8 +83,16 @@ const routes: Routes = [
         component: SecurityQuestionDetailsComponent
       },
       {
+        path: 'roles/:roleId',
+        component: RoleDetailsComponent
+      },
+      {
          path: 'verify-users/:username',
          component: VerifyUsernameFormComponent
+       },
+       {
+         path: 'roles',
+         component: RoleListComponent
        },
        {
         path: 'roles/create/new',

@@ -115,7 +115,7 @@ router.get('/purchases-graph', async (req,res) => {
         res.json(findPurchasesByServiceGraphResponse.toObject());
       }
     })
-  }
+  }// If there is an error with the server, return a 500 code and the error.
   catch (e)
   {
     console.log(e);

@@ -5,7 +5,7 @@
 ** Date: April 30 2021
 ** Description: API - Sprint 3
  ***/
-
+//This interface defines a line item object.
 export interface LineItem {
   title: string;
   price: number;
