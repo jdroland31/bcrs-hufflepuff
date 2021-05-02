@@ -89,7 +89,7 @@ body {  background-color:white; min-height: 100%;}
   }
   .navbar-icons-container{
     float: right;
-    margin-bottom: -50px;
+    margin-bottom: -75px;
     margin-right: 50px;
   }
   .nav-icon{
@@ -148,4 +148,25 @@ body {  background-color:white; min-height: 100%;}
   nav
   {
     flex:0 !important;
+  }
+/* User Dropdown */
+  .user-dropdown {
+    position: absolute;
+    padding: 4px 8px;
+    margin-top: 25px;
+  }
+  .user-dropdown /deep/.mat-select-arrow-wrapper {
+    visibility: hidden;
+  }
+
+  mat-form-field /deep/.mat-form-field-underline {
+    height: 0 !important;
+  }
+
+  .user-option{
+    background-color: #f9c02d;
+  }
+
+  .user-option:hover{
+    background-color: #ffeb6b;
   }

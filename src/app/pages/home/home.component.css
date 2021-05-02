@@ -55,3 +55,15 @@
   .service-form{
     padding-bottom: 50px;
   }
+
+  .service-order-button{
+    background-color: #f9c02d;
+    width: 200px;
+    margin-bottom: 30px;
+  }
+
+  .checkout-icon{
+    font-size: 20px;
+    margin-top: 8px;
+  }
+

@@ -20,12 +20,16 @@
       <h2 class="subtitle">Computer Repair Shop</h2>
     </mat-toolbar-row>
     <div class="navbar-icons-container">
-      <button mat-icon-button>
-        <mat-icon class="nav-icon">shopping_cart</mat-icon>
-      </button>
-      <button mat-icon-button>
-        <mat-icon class="nav-icon">account_circle</mat-icon>
-      </button>
+      <!-- Credit for this dropdown implementation to Stackoverflow user  Muhammad Ahsan Ayaz: https://stackoverflow.com/questions/53758021/how-to-create-a-dropdown-from-an-icon-using-angular-material -->
+      <mat-form-field>
+        <mat-icon class="nav-icon" ng-controller="navsController">account_circle</mat-icon>
+        <mat-select class="user-dropdown" trigger="userTrigger" #userSelect>
+          <mat-option class="user-option" routerLink="/userlist">Users Configuration</mat-option>
+          <mat-option class="user-option" routerLink="/security-questions">Security Questions Configuration</mat-option>
+          <mat-option class="user-option" routerLink="/chart">Purchases By Service</mat-option>
+          <mat-option class="user-option" (click)="signOut()">Sign Out</mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
   </div>
   <!-- navigation -->

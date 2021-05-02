@@ -25,6 +25,10 @@ export class BaseLayoutComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  showMenu(){
+    console.log('Show Menu');
+  }
   //This function destroys all cookie sessions to allow the user to sign out. It then navigates them to the sign in page.
   signOut() {
     this.cookieService.deleteAll();
