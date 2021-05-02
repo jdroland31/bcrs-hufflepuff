@@ -21,7 +21,7 @@ import { Role } from '../../shared/interfaces/role.interface';
 export class RoleCreateComponent implements OnInit {
   form: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router, private roleService: RoleService) {
+  constructor( private fb: FormBuilder, private router: Router, private roleService: RoleService) {
    }
 
   ngOnInit(): void {
@@ -41,7 +41,7 @@ export class RoleCreateComponent implements OnInit {
     this.roleService.createRole(newRole).subscribe(res => {
       this.router.navigate(['/roles']);
     }, err => {
-        console.log(err);
+        console.log('Error:' + err);
     })
   }
   //This provides for navigation back to the role list.
