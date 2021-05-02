@@ -5,7 +5,8 @@
 ** Date: April 25 2021
 ** Description: Verify Security Questions Form - Sprint 2
  ***/
-
+//this component is part of the reset password process - it provides
+//the user a form with security questions to authenticate him before serving the password reset  form
 
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';

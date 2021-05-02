@@ -40,7 +40,7 @@ const saltRounds = 10; // set salt rounds for hashing algorithm
       }
     });
   }
-   // catch all e
+   // // If there is an error with the server, return a 500 code and the error.
   catch (e) {
     console.log('inside catch error' + error);
     const findAllCatchErrorResponse = new ErrorResponse (500, 'Internal Server Error', error);
@@ -91,6 +91,7 @@ router.post('/', async(req, res) => {
 
     })
   } catch (e){
+    // If there is an error with the server, return a 500 code and the error.
     console.log(e);
     const findByIdCatchErrorResponse = new ErrorResponse(500, 'Internal server error', e);
     res.status(500).send(findByIdCatchErrorResponse.toObject());
@@ -127,7 +128,7 @@ router.get('/:_id', async(req, res) => {
     })
   }
   catch(e)
-  {
+  {// If there is an error with the server, return a 500 code and the error.
     console.log(e);
     const findUserCatchError = new BaseResponse('500', `Internal Server Error ${err.message}`,null);
     res.json(findUserCatchError)
@@ -274,13 +275,6 @@ router.delete('/:id', async(req,res) => {
     res.status(500).send(updateUserCatchResponse.toObject());
   }
 })
-
-/**
- * Add your API here
- *
- *
- */
-
 
 
  /**

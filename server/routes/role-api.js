@@ -25,7 +25,7 @@ const router = express.Router();
  */
 
  router.get('/', async (req, res) => {
-  try {
+  try { // query DB - return all roles that are not disabled
     Role.find({})
       .where('isDisabled')
       .equals(false)
@@ -44,7 +44,7 @@ const router = express.Router();
           res.json(findAllRolesResponse.toObject());
         }
       })
-  }
+  }// If there is an error with the server, return a 500 code and the error.
   catch (e)
   {
     console.log(e);
@@ -170,7 +170,7 @@ router.post('/', async (req, res) => {
           })
         }
     })
-  }
+  }// If there is an error with the server, return a 500 code and the error.
   catch (e)
   {
     console.log(e);
@@ -264,7 +264,7 @@ router.post('/', async (req, res) => {
         )
       }
     })
-   }
+   } // If there is an error with the server, return a 500 code and the error.
    catch (e)
    {
     console.log(e);

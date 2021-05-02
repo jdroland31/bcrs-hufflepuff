@@ -6,6 +6,7 @@
 ** Description: User Details - Sprint 1
  ***/
 
+// this component displays the details of a selected user
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
