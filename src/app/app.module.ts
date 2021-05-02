@@ -41,8 +41,8 @@ import { VerifySecurityQuestionsFormComponent } from './pages/verify-security-qu
 import { RoleCreateComponent } from './pages/role-create/role-create.component';
 import { InvoiceSummaryDialogComponent } from './dialogs/invoice-summary-dialog/invoice-summary-dialog.component';
 import { ErrorInterceptor } from './shared/error.interceptor';
-
-
+import { RoleListComponent } from './pages/role-list/role-list.component';
+import { RoleDetailsComponent } from './pages/role-details/role-details.component';
 
 
 //Imported angular material modules of th application
@@ -61,9 +61,6 @@ import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list';
 import { MatStepperModule } from '@angular/material/stepper';
 import { PurchasesByServiceGraphComponent } from './pages/purchases-by-service-graph/purchases-by-service-graph.component';
-import { RoleListComponent } from './pages/role-list/role-list.component';
-
-
 
 @NgModule({
   //Declare the components used in the application.
@@ -94,6 +91,7 @@ import { RoleListComponent } from './pages/role-list/role-list.component';
     InvoiceSummaryDialogComponent,
     PurchasesByServiceGraphComponent,
     RoleListComponent,
+    RoleDetailsComponent,
   ],
   //Declare the imported modules being used.
   imports: [

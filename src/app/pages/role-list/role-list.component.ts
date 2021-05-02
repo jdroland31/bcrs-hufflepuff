@@ -26,7 +26,9 @@ export class RoleListComponent implements OnInit {
   displayedColumns = ['role', 'functions'];
 
   constructor(private dialog: MatDialog, private roleService: RoleService) {
-    this.roleService.findAllRoles().subscribe(res => {
+
+       //The role service is called to get all roles and set the roles variable to that data.
+       this.roleService.findAllRoles().subscribe(res => {
       this.roles = res.data;
 
       console.log('Query result:' + this.roles);
@@ -40,7 +42,7 @@ export class RoleListComponent implements OnInit {
    }
 
   ngOnInit(): void {  }
-
+//If the user click on the Delete icon, a dialog hosting the Delete Dialog component appears. If the user confirms, the deleteRole API is called via the role service.
   delete(roleId, text) {
     const dialogRef = this.dialog.open(DeleteRecordDialogComponent, {
       data: {
@@ -51,7 +53,7 @@ export class RoleListComponent implements OnInit {
       disableClose: true,
       width: '800px'
     });
-
+    //When the dialog closes, if the user confirmed the deletion the role service is called to process the deletion.
     dialogRef.afterClosed().subscribe(result =>
     {
       if (result === 'confirm')

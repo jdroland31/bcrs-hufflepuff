@@ -34,7 +34,7 @@ import { VerifySecurityQuestionsFormComponent } from './pages/verify-security-qu
 import { RoleCreateComponent } from './pages/role-create/role-create.component';
 import { RoleListComponent } from './pages/role-list/role-list.component';
 import { PurchasesByServiceGraphComponent } from './pages/purchases-by-service-graph/purchases-by-service-graph.component';
-
+import { RoleDetailsComponent } from './pages/role-details/role-details.component';
 //This variable defines the routes used in the application.
 const routes: Routes = [
   {
@@ -81,6 +81,10 @@ const routes: Routes = [
       {
         path: 'security-questions/:questionId',
         component: SecurityQuestionDetailsComponent
+      },
+      {
+        path: 'roles/:roleId',
+        component: RoleDetailsComponent
       },
       {
          path: 'verify-users/:username',
