@@ -122,11 +122,11 @@ router.post('/', async (req, res) => {
   // The catch error if it's not connected to the server
   catch (e)
   {
-    console.log(e);
+    console.log(' api catch all' + e);
     const createRoleCatchErrorResponse = new ErrorResponse('500', 'Internal server error', e.message);
     res.status(500).send(createRoleCatchErrorResponse.toObject());
   }
-})
+});
 
 
 
