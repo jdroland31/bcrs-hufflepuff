@@ -9,7 +9,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { RoleService } from '../../shared/services/role.service';
+import { RoleService } from 'src/app/shared/services/role.service';
 import { Role } from '../../shared/interfaces/role.interface';
 
 
@@ -24,7 +24,7 @@ export class RoleCreateComponent implements OnInit {
   constructor( private fb: FormBuilder, private router: Router, private roleService: RoleService) {
    }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.form = this.fb.group({
        //When initialized, make field required.
       text: [null, Validators.compose([Validators.required])]
