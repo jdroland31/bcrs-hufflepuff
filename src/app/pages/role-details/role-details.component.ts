@@ -11,7 +11,7 @@ import { Role } from '../../shared/interfaces/role.interface';
 import { RoleService } from '../../shared/services/role.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
-import {HttpClient} from '@angular/common/http';
+
 
 @Component({
   selector: 'app-role-details',
