@@ -42,24 +42,47 @@ export class PurchasesByServiceGraphComponent implements OnInit {
         datasets: [
           // graph object
           {
+            // backgroundColor: [
+            //   '#ED0A3F',
+            //   '#FF8833',
+            //   '#5FA777',
+            //   '#0066CC',
+            //   '#683FA0',
+            //   '#AF593E',
+            //   '#6CDAE7'
+            // ],
+            // //the hover background colors
+            // hoverBackgroundColor: [
+            //   '#ED0A3F',
+            //   '#FF8833',
+            //   '#5FA777',
+            //   '#0066CC',
+            //   '#683FA0',
+            //   '#AF593E',
+            //   '#6CDAE7'
+            // ],
+
+            //Using Hufflepuff colors and supporting colors to stay within the project's style.
             backgroundColor: [
-              '#ED0A3F',
-              '#FF8833',
-              '#5FA777',
-              '#0066CC',
-              '#683FA0',
-              '#AF593E',
-              '#6CDAE7'
+              '#f9c02d',
+              '#3e2622',
+              '#a9a9a9',
+              '#FF0000',
+              '#6a4f4b',
+              '#b68900',
+              '#000000',
+              '#ffeb6b'
             ],
             //the hover background colors
             hoverBackgroundColor: [
-              '#ED0A3F',
-              '#FF8833',
-              '#5FA777',
-              '#0066CC',
-              '#683FA0',
-              '#AF593E',
-              '#6CDAE7'
+              '#f9c02d',
+              '#3e2622',
+              '#a9a9a9',
+              '#FF0000',
+              '#6a4f4b',
+              '#b68900',
+              '#000000',
+              '#ffeb6b'
             ],
             //shows the item count of each service
             data: this.itemCount
