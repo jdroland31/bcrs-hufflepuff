@@ -83,13 +83,13 @@ const routes: Routes = [
         component: SecurityQuestionDetailsComponent
       },
       {
-        path: 'roles/:roleId',
-        component: RoleDetailsComponent
-      },
-      {
          path: 'verify-users/:username',
          component: VerifyUsernameFormComponent
        },
+      {
+        path: 'roles/:roleId',
+        component: RoleDetailsComponent
+      },
        {
          path: 'roles',
          component: RoleListComponent
@@ -148,7 +148,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true, enableTracing: false, scrollPositionRestoration: 'enabled', relativeLinkResolution: 'legacy' })],
+  imports: [RouterModule.forRoot(routes, {
+    useHash: true,
+    enableTracing: false,
+    scrollPositionRestoration: 'enabled',
+    relativeLinkResolution: 'legacy' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
