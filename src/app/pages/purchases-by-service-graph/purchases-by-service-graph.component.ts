@@ -35,7 +35,7 @@ export class PurchasesByServiceGraphComponent implements OnInit {
         this.labels.push(item._id.title);
         this.itemCount.push(item.count);
       }
-
+      console.log(this.purchases);
       //build the object literal for the primeNG bar graph
       this.data = {
         labels: this.labels, //label for services

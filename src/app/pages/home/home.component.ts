@@ -37,19 +37,21 @@ export class HomeComponent implements OnInit {
     private dialog: MatDialog, private router: Router, private serviceRepairService: ServiceRepairService,
     private invoiceService: InvoiceService)
     { // get username
-      this.userName = this.cookieService.get('sessionUser');
+      this.userName = this.cookieService.get('session_user');
       this.services = this.serviceRepairService.getServiceRepairItems();
+      console.log(this.services);
     }
 
   ngOnInit() {
     this.form = this.fb.group({
       parts: [null, Validators.compose([Validators.required])],
-      labor: [null, Validators.compose([Validators.required])],
-      alternator: [null, null]
+      labor: [null, Validators.compose([Validators.required])]
     });
+    console.log(this.form);
   }
 
   submit(form) {
+    console.log('service submit!');
     console.log(form);
     const selectedServiceIds = [];
     for (const [key, value] of Object.entries(form.checkGroup)) {
@@ -104,6 +106,7 @@ export class HomeComponent implements OnInit {
       if (result === 'confirm') {
         console.log('invoice saved');
         this.invoiceService.createInvoice(invoice.userName, invoice).subscribe(res => {
+          console.log(res);
           this.router.navigate(['/']);
         }, err => {
           console.log(err);
