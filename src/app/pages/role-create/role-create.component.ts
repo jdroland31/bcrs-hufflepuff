@@ -39,6 +39,7 @@ export class RoleCreateComponent implements OnInit {
     } as Role
     //Call the role service and pass the values to the createRole() function.
     this.roleService.createRole(newRole).subscribe(res => {
+      console.log(res);
       this.router.navigate(['/roles']);
     }, err => {
         console.log('Error:' + err);

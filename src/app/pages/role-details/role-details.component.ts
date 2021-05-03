@@ -29,6 +29,7 @@ export class RoleDetailsComponent implements OnInit {
     this.roleId = this.route.snapshot.paramMap.get('roleId');
 
     this.roleService.findRoleById(this.roleId).subscribe(res => {
+      console.log(res);
       this.role = res['data'];
     }, err => {
       console.log(err);
