@@ -42,7 +42,7 @@ export class RoleDetailsComponent implements OnInit {
     console.log(this.role.text);
     this.form = this.fb.group({
       text: [null, Validators.compose([Validators.required])]
-    });
+    })
   }
 
   save() {
@@ -54,7 +54,7 @@ export class RoleDetailsComponent implements OnInit {
       this.router.navigate(['/roles']);
     }, err => {
       console.log(err);
-    });
+    })
   }
 
   cancel() {
