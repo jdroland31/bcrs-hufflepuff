@@ -4,8 +4,58 @@
   </h1>
 </div>
 
-
 <div fxLayout="column" fxLayoutAlign="center center">
+  <form #serviceRepairForm="ngForm" (ngSubmit)="submit(serviceRepairForm.value); serviceRepairForm.reset();" class="service-form">
+    <div fxLayout="row">
+      <mat-card>
+        <mat-card-content>
+          <div ngModelGroup="checkGroup" *ngFor="let service of services; let i = index">
+            <!-- <div fxLayout="row" *ngIf="i%4==0">
+              {{ i }} -->
+              <mat-card class="service-card">
+                <mat-card-title>{{service.title}} <span class="material-icons">{{service.icon}}</span></mat-card-title>
+                <hr>
+                <mat-card-subtitle>{{service.salesPitch}}</mat-card-subtitle>
+                <br>
+                <mat-card-content>
+                  <div fxLayoutAlign="center center">
+                    <mat-checkbox name="{{service.id}}" ngModel>
+                      ({{service.price | currency}})
+                    </mat-checkbox>
+                  </div>
+                </mat-card-content>
+              </mat-card>
+            <!-- </div> -->
+            <br />
+          </div>
+          <div fxLayout="column">
+            <h4 fxFlex>Standard Fees</h4>
+            <mat-form-field fxFlex style="width: 300px !important;">
+              <input matInput
+              name="parts"
+              ngModel="0"
+              placeholder="Parts ($)" />
+            </mat-form-field>
+
+            <mat-form-field fxFlex style="width: 300px !important;">
+              <input matInput
+                    name="labor"
+                    ngModel="0"
+                    placeholder="Number of hours @ $50.00/hr" />
+            </mat-form-field>
+          </div>
+          <div class="column" fxLayoutAlign="center center">
+            <button mat-button class="service-order-button"  (click)="submit">
+              <span>Check Out<mat-icon class="checkout-icon">shopping_cart</mat-icon></span>
+            </button>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </form>
+</div>
+
+<!-- <div fxLayout="column" fxLayoutAlign="center center">
   <form #serviceRepairForm="ngForm" (ngSubmit)="submit(serviceRepairForm.value); serviceRepairForm.reset();" class="service-form">
     <div fxLayout="row">
       <mat-card class="service-card">
@@ -105,7 +155,7 @@
       <span>Check Out<mat-icon class="checkout-icon">shopping_cart</mat-icon></span>
     </button>
   </div>
-</div>
+</div> -->
 
 <!-- <mat-card class="mat-elevation-z0" style="width: 65%; margin: 0 auto;">
   <form #serviceRepairForm="ngForm" (ngSubmit)="submit(serviceRepairForm.value); serviceRepairForm.reset();">

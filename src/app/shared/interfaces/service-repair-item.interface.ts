@@ -10,4 +10,6 @@ export interface ServiceRepairItem {
   id: string;
   title: string;
   price: number;
+  icon: string;
+  salesPitch: string;
 }
