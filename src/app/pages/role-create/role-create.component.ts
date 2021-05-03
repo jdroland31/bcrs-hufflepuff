@@ -9,9 +9,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { RoleService } from 'src/app/shared/services/role.service';
 import { Role } from '../../shared/interfaces/role.interface';
-
+import { RoleService } from 'src/app/shared/services/role.service';
 
 @Component({
   selector: 'app-role-create',
@@ -21,8 +20,7 @@ import { Role } from '../../shared/interfaces/role.interface';
 export class RoleCreateComponent implements OnInit {
   form: FormGroup;
 
-  constructor( private fb: FormBuilder, private router: Router, private roleService: RoleService) {
-   }
+  constructor( private fb: FormBuilder, private router: Router, private roleService: RoleService) { }
 
   ngOnInit() {
     this.form = this.fb.group({
@@ -38,11 +36,11 @@ export class RoleCreateComponent implements OnInit {
       text: this.form.controls['text'].value
     } as Role
     //Call the role service and pass the values to the createRole() function.
-    this.roleService.createRole(newRole).subscribe(res => {
+    this.roleService.createRole(newRole).subscribe( res => {
       this.router.navigate(['/roles']);
     }, err => {
-        console.log('Error:' + err);
-    })
+        console.log(err);
+    } )
   }
   //This provides for navigation back to the role list.
   cancel() {

@@ -30,13 +30,13 @@ export class RoleService {
 
   createRole(role: Role): Observable<any> {
     return this.http.post('/api/roles/', {
-      text: role.text
-    })
+      text: role.text,
+    });
   }
 
   updateRole(roleId: string, role: Role): Observable<any> {
     return this.http.put('/api/roles/' + roleId, {
-      text: role.text
+      text: role.text,
     })
   }
 
