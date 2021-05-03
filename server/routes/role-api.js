@@ -98,8 +98,8 @@ router.post('/', async (req, res) => {
   {
       // This is the required text that's added to the database
       const newRole = {
-        text: req.body.text
-      }
+        text: req.body.text,
+      };
       // The role will be created once this function is called
       Role.create(newRole, function(err, role)
       {

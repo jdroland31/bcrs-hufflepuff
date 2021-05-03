@@ -39,11 +39,11 @@ export class RoleDetailsComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     console.log(this.role.text);
     this.form = this.fb.group({
-      text: [null, Validators.compose([Validators.required])]
-    })
+      text: [null, Validators.compose([Validators.required])],
+    });
   }
 
   save() {
@@ -55,7 +55,7 @@ export class RoleDetailsComponent implements OnInit {
       this.router.navigate(['/roles']);
     }, err => {
       console.log(err);
-    })
+    });
   }
 
   cancel() {
