@@ -30,7 +30,11 @@ export class RoleService {
 
   createRole(role: Role): Observable<any> {
     return this.http.post('/api/roles/', {
+<<<<<<< HEAD
       text: role.text,
+=======
+      text: role.text
+>>>>>>> aef09891c6d94ac637e51e531a2c72ffee4dfdc8
     });
   }
 
