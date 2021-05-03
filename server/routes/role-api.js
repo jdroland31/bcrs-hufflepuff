@@ -137,16 +137,22 @@ router.post('/', async (req, res) => {
  router.put('/:roleId', async (req, res) => {
   try
   {
+    //finds the role id in the database
     Role.findOne({ '_id': req.params.roleId }, function(err, role)
     {
       if (err)
       {
+        //error 500 response if a mongodb error occurs
           console.log(err);
           const updateRoleMongodbErrorResponse = new ErrorResponse(500, "Internal server error", err);
           res.status(500).send(updateRoleMongodbErrorResponse.toObject());
       }
       else
       {
+        /**
+         * If there is no error the role will be set as a new
+         * text and will be saved and an successful query response will show
+         */
           console.log(role);
 
           role.set(
