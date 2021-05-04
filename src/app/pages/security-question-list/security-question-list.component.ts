@@ -38,12 +38,12 @@ export class SecurityQuestionListComponent implements OnInit {
   ngOnInit() {
   }
   //This function populates a dialog with the DeleteRecordDialogComponent and allows the user to call to the API to delete a specified security question.
-  delete (recordId: string){
+  delete (recordId: string, text: string){
     const dialogRef = this.dialog.open(DeleteRecordDialogComponent, {
       data: {
         recordId,
         dialogHeader: "Delete Record Dialog",
-        dialogBody: `Are you sure you want to delete security question ${recordId}?`
+        dialogBody: `Are you sure you want to delete security question "${text}"?`
       },
       disableClose: true,
       width: '800px'

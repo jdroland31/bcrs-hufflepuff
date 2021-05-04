@@ -38,12 +38,13 @@ export class UserListComponent implements OnInit {
   }
 
   //If the user click on the Delete icon, a dialog hosting the Delete Dialog component appears. If the user confirms, the deleteUser API is called via the user service.
-  delete(userId: string, recordId: string): void {
+  delete( userId: string, userName: string, recordId: string): void {
     const dialogRef = this.dialog.open(DeleteRecordDialogComponent, {
       data: {
         recordId,
+
         dialogHeader: 'Delete Record Dialog',
-        dialogBody: `Are you sure you want to delete user ${userId}?`
+        dialogBody: `Are you sure you want to delete user ${userName}?`
       },
       disableClose: true,
       width: '800px'
