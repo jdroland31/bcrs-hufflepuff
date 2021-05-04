@@ -11,7 +11,9 @@
 /* .signInContainer{
   padding: 10px;
 } */
-/* sign in form container */
+
+
+/* sign in form container*/
 .mat-card{
   background-color: #f9c02d !important;
   width: 550px;
@@ -50,6 +52,7 @@ button:hover{
  }
 .mat-input-element{
   padding: 8px 0;
+
 }
 a.login-link,
 .mat-card-subtitle a {
