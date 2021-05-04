@@ -57,11 +57,13 @@ const routes: Routes = [
       },
       {
         path: 'users/create/new',
-        component: UserCreateComponent
+        component: UserCreateComponent,
+        canActivate: [RoleGuard]
       },
       {
         path: 'users/:id',
-        component: UserDetailsComponent
+        component: UserDetailsComponent,
+        canActivate: [RoleGuard]
       },
       {
         path: 'about',
@@ -69,19 +71,23 @@ const routes: Routes = [
       },
       {
         path: 'userlist',
-        component: UserListComponent
+        component: UserListComponent,
+        canActivate: [RoleGuard]
       },
       {
         path: 'security-questions',
-        component: SecurityQuestionListComponent
+        component: SecurityQuestionListComponent,
+        canActivate: [RoleGuard]
       },
       {
         path: 'security-question-create',
-        component: SecurityQuestionCreateComponent
+        component: SecurityQuestionCreateComponent,
+        canActivate: [RoleGuard]
       },
       {
         path: 'security-questions/:questionId',
-        component: SecurityQuestionDetailsComponent
+        component: SecurityQuestionDetailsComponent,
+        canActivate: [RoleGuard]
       },
       {
          path: 'verify-users/:username',
@@ -89,15 +95,18 @@ const routes: Routes = [
        },
       {
         path: 'roles/:roleId',
-        component: RoleDetailsComponent
+        component: RoleDetailsComponent,
+        canActivate: [RoleGuard]
       },
        {
          path: 'roles',
-         component: RoleListComponent
+         component: RoleListComponent,
+         canActivate: [RoleGuard]
        },
        {
         path: 'roles/create/new',
-        component: RoleCreateComponent
+        component: RoleCreateComponent,
+        canActivate: [RoleGuard]
        },
        {
          path:'chart',

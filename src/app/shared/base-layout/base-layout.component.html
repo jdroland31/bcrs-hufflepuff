@@ -24,9 +24,9 @@
       <mat-form-field>
         <mat-icon class="nav-icon" ng-controller="navsController">account_circle</mat-icon>
         <mat-select class="user-dropdown" trigger="userTrigger" #userSelect>
-          <mat-option class="user-option" routerLink="/userlist">Users Configuration</mat-option>
-          <mat-option class="user-option" routerLink="/security-questions">Security Questions Configuration</mat-option>
-          <mat-option class="user-option" routerLink="/roles">Roles Configuration</mat-option>
+          <mat-option class="user-option" routerLink="/userlist" *ngIf="userRole === 'admin'">Users Configuration</mat-option>
+          <mat-option class="user-option" routerLink="/security-questions" *ngIf="userRole === 'admin'">Security Questions Configuration</mat-option>
+          <mat-option class="user-option" routerLink="/roles" *ngIf="userRole === 'admin'">Roles Configuration</mat-option>
           <mat-option class="user-option" routerLink="/chart" *ngIf="userRole === 'admin'">Purchases By Service</mat-option>
           <mat-option class="user-option" (click)="signOut()">Sign Out</mat-option>
         </mat-select>
