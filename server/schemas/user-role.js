@@ -12,7 +12,7 @@ const Schema = mongoose.Schema;
 //the schema for user roles
 let userRoleSchema = new Schema({
   //Default all users to standard role on creation.
-  text: {type: String, default: 'standard'},
+  role: {type: String, default: 'standard'},
   isDisabled: {type: Boolean, default: false}
 })
 //Export the userRoleSchema.

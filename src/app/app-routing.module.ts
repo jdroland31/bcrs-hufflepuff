@@ -35,6 +35,7 @@ import { RoleCreateComponent } from './pages/role-create/role-create.component';
 import { RoleListComponent } from './pages/role-list/role-list.component';
 import { PurchasesByServiceGraphComponent } from './pages/purchases-by-service-graph/purchases-by-service-graph.component';
 import { RoleDetailsComponent } from './pages/role-details/role-details.component';
+import { RoleGuard } from './shared/guards/role-guard';
 //This variable defines the routes used in the application.
 const routes: Routes = [
   {
@@ -100,7 +101,9 @@ const routes: Routes = [
        },
        {
          path:'chart',
-         component: PurchasesByServiceGraphComponent
+         component: PurchasesByServiceGraphComponent,
+         canActivate: [RoleGuard]
+
        }
     ],
     canActivate: [SessionGuard] //The SessionGuard can be called by the BaseLayout to prevent unauthorized users from accessing the routes within it's hierarchy.
