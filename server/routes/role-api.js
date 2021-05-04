@@ -32,7 +32,7 @@ const router = express.Router();
       .exec(function(err, roles)
       {
         if (err)
-        {
+        { // If there is an error with the server, return a 500 code and the error.
           console.log(err);
           const findAllRolesMongodbErrorResponse = new ErrorResponse(500, 'Internal server error', err);
           res.status(500).send(findAllRolesMongodbErrorResponse.toObject());
@@ -162,13 +162,13 @@ router.post('/', async (req, res) => {
 
           role.save(function(err, updatedRole) {
             if (err)
-            {
+            {// If there is an error with the server, return a 500 code and the error.
               console.log(err);
               const updatedRoleCatchErrorResponse = new ErrorResponse(500, "Internal server error", err);
               res.status(500).send(updatedRoleCatchErrorResponse.toObject());
             }
             else
-            {
+            {// The successful response once the query was added,  the role updated will show as well
               console.log(updatedRole)
               const updatedRoleResponse = new BaseResponse(200, "Query Successful", updatedRole);
               res.json(updatedRoleResponse.toObject());
