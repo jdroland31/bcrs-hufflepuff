@@ -1,0 +1,68 @@
+<!---
+ ============================================
+; Title:  about.component.html
+; Author: Professor Krasso
+; Date: 25 April 2021
+; Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+; Description: The about page - Sprint 2
+;===========================================
+-->
+
+
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px" class="about-container">
+
+  <mat-card-title class="about-main-title">Team Hufflepuff</mat-card-title>
+  <!-- The House Hufflepuff tenets are listed in the subtitle. -->
+  <mat-card-subtitle>Hard work, patience, justice and loyalty</mat-card-subtitle>
+  <mat-card-content>
+    <!-- This is the group introduction text. -->
+    <span fxFlex="30"></span>
+    <p class="main-text" fxLayoutAlign="center center">
+      We are a group of student developers with a range of experience, working together to create Bob's Computer Repair Shop.
+      This application represents the culmination of everything we have learned in Bellevue University's Web Development program.
+      This cohort has learned and worked together since March 2020 to develop skills in HTML, CSS, Javascript, DevOps, Agile methodology, API development, Express JS, Node JS, Angular and Typescript.
+      Now we are bringing our full stack skills and experience together to deliver this WEB 450 capstone project. You can learn more about our team members below and follow the links to check out their portfolios.
+    </p>
+    <span fxFlex="30"></span>
+  </mat-card-content>
+<!-- Each team member is given a photo and bio spotlight. Their names are linked to their portfolios. -->
+  <div fxLayout="row" fxLayoutGap="100px" class="bios">
+
+    <span fxFlex="5"></span>
+    <div fxLayout="column" fxFlex="30">
+      <img src="../../../../assets/images/nicole-profile.jpg">
+      <mat-card-title>
+        <a href="https://nicolebarleta.github.io/index.html" target="_blank">Nicole Barleta</a>
+      </mat-card-title>
+      <mat-card-subtitle>Developer</mat-card-subtitle>
+      <mat-card-content>
+        In 2013, I acquired a bachelor’s degree in computer science from the Philippines. Still, with a lack of practice and concentration, I found myself not in the tech industry, especially when I moved here in the US in 2013, my skills are somewhat not what the industry needs. Then I have tried to learn on my own from different platforms, but none of them has a proper path to get a career in tech. However, in God’s perfect timing, I had a chance to acquire a tuition fee-free from my work through guild education. Now, I am doing this web development degree at Bellevue University. So far, I think the skills that we learned are at par in what the industry needs and practices—looking forward to learning more in web development and hoping to harness my skills with building functional and trendy web applications.
+      </mat-card-content>
+    </div>
+
+    <div fxLayout="column" fxFlex="30">
+      <img src="../../../../assets/images/jonathan-profile.jpg">
+      <mat-card-title>
+        <a href="https://jdroland31.github.io/" target="_blank" >Jonathan Roland</a>
+      </mat-card-title>
+      <mat-card-subtitle>Team Leader</mat-card-subtitle>
+      <mat-card-content>
+        After completing an enlistment in the United States Marine Corps in 2012, I started seeking my next journey in life. While sampling classes at community college, I became fascinated with the challenge and depth of programming. I completed my A.A.S. in CIT/Programming at Pellissippi State Community College and began my professional path at Jewelry Television, where I got my start on custom Wordpress plugins to enable internal business processes. After 2.5 years at JTV, I returned to Pellissippi State as their staff Web Applications Programmer, where my Wordpress experience continues to grow. I am currently working towards a B.S. at Bellevue University, majoring in Web Development.
+
+Outside of work I love hiking, cooking and playing guitar.
+      </mat-card-content>
+    </div>
+
+    <div fxLayout="column" fxFlex="30">
+      <img src="../../../../assets/images/wendy-profile.png">
+      <mat-card-title>
+        <a href="https://wen-d.github.io/" target="_blank">Wendy Leon</a></mat-card-title>
+      <mat-card-subtitle>Developer</mat-card-subtitle>
+      <mat-card-content>
+        I have been designing websites of all sizes for a bit over 20 years. I first learned web design through an intensive 10-month Web Programming Program at Champlain College, St Lambert, Canada and I was hooked. I recently started pursuing a bachelors in Web Development online at Bellevue University.
+When I am not in front of my computer designing websites, you can find me in front of my computer learning new web technologies. I recently started playing with Node and hope to become good friends with Express.
+      </mat-card-content>
+    </div>
+    <span fxFlex="10"></span>
+  </div>
+</div>

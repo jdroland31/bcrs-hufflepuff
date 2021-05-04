@@ -1,0 +1,46 @@
+<!---
+ ============================================
+; Title:  signin.component.html
+; Author: Professor Krasso
+; Date: 25 April 2021
+; Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+; Description: sign in page html file
+;===========================================
+-->
+
+<!-- This template provides a form for a user to sign in. -->
+<div fxLayout="column" fxLayoutAlign="center center">
+  <mat-card class="mat-elevation-z0">
+    <mat-card-title>Log In</mat-card-title>
+    <!-- A new user who does not have credentials can follow this link to begin the account creation process. -->
+    <mat-card-subtitle><a routerLink="/session/register" class="login-link" fxLayoutAlign="end">New User?</a></mat-card-subtitle>
+    <mat-card-content>
+      <!-- This formGroup captures the login info. -->
+        <form [formGroup]="signinForm" (ngSubmit)="signin(); signinForm.reset()">
+          <mat-card-content fxLayout="column">
+            <mat-form-field appearance="fill">
+              <mat-label>Username</mat-label>
+              <input matInput [formControl]="signinForm.controls['userName']">
+              <mat-error *ngIf="signinForm.controls['userName'].hasError('required') && signinForm.controls['userName'].touched">
+                Username is a required field.
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Password</mat-label>
+              <input type="password" matInput [formControl]="signinForm.controls['password']">
+              <mat-error *ngIf="signinForm.controls['password'].hasError('required') && signinForm.controls['password'].touched">
+                Password is a required field.
+              </mat-error>
+            </mat-form-field>
+          </mat-card-content>
+          <!-- When the user clicks submit the form is submitted and their credentials are compared to those stored for the user. -->
+          <mat-card-actions align="end">
+            <button type="submit" fxFlex mat-raised-button [disabled] color="primary">Submit</button>
+          </mat-card-actions>
+        </form>
+        <!-- A user who has forgotten their password can follow this link to reset their password. -->
+        <a routerLink="/session/forgot" class="login-link" fxLayoutAlign="end">Forgot your password?</a>
+    </mat-card-content>
+  </mat-card>
+</div>
+

@@ -1,0 +1,47 @@
+/*
+ ============================================
+; Title:  about.component.css
+; Author: Professor Krasso
+; Date: 19 March 2021
+; Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+; Description: The about component styling
+;===========================================
+**/
+
+/* This is the style sheet for the About component. */
+
+/* Images have a border radius of 50% to provide circular profile images. */
+img{
+  border-radius: 50%;
+  /* height: 300px;
+  width: 300px; */
+}
+/* header*/
+mat-card-title{
+  margin-top: 20px !important;
+}
+/* about container*/
+.about-container{
+  margin-top: 50px !important;
+  margin-bottom: 50px;
+}
+
+.main-text{
+  /* text-align: center; */
+}
+
+/* Some styling was done for the links. */
+a{
+  color: #3e2622;
+  text-decoration: none;
+}
+/*link styling*/
+a:hover{
+  color: #6a4f4b;
+}
+/* Further sizing rules for the bio pics. */
+.bios img{
+  min-width: 180px;
+  width: 250px;
+  max-width: 28%;
+}

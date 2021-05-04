@@ -1,0 +1,64 @@
+<!---
+ ============================================
+; Title:  user-create.component.html
+; Author: Professor Krasso
+; Date: 15 April 2021
+; Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+; Description: user create html file
+;===========================================
+-->
+
+<!-- This template allows a new user to be created. -->
+
+
+
+<div fxLayout="column" fxLayoutAlign="center center" fxFill>
+  <mat-card-title class="newUserTitle" fxLayoutAlign="center center">Add New User</mat-card-title>
+    <br>
+
+    <!-- This form provides all needed fields for user creation. -->
+    <form class="addUserForm" [formGroup]="form" (ngSubmit)="createUser()" #userForm>
+      <div fxLayout="column">
+        <mat-card>
+          <mat-form-field>
+            <input type="text" matInput [formControl]="form.controls['userName']" placeholder="Username">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input type="text" matInput [formControl]="form.controls['password']" placeholder="Password">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input type="text" matInput [formControl]="form.controls['firstName']" placeholder="First name">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input type="text" matInput [formControl]="form.controls['lastName']" placeholder="Last name">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input type="text" matInput [formControl]="form.controls['phoneNumber']" placeholder="Phone number">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input type="text" matInput [formControl]="form.controls['address']" placeholder="Address">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input type="text" matInput [formControl]="form.controls['email']" placeholder="Email">
+          </mat-form-field>
+
+        </mat-card>
+        </div>
+
+
+
+      <br>
+        <!-- The user can choose to create a new user or navigate back to the Users list. -->
+      <mat-card-actions align="end">
+        <button mat-raised-button (click)="cancel()" color="warn">Cancel</button>
+        <button type="submit" mat-raised-button color="accent">Submit</button>
+      </mat-card-actions>
+    </form>
+
+</div>

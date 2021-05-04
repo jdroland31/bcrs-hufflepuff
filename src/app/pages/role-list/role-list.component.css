@@ -1,0 +1,16 @@
+.container{
+  width: 600px;
+  max-width: 95%;
+  margin: 65px auto 100px;
+}
+.mat-card-subtitle{
+  text-align: right;
+}
+table{
+  width: 90%;
+  margin: 20px auto;
+}
+.mat-card-title{
+  margin: 15px auto !important;
+  text-align: center;
+}

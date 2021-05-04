@@ -1,0 +1,38 @@
+<!---
+ ============================================
+; Title:  Role details
+; Author: Professor Krasso
+; Date: 3 May 2021
+; Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+; Description: Role details html file
+;===========================================
+-->
+
+<div fxLayout="column" class="container">
+
+  <mat-card class="mat-elevation-z8">
+    <mat-card-title> Update Role Name</mat-card-title> <br />
+
+    <form [formGroup]="form" (ngSubmit)="save()" #roleForm>
+
+      <mat-card-content>
+        <div fxLayout="column" fxLayoutGap="10px">
+          <mat-form-field>
+            <mat-label>Role Name</mat-label>
+            <input matInput
+                  [formControl]="form.controls['text']"
+                  placeholder="Role" />
+          </mat-form-field>
+        </div>
+      <br />
+
+      <br />
+        <mat-card-actions align="end">
+          <button mat-raised-button (click)="cancel()" color="warn">Cancel</button>
+          <button mat-raised-button color="accent" [disabled]="!form.valid">Create</button>
+        </mat-card-actions>
+
+      </mat-card-content>
+    </form>
+  </mat-card>
+</div>

@@ -1,32 +1,74 @@
-<div fxLayout="column">
+<!---
+ ============================================
+; Title:  base-layout.component.html
+; Author: Professor Krasso
+; Date: 15 April 2021
+; Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+; Description: base layout html file
+;===========================================
+-->
 
+<div fxLayout="column" class="main-container">
+  <div class="logo-group">
+    <div class="logo">
+      <img class="logo-img" src="./assets/images/bcrs-logo.png">
+    </div>
+    <mat-toolbar-row class="nav-row">
+      <h1 class="bcrs-title">Bob's</h1>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="nav-row">
+      <h2 class="subtitle">Computer Repair Shop</h2>
+    </mat-toolbar-row>
+    <div class="navbar-icons-container">
+      <!-- Credit for this dropdown implementation to Stackoverflow user  Muhammad Ahsan Ayaz: https://stackoverflow.com/questions/53758021/how-to-create-a-dropdown-from-an-icon-using-angular-material -->
+      <mat-form-field>
+        <mat-icon class="nav-icon" ng-controller="navsController">account_circle</mat-icon>
+        <mat-select class="user-dropdown" trigger="userTrigger" #userSelect>
+          <mat-option class="user-option" routerLink="/userlist">Users Configuration</mat-option>
+          <mat-option class="user-option" routerLink="/security-questions">Security Questions Configuration</mat-option>
+          <mat-option class="user-option" routerLink="/roles">Roles Configuration</mat-option>
+          <mat-option class="user-option" routerLink="/chart" *ngIf="userRole === 'admin'">Purchases By Service</mat-option>
+          <mat-option class="user-option" (click)="signOut()">Sign Out</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
   <!-- navigation -->
   <nav fxFlex>
-    <mat-toolbar>
-      <!-- navbar container -->
-      <div class="navbar-container">
-        <!-- logo -->
-        <button class="logo" routerLink="/" mat-button>BCRS</button>
+    <mat-toolbar class="nav-bar">
+      <mat-toolbar-row>
+        <span class="bcrs-nav-spacer"></span>
+        <!-- navbar container -->
+        <div class="navbar-container">
+          <div class="nav-bar-items-container">
+            <button class="navbar-link ml-auto" routerLink="/services" mat-button>Services</button>
+            <button class="navbar-link ml-auto" routerLink="/about" mat-button>About</button>
+            <button class="navbar-link ml-auto" routerLink="/contact" mat-button>Contact</button>
+            <!-- <button class="navbar-link ml-auto" routerLink="/userlist" mat-button>Users Configuration</button>
+            <button class="navbar-link ml-auto" routerLink="/security-questions" mat-button>Security Questions Configuration</button>
+            <button class="navbar-link ml-auto" routerLink="/chart" mat-button>Chart</button>
+            <button  class="navbar-link ml-auto" (click)="signOut()" mat-button>Sign Out</button> The signOut() function allows the user to destroy their session and navigate back to the sign in page. -->
 
-        <button class="navbar-link" routerLink="/" mat-button>Home</button>
-        <button class="navbar-link" mat-button>About</button>
-      </div>
 
+          </div>
+        </div>
+      </mat-toolbar-row>
     </mat-toolbar>
   </nav>
 
   <!-- main content -->
   <div fxFlex>
-    <main class="main-content" fxFlex="100%;">
+    <main class="main-content" fxFlex="100%;" >
+      <!-- The router-outlet allows the application to act in a single page manner, loading child components here. -->
       <router-outlet></router-outlet>
     </main>
   </div>
 
   <!-- footer -->
-  <div fxFlex>
-    <footer class="footer">
-      <mat-toolbar class="footer-content">
-        <p>
+  <div fxFlex class="footer">
+    <footer>
+      <mat-toolbar class="footer-content" color="accent">
+        <p class="bcrs-footer-content">
           &copy; {{year | date: 'yyyy'}} - Bob's Computer Repair Shop - <a href="https://www.bellevue.edu/" class="bu-link" target="_blank">Bellevue University</a>
         </p>
       </mat-toolbar>

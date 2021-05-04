@@ -1,1 +1,46 @@
-<p>auth-layout works!</p>
+<!---
+ ============================================
+; Title:  auth-layout.component.html
+; Author: Professor Krasso
+; Date: 15 April 2021
+; Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+; Description: auth layout html file
+;===========================================
+-->
+
+<!-- router outlet tags render routed pages -->
+
+<div fxLayout="column">
+  <div class="logo-group">
+    <div class="logo">
+      <img class="logo-img" src="./assets/images/bcrs-logo.png">
+    </div>
+    <mat-toolbar-row class="nav-row">
+      <h1 class="bcrs-title">Bob's</h1>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="nav-row">
+      <h2 class="subtitle">Computer Repair Shop</h2>
+    </mat-toolbar-row>
+  </div>
+
+  <!-- This component does not include the navigation bar. -->
+
+  <!-- main content -->
+  <div fxFlex>
+    <main class="main-content" fxFlex="100%;" >
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+
+  <!-- footer -->
+  <div fxFlex>
+    <footer class="footer">
+      <mat-toolbar class="footer-content" color="accent">
+        <p class="bcrs-footer-content">
+          &copy; {{year | date: 'yyyy'}} - Bob's Computer Repair Shop - <a href="https://www.bellevue.edu/" class="bu-link" target="_blank">Bellevue University</a>
+        </p>
+      </mat-toolbar>
+    </footer>
+  </div>
+</div>
+

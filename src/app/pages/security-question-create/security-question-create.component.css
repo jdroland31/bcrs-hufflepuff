@@ -1,0 +1,13 @@
+/***
+** Title: Bob's Computer Repair Shop
+** Author:  Professor Krasso
+** Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+** Date: April 15 2021
+** Description: API - Sprint 1
+ ***/
+
+ /* This is the style sheet for the security question create component. */
+
+mat-form-field{
+  width: 600px;
+}

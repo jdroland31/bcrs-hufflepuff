@@ -1,0 +1,93 @@
+<!---
+ ============================================
+; Title:  about.component.html
+; Author: Professor Krasso
+; Date: 25 April 2021
+; Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+; Description: contact page html file, Sprint 2
+;===========================================
+-->
+
+
+<!--
+; The mat-card from material angular is inside the flex layout
+; which will provide a responsive layout to this page.
+; mat-card elements have a shadow effect that shows a texture to each content
+-->
+<div fxLayout="row wrap" class="contact">
+
+  <!-- Right side of contact page -->
+
+  <div fxFlex class="right">
+    <!-- Embedded script of google maps specifically for bellevue university address
+      Reference: https://goo.gl/maps/qDixscAwnmFrik6N9
+    -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3004.2646573165143!2d-95.92034668485618!3d41.150576018605534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8793886a86ca807f%3A0x838e857240d175eb!2sBellevue%20University!5e0!3m2!1sen!2sus!4v1619400505777!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+  </div>
+
+  <!-- Left side of contact page
+    ;This is where the mat card for location, phone number
+    ;social media pages and email.
+    ; The social media icons are connected to their respective
+    ; social media links
+  -->
+  <div fxFlex class="left">
+
+    <mat-card class="mat-elevation-z0">
+
+
+              <!-- The left side of the mat card -->
+              <div fxFlex>
+
+                <mat-card-title class="card-title-icon">
+                  <mat-card-title>Find Us</mat-card-title>
+                  <mat-icon class="location">location_on</mat-icon>
+                </mat-card-title>
+                <mat-card-content class="align-center">
+                  <p>1000 Galvin Rd S,</p>
+                  <p>Bellevue, Nebraska 68005</p>
+                </mat-card-content>
+
+            <br />
+
+
+               <mat-card-title>We are Social</mat-card-title>
+                <a href="https://www.facebook.com/BellevueUniversity" target="_blank">
+                  <i class="fab fa-facebook-square" style="font-size:50px">
+                  </i>
+                </a>
+                <a href="https://www.instagram.com/bellevueuniversity/" target="_blank">
+                  <i class="fab fa-instagram" style="font-size:50px">
+                  </i>
+                </a>
+                <a href="https://twitter.com/BellevueU" target="_blank">
+                  <i class="fab fa-twitter" style="font-size:50px">
+                  </i>
+                </a>
+              </div>
+
+              <!-- The right side of the mat card -->
+                <div fxFlex>
+
+                <mat-card-title class="card-title-icon">
+                  <mat-card-title>Give Us a Call</mat-card-title>
+                  <mat-icon class="phone">contact_phone</mat-icon>
+                </mat-card-title>
+                <mat-card-content class="align-center">
+                  <p>Main Number: 1.800.756.79200</p>
+                  <p>Other option: 1.402.293.2000</p>
+                </mat-card-content>
+
+                <br />
+                <mat-card-title>Email Us</mat-card-title>
+                <mat-icon class="phone">mail</mat-icon>
+                <p>Email: BRUINSupportServices@bellevue.edu</p>
+
+                </div>
+
+
+
+    </mat-card>
+  </div>
+</div>

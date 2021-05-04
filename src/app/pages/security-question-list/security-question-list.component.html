@@ -1,0 +1,60 @@
+<!---
+ ============================================
+; Title:  security-question-list.component.html
+; Author: Professor Krasso
+; Date: 15 April 2021
+; Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+; Description: security question list html file
+;===========================================
+-->
+
+<!-- This template displays a list of security questions. -->
+<div fxLayout="column" class="security" fxLayoutAlign="center center">
+
+
+    <mat-card-title class="security-title">
+      Security Questions Configuration</mat-card-title>
+    <br/>
+<!-- New security questions can be created by clicking this button to go to the creation component. -->
+    <button class="createButton" mat-button routerLink="/security-question-create">
+      <mat-icon>addition</mat-icon>
+      Add Security Question
+    </button>
+
+    <br />
+    <!-- The existing security questions are displayed if there are any. -->
+    <mat-card-content *ngIf="securityQuestions">
+      <table class="tableSecurity"  mat-table [dataSource]="securityQuestions">
+        <ng-container matColumnDef="question">
+          <th mat-header-cell *matHeaderCellDef>Questions</th>
+          <td mat-cell *matCellDef="let element">
+
+           {{element.text}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="functions">
+          <th mat-header-cell *matHeaderCellDef>Functions</th>
+          <!-- Clicking the edit icon routes the user to the security question edit component where a particular questions' text can be changed. -->
+          <td mat-cell *matCellDef="let element">
+            <button mat-icon-button routerLink="/security-questions/{{element._id}}">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <!-- Clicking the delete icon opens the delete security question dialog. -->
+            <button mat-icon-button (click)="delete(element._id)">
+              <mat-icon>cancel_presentation</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      </table>
+
+
+    </mat-card-content>
+
+</div>
+
+

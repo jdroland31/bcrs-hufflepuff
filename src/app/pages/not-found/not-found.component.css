@@ -1,0 +1,37 @@
+/*
+ ============================================
+; Title:  not-found.component.css
+; Author: Professor Krasso
+; Date: 26 April 2021
+; Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+; Description: not-found page styling, Sprint 2
+;===========================================
+**/
+
+/* This is the style sheet for the not-found component */
+.center {text-align: center;}
+/*  image styling */
+.not-found-badger img{
+  width: 250px;
+  max-width: 80%;
+  margin: 30px auto 10px;
+}
+/* header */
+h2{
+  font-size: 32px;
+  margin-top: 10px;
+}
+/* text container */
+.not-found-text-box{
+  width: 550px;
+  margin: 40px auto;
+}
+/* Button*/
+.mat-raised-button{
+  margin: 60px 0 20px 0 !important;
+  display: inline-block;
+}
+/* Subitle Header */
+.tiny{
+  font-size: 12px;
+}

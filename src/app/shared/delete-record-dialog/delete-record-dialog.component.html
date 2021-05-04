@@ -1,0 +1,25 @@
+<!---
+ ============================================
+; Title:  delete-record-dialog.component.html
+; Author: Professor Krasso
+; Date: 15 April 2021
+; Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+; Description: delete dialog html file
+;===========================================
+-->
+
+<!-- This template displays a record's information so the user can choose to delete it or not -->
+<h2 mat-dialog-title> {{ dialogHeader }} </h2>
+
+
+<div mat-dialog-content>
+  <p> {{ dialogBody }} </p>
+  <small style="color: red;">WARNING: THIS CANNOT BE UNDONE. </small>
+</div>
+
+<hr/>
+
+<div mat-dialog-actions align='end'>
+  <button mat-raised-button matDialogClose="cancel" color="accent"> Cancel </button>
+  <button mat-raised-button matDialogClose="confirm" color="primary" cdkFocusInitial>Delete</button>
+</div>

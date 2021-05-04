@@ -1,0 +1,41 @@
+/*
+ ============================================
+; Title:  register.component.css
+; Author: Professor Krasso
+; Date: 26 April 2021
+; Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+; Description: Register styling, Sprint 2
+;===========================================
+**/
+
+/* This is the style sheet for the Register component */
+
+/* Container styling. */
+.register-container
+{
+  width: 600px;
+  max-width: 90%;
+  margin: 40px auto;
+}
+/* Input styling. */
+.mat-input-element
+{
+  margin-bottom:10px;
+}
+/* Material Stepper styling. */
+.mat-stepper-next,
+.mat-stepper-previous{
+  margin-top: 25px;
+}
+/* Stepper background */
+.mat-step-header .mat-step-icon,
+.mat-step-icon.mat-step-icon-state-number {
+  background-color: rgba(0, 0, 0, 0.14) !important;
+
+}
+/* prev button */
+.mat-stepper-previous
+{
+  line-height: 0;
+  margin-right: 15px;
+}
