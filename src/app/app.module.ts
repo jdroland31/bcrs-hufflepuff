@@ -61,6 +61,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list';
 import { MatStepperModule } from '@angular/material/stepper';
 import { PurchasesByServiceGraphComponent } from './pages/purchases-by-service-graph/purchases-by-service-graph.component';
+import { InvoiceConfirmationComponent } from './dialogs/invoice-confirmation/invoice-confirmation.component';
 
 @NgModule({
   //Declare the components used in the application.
@@ -92,6 +93,7 @@ import { PurchasesByServiceGraphComponent } from './pages/purchases-by-service-g
     PurchasesByServiceGraphComponent,
     RoleListComponent,
     RoleDetailsComponent,
+    InvoiceConfirmationComponent,
   ],
   //Declare the imported modules being used.
   imports: [

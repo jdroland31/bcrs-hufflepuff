@@ -1,0 +1,21 @@
+<!---
+ ============================================
+; Title:  Invoice Summary
+; Author: Professor Krasso
+; Date: 4 May 2021
+; Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+; Description: Invoice Confirmation html file
+;===========================================
+-->
+
+<h2 style="text-align: center;" mat-dialog-title> {{invoice.userName}}, Your Order is Confirmed</h2>
+
+<div mat-dialog-content>
+  <h3>Order date: {{ invoice.orderDate | date }}</h3>
+  <h3>Order Total: {{ invoice.total | currency }}</h3>
+  <mat-divider></mat-divider>
+</div>
+
+<div mat-dialog-actions align="end">
+  <button mat-raised-button matDialogClose="confirm" color="accent">OK</button>
+</div>
