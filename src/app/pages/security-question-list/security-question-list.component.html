@@ -41,7 +41,7 @@
               <mat-icon>edit</mat-icon>
             </button>
             <!-- Clicking the delete icon opens the delete security question dialog. -->
-            <button mat-icon-button (click)="delete(element._id)">
+            <button mat-icon-button (click)="delete(element._id, element.text)">
               <mat-icon>cancel_presentation</mat-icon>
             </button>
           </td>
