@@ -13,6 +13,7 @@ import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from
 import { CookieService } from 'ngx-cookie-service';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { resetFakeAsyncZone } from '@angular/core/testing';
 
 @Injectable({
   providedIn: 'root'
@@ -22,10 +23,11 @@ export class RoleGuard implements CanActivate {
   constructor(private router: Router, private http: HttpClient, private cookieService: CookieService, private roleService: RoleService) { }
   //This function checks if the session_user cookie is set. If not it navigates the user back to the sign in page.
   canActivate( route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    return this.roleService.findUserRole(this.cookieService.get('sessionUser')).pipe(map(res =>
+    return this.roleService.findUserRole(this.cookieService.get('session_user')).pipe(map(res =>
     {
-      console.log(res);
-      if (res['data'].text === 'admin')
+      console.log('inside the role guard');
+      console.log(res)
+      if (res['data'].role === 'admin')
       {
         return true;
       }

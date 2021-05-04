@@ -170,8 +170,8 @@ router.get('/:_id', async(req, res) => {
             address: req.body.address,
             email: req.body.email
           });
-
-          user.role.set({text: req.body.role});
+          //it sets the new role text
+          user.role.set({role: req.body.role});
 
           //Save the new user data.
           user.save(function(err, updatedUser){

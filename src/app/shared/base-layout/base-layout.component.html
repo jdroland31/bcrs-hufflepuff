@@ -27,7 +27,7 @@
           <mat-option class="user-option" routerLink="/userlist">Users Configuration</mat-option>
           <mat-option class="user-option" routerLink="/security-questions">Security Questions Configuration</mat-option>
           <mat-option class="user-option" routerLink="/roles">Roles Configuration</mat-option>
-          <mat-option class="user-option" routerLink="/chart">Purchases By Service</mat-option>
+          <mat-option class="user-option" routerLink="/chart" *ngIf="userRole === 'admin'">Purchases By Service</mat-option>
           <mat-option class="user-option" (click)="signOut()">Sign Out</mat-option>
         </mat-select>
       </mat-form-field>
