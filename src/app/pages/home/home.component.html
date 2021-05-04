@@ -18,24 +18,24 @@
     <div fxLayout="row">
       <mat-card>
         <mat-card-content>
-          <div ngModelGroup="checkGroup" *ngFor="let service of services; let i = index">
-            <!-- <div fxLayout="row" *ngIf="i%4==0">
-              {{ i }} -->
-              <mat-card class="service-card">
-                <mat-card-title>{{service.title}} <span class="material-icons">{{service.icon}}</span></mat-card-title>
-                <hr>
-                <mat-card-subtitle>{{service.salesPitch}}</mat-card-subtitle>
-                <br>
-                <mat-card-content>
-                  <div fxLayoutAlign="center center">
-                    <mat-checkbox name="{{service.id}}" ngModel>
-                      ({{service.price | currency}})
-                    </mat-checkbox>
-                  </div>
-                </mat-card-content>
-              </mat-card>
-            <!-- </div> -->
-            <br />
+          <div class="grid-container" style="display: grid; grid-gap: 20px; grid-template-columns: auto auto auto auto; padding: 20px">
+              <div ngModelGroup="checkGroup" *ngFor="let service of services; let i = index">
+                <mat-card class="service-card">
+                  <mat-card-title>{{service.title}} <span class="material-icons">{{service.icon}}</span></mat-card-title>
+                  <hr>
+                  <mat-card-subtitle>{{service.salesPitch}}</mat-card-subtitle>
+                  <br>
+                  <mat-card-content>
+                    <div fxLayoutAlign="center center">
+                      <mat-checkbox name="{{service.id}}" ngModel>
+                        ({{service.price | currency}})
+                      </mat-checkbox>
+                    </div>
+                  </mat-card-content>
+                </mat-card>
+              <!-- </div> -->
+              <br />
+            </div>
           </div>
           <div fxLayout="column">
             <h4 fxFlex>Standard Fees</h4>
