@@ -3,17 +3,19 @@
 ** Author:  Professor Krasso
 ** Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
 ** Date: April 15 2021
-** Description: API - Sprint 1
+** Description: User Details - Sprint 1
  ***/
 
+// this component displays the details of a selected user
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
-import { ActivatedRoute, Router } from '@angular/router'
-
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Role } from 'src/app/shared/interfaces/role.interface';
+import { RoleService} from 'src/app/shared/services/role.service';
 import { User } from 'src/app/shared/user.interface';
-
 import { UserService } from '../../shared/user.service';
+
 
 @Component({
   selector: 'app-user-details',
@@ -24,12 +26,12 @@ export class UserDetailsComponent implements OnInit {
   user: User;
   userId: string;
   form: FormGroup;
-  roles: any;
+  roles: Role[];
 
-  constructor(private route: ActivatedRoute, private http: HttpClient, private fb: FormBuilder, private router: Router, private userService: UserService) {
+  constructor(private route: ActivatedRoute, private http: HttpClient, private fb: FormBuilder, private router: Router, private userService: UserService, private roleService: RoleService) {
     this.userId = this.route.snapshot.paramMap.get('id');
     // console.log(this.userId);
-
+    //Get the current values of the user's editable field via the passed in userId.
     this.userService.findUserById(this.userId).subscribe(res => {
       this.user = res['data'];
     }, err => {
@@ -40,22 +42,31 @@ export class UserDetailsComponent implements OnInit {
       this.form.controls.phoneNumber.setValue(this.user.phoneNumber);
       this.form.controls.address.setValue(this.user.address);
       this.form.controls.email.setValue(this.user.email);
+      this.form.controls.role.setValue(this.user.role);
+
+      this.roleService.findAllRoles().subscribe(res => {
+        console.log(res);
+        this.roles = res['data'];
+      }, err => {
+        console.log(err);
+      })
     })
    }
 
 
 
   ngOnInit(): void {
-
+    //Set the validation standards on the field forms.
     this.form = this.fb.group({
       firstName: [null, Validators.compose([Validators.required])],
       lastName: [null, Validators.compose([Validators.required])],
       phoneNumber: [null, Validators.compose([Validators.required])],
       address: [null, Validators.compose([Validators.required])],
-      email: [null, Validators.compose([Validators.required, Validators.email])]
+      email: [null, Validators.compose([Validators.required, Validators.email])],
+      role: [null, Validators.compose([Validators.required])]
     });
   }
-
+  //When called, this collects the values in the editable fields and updates the user, then returns them to the user list.
   saveUser() {
     // console.log("saveUser() was called");
     const updatedUser = {} as User;
@@ -64,6 +75,7 @@ export class UserDetailsComponent implements OnInit {
     updatedUser.phoneNumber = this.form.controls.phoneNumber.value;
     updatedUser.address = this.form.controls.address.value;
     updatedUser.email = this.form.controls.email.value;
+    updatedUser.role = this.form.controls.role.value;
 
     this.userService.updateUser(this.userId, updatedUser).subscribe(res => {
       this.router.navigate(['/userlist'])
@@ -71,7 +83,7 @@ export class UserDetailsComponent implements OnInit {
       console.log(err);
     })
   }
-
+  //If the user cancels editing, they are navigated back to the user list component.
   cancel () {
     this.router.navigate(['/userlist']);
   }

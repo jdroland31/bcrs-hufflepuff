@@ -11,7 +11,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 //the schema for user roles
 let userRoleSchema = new Schema({
-  role: {type: String, default: 'standard'}
+  //Default all users to standard role on creation.
+  role: {type: String, default: 'standard'},
+  isDisabled: {type: Boolean, default: false}
 })
-
+//Export the userRoleSchema.
 module.exports = userRoleSchema;

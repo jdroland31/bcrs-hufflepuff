@@ -84,7 +84,7 @@ router.get('/:id', async(req, res) => {
         res.json(findByIdResponse.toObject());
       }
     })
-  }
+  }// If there is an error with the server, return a 500 code and the error.
   catch (e)
   {
     console.log(e);
@@ -120,7 +120,7 @@ router.get('/:id', async(req, res) => {
               res.json(createSecurityQuestionResponse.toObject());
           }
       })
-  }
+  }// If there is an error with the server, return a 500 code and the error.
   catch (e)
   {
       console.log(e);console.log('catch');
@@ -240,7 +240,7 @@ router.delete('/:id', async(req, res) => {
     })
   }
   catch (e)
-  {
+  {// If there is an error with the server, return a 500 code and the error.
     console.log(e);
     const findAllCatchErrorResponse = new ErrorResponse(500, 'Internal server error', e.message);
     res.status(500).send(findAllCatchErrorResponse.toObject());

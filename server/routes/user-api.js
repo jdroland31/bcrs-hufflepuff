@@ -40,7 +40,7 @@ const saltRounds = 10; // set salt rounds for hashing algorithm
       }
     });
   }
-   // catch all e
+   // // If there is an error with the server, return a 500 code and the error.
   catch (e) {
     console.log('inside catch error' + error);
     const findAllCatchErrorResponse = new ErrorResponse (500, 'Internal Server Error', error);
@@ -91,6 +91,7 @@ router.post('/', async(req, res) => {
 
     })
   } catch (e){
+    // If there is an error with the server, return a 500 code and the error.
     console.log(e);
     const findByIdCatchErrorResponse = new ErrorResponse(500, 'Internal server error', e);
     res.status(500).send(findByIdCatchErrorResponse.toObject());
@@ -127,7 +128,7 @@ router.get('/:_id', async(req, res) => {
     })
   }
   catch(e)
-  {
+  {// If there is an error with the server, return a 500 code and the error.
     console.log(e);
     const findUserCatchError = new BaseResponse('500', `Internal Server Error ${err.message}`,null);
     res.json(findUserCatchError)
@@ -168,8 +169,10 @@ router.get('/:_id', async(req, res) => {
             phoneNumber: req.body.phoneNumber,
             address: req.body.address,
             email: req.body.email
-
           });
+          //it sets the new role text
+          user.role.set({role: req.body.role});
+
           //Save the new user data.
           user.save(function(err, updatedUser){
             if(err)
@@ -209,7 +212,7 @@ router.get('/:_id', async(req, res) => {
 
 /**
  * API: DeleteUser
- * @param userId
+ * @param _id
  * @returns User document or null
  * This route updates a user identified by user ID to be 'disabled' rather than act as a true deletion.
  */
@@ -273,6 +276,79 @@ router.delete('/:id', async(req,res) => {
   }
 })
 
+
+ /**
+  * FindSelectedSecurityQuestions
+  * Get request to retrieve user's selected
+  * security questions for request password validation
+  */
+router.get('/:userName/security-questions', async (req, res) => {
+  try
+  {
+    //Find query to find specific username
+    User.findOne({'userName': req.params.userName}, function(err, user){
+      if (err)
+      {
+        console.log(err);
+        const findSelectedSecurityQuestionsMongodbErrorResponse = new ErrorResponse('500', 'Internal server error', err);
+        res.status(500).send(findSelectedSecurityQuestionsMongodbErrorResponse.toObject());
+      }
+      /**
+       * if it connects properly to the database the console
+       * will respond successful query and the data objects
+       * that was found
+       */
+      else
+      {
+        console.log(user);
+        const findSelectedSecurityQuestionsResponse = new BaseResponse('200', 'Query successful', user.selectedSecurityQuestions);
+        res.json(findSelectedSecurityQuestionsResponse.toObject());
+      }
+    })
+  }
+  catch (e)
+  {
+    //the catch response when the node server didn't work
+    console.log(e);
+    const findSelectedSecurityQuestionsCatchErrorResponse = new ErrorResponse('500', 'Internal server error', e);
+    res.status(500).send(findSelectedSecurityQuestionsCatchErrorResponse.toObject());
+  }
+});
+
+/**
+ * findUserRole Api
+ * This API uses get request to get the role of a specific username
+ */
+router.get('/:userName/role', async (req, res) => {
+  try
+  {
+    //Finds the username, but gets the role based on the query
+      User.findOne({'userName': req.params.userName}, function(err, user)
+      {
+          if (err)
+          {
+            //The error response if the mongodb is not connected
+            console.log(err);
+            const findUserRoleMongoDbErrorResponse = new ErrorResponse('500', 'Internal server error', err);
+            res.status(500).send(findUserRoleMongoDbErrorResponse.toObject());
+          }
+          else
+          {
+            //The successful response if the query ran
+              console.log(user);
+              const findUserRoleResponse = new BaseResponse('200', 'Query successful', user.role);
+              res.json(findUserRoleResponse.toObject());
+          }
+      })
+  }
+  catch (e)
+  {
+    //The catch response if the server is not working
+      console.log(e);
+      const findUserRoleCatchErrorResponse = new ErrorResponse('500', 'Internal server error', e.message);
+      res.status(500).send(findUserRoleCatchErrorResponse.toObject());
+  }
+})
 module.exports = router;
 
 

@@ -3,8 +3,10 @@
 ** Author:  Professor Krasso
 ** Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
 ** Date: April 15 2021
-** Description: API - Sprint 1
+** Description: Auth Layout - Sprint 1
  ***/
+
+// This component provides the layout for users who are not yet signed in.
 
 import { Component, OnInit } from '@angular/core';
 

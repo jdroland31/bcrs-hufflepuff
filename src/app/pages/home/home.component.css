@@ -2,6 +2,7 @@
  ============================================
 ; Title:  home.component.css
 ; Author: Professor Krasso
+<<<<<<< HEAD
 ; Date: 19 April 2021
 ; Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
 ; Description: home page styling
@@ -11,12 +12,77 @@
     margin-top: 30px;
   }
 
+=======
+; Date: 26 April 2021
+; Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+; Description: home page styling, Sprint 2
+;===========================================
+**/
+
+/* This is the style sheet for the home component. */
+
+.main-welcome {
+    margin-top: 30px;
+  }
+/* Title*/
+>>>>>>> 27c1b7945f38efa13d95868832b7f144f638c4b9
   .title {
     text-align: center;
     font-weight: lighter;
   }
+<<<<<<< HEAD
 
+=======
+/* Subitle*/
+>>>>>>> 27c1b7945f38efa13d95868832b7f144f638c4b9
   .subtitle {
     text-align: center;
     font-size: 14px;
   }
+<<<<<<< HEAD
+=======
+  /* body */
+  body {
+    background: white;
+  }
+  /* Card */
+  .service-card{
+    margin: 10px;
+    width: 375px;
+  }
+
+  /* Icons */
+  .service-icon{
+      color: black;
+      font-size: 36px;
+      visibility: visible;
+    }
+
+  .material-icons{
+    float: right;
+  }
+  /* Checkbox */
+  mat-checkbox{
+    background-color: #f9c02d;
+    padding: 10px;
+    /* border-radius: 25px; */
+  }
+
+  /* Form */
+
+  .service-form{
+    padding-bottom: 50px;
+  }
+
+  .service-order-button{
+    background-color: #f9c02d;
+    width: 200px;
+    margin-bottom: 30px;
+  }
+
+  .checkout-icon{
+    font-size: 20px;
+    margin-top: 8px;
+  }
+
+>>>>>>> 27c1b7945f38efa13d95868832b7f144f638c4b9

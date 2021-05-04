@@ -1,3 +1,12 @@
+/***
+** Title: Bob's Computer Repair Shop
+** Author:  Professor Krasso
+** Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+** Date: April 15 2021
+** Description: API - Sprint 1
+ ***/
+
+//This component provides an interface for the User API.
 import { Injectable } from '@angular/core';
 import { User } from './user.interface';
 
@@ -32,6 +41,7 @@ export class UserService {
       phoneNumber: user.phoneNumber,
       address: user.address,
       email: user.email,
+      role: user.role
     })
   }
 
@@ -47,7 +57,8 @@ export class UserService {
       lastName: user.lastName,
       phoneNumber: user.phoneNumber,
       address: user.address,
-      email: user.email
+      email: user.email,
+      role: user.role
     })
 
   }

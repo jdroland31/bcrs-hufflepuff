@@ -1,0 +1,18 @@
+/*
+ ============================================
+; Title:  purchases-by-service-graph.component.css
+; Author: Professor Krasso
+; Date: 30 April 2021
+; Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+; Description: Styling for the chart
+; Sprint - 3
+;===========================================
+**/
+
+ h1{
+   margin-top: 25px;
+ }
+
+ .chart-container{
+   padding-bottom: 50px;
+ }

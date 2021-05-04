@@ -2,23 +2,33 @@
  ============================================
 ; Title:  user-list.component.html
 ; Author: Professor Krasso
+<<<<<<< HEAD
 ; Date: 19 April 2021
 ; Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
 ; Description: user-list component html file
 ;===========================================
 -->
 
+=======
+; Date: 25 April 2021
+; Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+; Description: user list html file
+;===========================================
+-->
+
+<!-- This template allows the user to browse a list of existing users to edit or delete. -->
+>>>>>>> 27c1b7945f38efa13d95868832b7f144f638c4b9
 <div fxLayout='column' class="userList" fxLayoutAlign="center center">
 
 
     <mat-card-title class="userList-title">Users Configuration</mat-card-title>
-
+<!-- This button navigates to the create user component. -->
     <button class="createButton" mat-button routerLink="/users/create/new">
       <mat-icon>addition</mat-icon>
       Add New User
     </button>
 
-
+    <!-- Using ngIf, this table is filled with data of existing users. -->
     <mat-card-content *ngIf="users">
       <table mat-table class="usersTable" [dataSource]='users'>
 
@@ -30,6 +40,11 @@
         <ng-container matColumnDef='firstName'>
           <th mat-header-cell *matHeaderCellDef>First Name</th>
           <td class="text" mat-cell *matCellDef='let element'> {{ element.firstName }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef='role'>
+          <th mat-header-cell *matHeaderCellDef>Role</th>
+          <td class="text" mat-cell *matCellDef='let element'> {{ element.role.role }}</td>
         </ng-container>
 
         <ng-container matColumnDef='lastName'>
@@ -55,11 +70,11 @@
         <ng-container matColumnDef='functions'>
           <th mat-header-cell *matHeaderCellDef>Functions</th>
           <td mat-cell *matCellDef='let element'>
-
+            <!-- Clicking the edit user icon routes to the user edit component. -->
             <button mat-icon-button routerLink='/users/{{ element._id }}'>
               <mat-icon color='accent'>edit</mat-icon>
             </button>
-
+            <!-- Clicking the delete user icon loads a dialog where the user can confirm deletion. -->
             <button mat-icon-button (click)='delete(element._id)'>
               <mat-icon color='accent'>cancel_presentation</mat-icon>
             </button>

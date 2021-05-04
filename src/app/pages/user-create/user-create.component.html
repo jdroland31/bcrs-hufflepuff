@@ -2,6 +2,7 @@
  ============================================
 ; Title:  user-create.component.html
 ; Author: Professor Krasso
+<<<<<<< HEAD
 ; Date: 19 April 2021
 ; Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
 ; Description: user-create component html file
@@ -9,16 +10,26 @@
 -->
 
 <mat-card-title class="newUserTitle">Add New User</mat-card-title>
+=======
+; Date: 15 April 2021
+; Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+; Description: user create html file
+;===========================================
+-->
+>>>>>>> 27c1b7945f38efa13d95868832b7f144f638c4b9
+
+<!-- This template allows a new user to be created. -->
 
 
-<div fxLayout="columns">
 
+<div fxLayout="column" fxLayoutAlign="center center" fxFill>
+  <mat-card-title class="newUserTitle" fxLayoutAlign="center center">Add New User</mat-card-title>
     <br>
 
+    <!-- This form provides all needed fields for user creation. -->
     <form class="addUserForm" [formGroup]="form" (ngSubmit)="createUser()" #userForm>
-
-          <div fxLayout="column">
-          <mat-card>
+      <div fxLayout="column">
+        <mat-card>
           <mat-form-field>
             <input type="text" matInput [formControl]="form.controls['userName']" placeholder="Username">
           </mat-form-field>
@@ -53,7 +64,7 @@
 
 
       <br>
-
+        <!-- The user can choose to create a new user or navigate back to the Users list. -->
       <mat-card-actions align="end">
         <button mat-raised-button (click)="cancel()" color="warn">Cancel</button>
         <button type="submit" mat-raised-button color="accent">Submit</button>

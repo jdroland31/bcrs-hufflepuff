@@ -6,8 +6,9 @@
 ** Description: API - Sprint 1
  ***/
 
-
+//This interface defines a SecurityQuestion object.
 export interface SecurityQuestion {
+  questionText: string;
   _id: string;
   text: string;
 

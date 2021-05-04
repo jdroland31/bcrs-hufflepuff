@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  ============================================
 ; Title:  security-question-list.component.css
@@ -7,16 +8,26 @@
 ; Description: security-question-list component styling
 ;===========================================
 **/
+=======
+/***
+** Title: Bob's Computer Repair Shop
+** Author:  Professor Krasso
+** Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+** Date: April 15 2021
+** Description: API - Sprint 1
+ ***/
+>>>>>>> 27c1b7945f38efa13d95868832b7f144f638c4b9
 
+ /* This is the security question list style sheet */
 .security{
   padding-top: 5rem;
 
 }
-
+/* Header */
 .security-title{
   font-weight: lighter;
 }
-
+/* Title */
 .security-questions{
   padding-top: 2rem;
   font-weight: lighter;
@@ -25,16 +36,25 @@
 .questions{
   background-color: transparent;
 }
-
+/* Create button */
 .createButton{
   text-align: center;
   background-color: transparent;
   border: 0;
   margin-right: 7rem;
 }
-
+/* Table styling */
 .tableSecurity{
   text-align: left;
-  background-color: transparent;
+  background-color: white;
   size: 20rem;
+}
+table{
+  margin: 20px auto 80px auto;
+}
+/* Button */
+.mat-button{
+  background: black;
+    color: white;
+    margin: 15px auto 0;
 }

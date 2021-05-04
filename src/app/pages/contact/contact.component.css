@@ -2,8 +2,52 @@
  ============================================
 ; Title:  contact.component.css
 ; Author: Professor Krasso
-; Date: 19 April 2021
+; Date: 25 April 2021
 ; Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
-; Description: contact page styling
+; Description: contact page styling, Sprint 2
 ;===========================================
 **/
+
+/* This is the style sheet for the Contact component. */
+
+/*
+The contact div style
+*/
+.contact {
+  margin-top: 2rem;
+
+}
+
+/*
+The right side div flex style
+*/
+.right {
+  margin-bottom: 5rem;
+  margin-left: 3rem;
+}
+
+/*
+The left side div flex style
+*/
+.left {
+  margin-right: 2rem;
+  margin-left: 2rem;
+  padding-top: 4rem;
+}
+
+/*
+The link style
+*/
+a {
+  color: #3e2622;
+  margin-top: 3rem;
+  padding-right: 1rem;
+}
+
+/*
+The phone and location icons style
+*/
+.phone, .location {
+  color: #3e2622;
+  font-size: 50px;
+}

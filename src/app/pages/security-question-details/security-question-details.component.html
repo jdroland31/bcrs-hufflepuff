@@ -2,17 +2,27 @@
  ============================================
 ; Title:  security-question-details.component.html
 ; Author: Professor Krasso
+<<<<<<< HEAD
 ; Date: 19 April 2021
 ; Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
 ; Description: security-question-details component html file
 ;===========================================
 -->
+=======
+; Date: 25 April 2021
+; Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+; Description: security question details html file
+;===========================================
+-->
 
-<div fxLayout="column">
+<!--SQ update / edit Page -->
+>>>>>>> 27c1b7945f38efa13d95868832b7f144f638c4b9
+
+<div fxLayout="column" fxLayoutAlign="center center" fxFill>
   <mat-card class="mat-elevation-z8">
     <mat-card-title>Security Question Details</mat-card-title>
 
-
+<!-- This formGroup allows the specified security question text to be changed. -->
     <form [formGroup]="form" (ngSubmit)="saveQuestion()" #questionForm>
       <mat-card-content>
         <div fxLayout="column" fxLayoutGap="10px">
@@ -22,7 +32,7 @@
         </div>
       </mat-card-content>
 
-
+<!-- The user can choose to save the edit or return to the security questions list. -->
       <mat-card-actions align="end">
         <button mat-raised-button (click)="cancel()" color="warn"> Cancel </button>
         <button type="submit" mat-raised-button color="accent"> Submit </button>

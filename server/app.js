@@ -24,6 +24,8 @@ const mongoose = require('mongoose');
 const SecurityQuestionAPI = require('./routes/security-question-api');
 const SessionAPI = require('./routes/session-api');
 const UserAPI = require('./routes/user-api');
+const RoleAPI = require('./routes/role-api');
+const InvoiceAPI = require('./routes/invoice-api');
 
 /**
  * App configurations
@@ -32,8 +34,8 @@ let app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({'extended': true}));
 app.use(morgan('dev'));
-app.use(express.static(path.join(__dirname, '../dist/bcrs-hufflepuff')));
-app.use('/', express.static(path.join(__dirname, '../dist/bcrs-hufflepuff')));
+app.use(express.static(path.join(__dirname, '../dist/bcrs')));
+app.use('/', express.static(path.join(__dirname, '../dist/bcrs')));
 
 
 
@@ -65,7 +67,8 @@ mongoose.connect(conn, {
 app.use('/api/security_questions', SecurityQuestionAPI);
 app.use('/api/session', SessionAPI);
 app.use('/api/users', UserAPI);
-
+app.use('/api/roles', RoleAPI);
+app.use('/api/invoices', InvoiceAPI);
 
 /**
  * Create and start server

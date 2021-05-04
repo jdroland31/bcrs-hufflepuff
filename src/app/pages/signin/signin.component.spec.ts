@@ -3,7 +3,7 @@
 ** Author:  Professor Krasso
 ** Modified by: Jonathan Rodlan, Nicole Barleta, Wendy Leon
 ** Date: April 15 2021
-** Description: API - Sprint 1
+** Description: Sign In spec file - Sprint 1
  ***/
 
 import { ComponentFixture, TestBed } from '@angular/core/testing';

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  ============================================
 ; Title:  user-create.component.css
@@ -8,6 +9,20 @@
 ;===========================================
 **/
 
+=======
+/***
+** Title: Bob's Computer Repair Shop
+** Author:  Professor Krasso
+** Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+** Date: April 15 2021
+** Description: User Create - Sprint 1
+ ***/
+
+
+ /* This is the stylesheet for User Create */
+
+ /* Header */
+>>>>>>> 27c1b7945f38efa13d95868832b7f144f638c4b9
 .newUserTitle{
   padding-top: 5rem;
   font-weight: lighter;

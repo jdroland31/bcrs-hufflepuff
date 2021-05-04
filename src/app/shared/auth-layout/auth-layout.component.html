@@ -1,15 +1,29 @@
+<!---
+ ============================================
+; Title:  auth-layout.component.html
+; Author: Professor Krasso
+; Date: 15 April 2021
+; Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+; Description: auth layout html file
+;===========================================
+-->
+
 <!-- router outlet tags render routed pages -->
 
 <div fxLayout="column">
-  <!-- navigation -->
-  <nav fxFlex>
+  <div class="logo-group">
+    <div class="logo">
+      <img class="logo-img" src="./assets/images/bcrs-logo.png">
+    </div>
+    <mat-toolbar-row class="nav-row">
+      <h1 class="bcrs-title">Bob's</h1>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="nav-row">
+      <h2 class="subtitle">Computer Repair Shop</h2>
+    </mat-toolbar-row>
+  </div>
 
-    <mat-toolbar color="accent">
-      <mat-toolbar-row class="bcrs-title">
-        <span>Bob's Computer Repair Shop</span>
-      </mat-toolbar-row>
-    </mat-toolbar>
-  </nav>
+  <!-- This component does not include the navigation bar. -->
 
   <!-- main content -->
   <div fxFlex>

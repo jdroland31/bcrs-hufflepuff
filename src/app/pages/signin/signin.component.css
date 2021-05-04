@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  ============================================
 ; Title:  signin.component.css
@@ -7,21 +8,34 @@
 ; Description: signin component styling
 ;===========================================
 **/
+=======
+/***
+** Title: Bob's Computer Repair Shop
+** Author:  Professor Krasso
+** Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+** Date: April 15 2021
+** Description: Sign In - Sprint 1
+ ***/
+
+ /* This is the style sheet for the sign in component. */
+>>>>>>> 27c1b7945f38efa13d95868832b7f144f638c4b9
 
 /* .signInContainer{
   padding: 10px;
 } */
-
+/* sign in form container */
 .mat-card{
   background-color: #f9c02d !important;
-  width: 50%;
-  padding-top: 100px;
+  width: 550px;
+  padding: 40px 20px;
+  max-width: 80%;
+  margin: 40px auto;
 }
-
+/* input boxes*/
 input{
   width: 100%;
 }
-
+/* button styling */
 button{
   background-color: #6a4f4b !important;
   color: #fbc02d !important;
@@ -31,11 +45,7 @@ button{
 button:hover{
   background-color: #3e2723 !important;
 }
-
-.login-link {
-  color: gray !important;
-}
-
+/* log in link styling */
 .login-link:hover {
   text-decoration: underline;
   color: gainsboro !important;
@@ -50,4 +60,11 @@ button:hover{
   /*change color of label*/
   color: black !important;
  }
+.mat-input-element{
+  padding: 8px 0;
+}
+a.login-link,
+.mat-card-subtitle a {
+  color: rgba(0,0,0,1) !important;
+}
 
