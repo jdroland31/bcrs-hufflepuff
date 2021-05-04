@@ -62,28 +62,50 @@ export class PurchasesByServiceGraphComponent implements OnInit {
             //   '#6CDAE7'
             // ],
 
-            //Using Hufflepuff colors and supporting colors to stay within the project's style.
             backgroundColor: [
-              '#f9c02d',
-              '#3e2622',
-              '#a9a9a9',
               '#FF0000',
-              '#6a4f4b',
-              '#b68900',
-              '#000000',
-              '#ffeb6b'
+              '#f9c02d',
+              '#5FA777',
+              '#0066CC',
+              '#683FA0',
+              '#3e2622',
+              '#6CDAE7',
+              '#a9a9a9'
             ],
             //the hover background colors
             hoverBackgroundColor: [
-              '#f9c02d',
-              '#3e2622',
-              '#a9a9a9',
               '#FF0000',
-              '#6a4f4b',
-              '#b68900',
-              '#000000',
-              '#ffeb6b'
+              '#f9c02d',
+              '#5FA777',
+              '#0066CC',
+              '#683FA0',
+              '#3e2622',
+              '#6CDAE7',
+              '#a9a9a9'
             ],
+
+            //Using Hufflepuff colors and supporting colors to stay within the project's style.
+            // backgroundColor: [
+            //   '#f9c02d',//yellow
+            //   '#3e2622',//brown
+            //   '#a9a9a9',//grey
+            //   '#FF0000',//red
+            //   '#6a4f4b',//light brown
+            //   '#b68900',//dark gold
+            //   '#000000',//black
+            //   '#ffeb6b'//bright yellow
+            // ],
+            // //the hover background colors
+            // hoverBackgroundColor: [
+            //   '#f9c02d',
+            //   '#3e2622',
+            //   '#a9a9a9',
+            //   '#FF0000',
+            //   '#6a4f4b',
+            //   '#b68900',
+            //   '#000000',
+            //   '#ffeb6b'
+            // ],
             //shows the item count of each service
             data: this.itemCount
           },
