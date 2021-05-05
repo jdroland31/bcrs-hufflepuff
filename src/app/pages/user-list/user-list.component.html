@@ -66,7 +66,7 @@
               <mat-icon color='accent'>edit</mat-icon>
             </button>
             <!-- Clicking the delete user icon loads a dialog where the user can confirm deletion. -->
-            <button mat-icon-button (click)='delete(element._id)'>
+            <button mat-icon-button (click)='delete(element._id, element.userName)'>
               <mat-icon color='accent'>cancel_presentation</mat-icon>
             </button>
 
