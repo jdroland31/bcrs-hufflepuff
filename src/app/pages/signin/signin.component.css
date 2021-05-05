@@ -46,10 +46,7 @@ button:hover{
   color: darkgray !important;
 }
 
-::ng-deep .mat-focused .mat-form-field-label {
-  /*change color of label*/
-  color: black !important;
- }
+
 .mat-input-element{
   padding: 8px 0;
 
@@ -59,3 +56,13 @@ a.login-link,
   color: rgba(0,0,0,1) !important;
 }
 
+
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: black !important;
+ }
+
+::ng-deep.mat-form-field-ripple {
+ /*change color of underline when focused*/
+ background-color: black !important;;
+}

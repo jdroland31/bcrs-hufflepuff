@@ -44,7 +44,7 @@ export class SigninComponent implements OnInit {
         this.cookieService.set('session_user', userName, 1);
         this.router.navigate(['/']);
       }
-      else if(!(res['data']) && (res['httpCode'] === '200')) //If we do not get user data but return a 200 code, we have an invalid ID and should alert the user.
+      else if(!(res['data']) && (res['httpCode'] === '401')) //If we do not get user data but return a 200 code, we have an invalid ID and should alert the user.
       {
         this.openSnackBar('Invalid username or password, please try again', 'WARNING');
       }
