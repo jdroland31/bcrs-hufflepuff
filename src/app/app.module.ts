@@ -60,6 +60,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list';
 import { MatStepperModule } from '@angular/material/stepper';
+import { MatDividerModule } from '@angular/material/divider';
 import { PurchasesByServiceGraphComponent } from './pages/purchases-by-service-graph/purchases-by-service-graph.component';
 import { InvoiceConfirmationComponent } from './dialogs/invoice-confirmation/invoice-confirmation.component';
 
@@ -118,6 +119,7 @@ import { InvoiceConfirmationComponent } from './dialogs/invoice-confirmation/inv
     MatTableModule,
     MatListModule,
     MatStepperModule,
+    MatDividerModule,
     ChartModule
   ],
   providers: [

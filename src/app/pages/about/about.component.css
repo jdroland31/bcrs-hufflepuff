@@ -25,6 +25,14 @@ mat-card-title{
   margin-top: 50px !important;
   margin-bottom: 50px;
 }
+/* Divider */
+mat-divider {
+  width: 50%;
+}
+/* Text */
+.bcrs-text{
+  width:50%;
+}
 
 .main-text{
   /* text-align: center; */
