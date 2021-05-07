@@ -35,7 +35,7 @@
               "node_modules/material-design-icons/iconfont/material-icons.css"
             ],
             "scripts": [
-              "node_modules/chart.js/dist/chart.js"
+
             ]
           },
           "configurations": {
