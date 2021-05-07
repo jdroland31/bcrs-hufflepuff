@@ -21,14 +21,15 @@ import { RoleService } from '../../shared/services/role.service';
   styleUrls: ['./role-list.component.css']
 })
 export class RoleListComponent implements OnInit {
-
+  //variables that connects to the role service and interface
   roles: Role[];
+  //the name of the columns title is placed, so that it can be looped over in the front end
   displayedColumns = ['role', 'functions'];
 
   constructor(private dialog: MatDialog, private roleService: RoleService) {
 
        //The role service is called to get all roles and set the roles variable to that data.
-       this.roleService.findAllRoles().subscribe(res => {
+      this.roleService.findAllRoles().subscribe(res => {
       this.roles = res.data;
 
       console.log('Query result:' + this.roles);

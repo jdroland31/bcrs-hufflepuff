@@ -1,3 +1,14 @@
+/*
+ ============================================
+; Title:  role-list.component.css
+; Author: Professor Krasso
+; Date: 3 May 2021
+; Modified by: Jonathan Roland, Nicole Barleta, Wendy Leon
+; Description: styling for roles - Sprint 3
+;===========================================
+**/
+
+/* Container styling */
 .container{
   width: 600px;
   max-width: 95%;
