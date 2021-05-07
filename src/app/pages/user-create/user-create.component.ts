@@ -60,7 +60,7 @@ export class UserCreateComponent implements OnInit {
     })
   }
   //This provides for navigation back to the user list.
-  cancel () {
+  cancel() {
     this.router.navigate(['/userlist']);
   }
 }

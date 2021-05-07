@@ -20,7 +20,7 @@
       <br/><br/>
       <!-- The user's selected security questions are used to fill in this form.
         When the user submits the form, the provided answers are compared to those stored for these security questions. -->
-      <form *ngIf="selectedSecurityQuestions" [formGroup]="form" (ngSubmit)="verifySecurityQuestions()" #usernameForm>
+      <form *ngIf="selectedSecurityQuestions" [formGroup]="form" (ngSubmit)="verifySecurityQuestions()" (keydown.enter)="$event.preventDefault()" #usernameForm>
         <mat-card-content fxFlex fxLayout="column">
           <mat-list>
             <mat-list-item>
@@ -57,7 +57,7 @@
             <!-- The user can navigate back to the username lookup with the Back button. -->
             <button mat-raised-button routerLink="/session/forgot">
               Back
-            </button>
+            </button> &nbsp; &nbsp;
             <button mat-raised-button color="accent">Submit</button>
           </div>
         </mat-card-content>

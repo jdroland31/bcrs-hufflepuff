@@ -12,6 +12,7 @@ import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 import { RoleService } from '../services/role.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-base-layout',
@@ -22,11 +23,13 @@ export class BaseLayoutComponent implements OnInit {
 
   year: number = Date.now();
   userRole: string;
+  user: string;
 
   constructor(private cookieService: CookieService, private router: Router, private roleService: RoleService) {
     //finds the user role of the signed-in user
     this.roleService.findUserRole(this.cookieService.get('session_user')).subscribe(res => {
       this.userRole = res['data'].role;
+      this.user = this.cookieService.get('session_user');
       console.log("this is the output from baselayout")
       console.log(this.userRole)
     })

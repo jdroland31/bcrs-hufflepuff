@@ -22,7 +22,7 @@
     <div class="navbar-icons-container">
       <!-- Credit for this dropdown implementation to Stackoverflow user  Muhammad Ahsan Ayaz: https://stackoverflow.com/questions/53758021/how-to-create-a-dropdown-from-an-icon-using-angular-material -->
       <mat-form-field>
-        <mat-icon class="nav-icon" ng-controller="navsController">account_circle</mat-icon>
+       <mat-icon class="nav-icon" ng-controller="navsController">account_circle </mat-icon>  <span class="user">{{ user }}</span>
         <mat-select class="user-dropdown" trigger="userTrigger" #userSelect>
           <mat-option class="user-option" routerLink="/userlist" *ngIf="userRole === 'admin'">Users Configuration</mat-option>
           <mat-option class="user-option" routerLink="/security-questions" *ngIf="userRole === 'admin'">Security Questions Configuration</mat-option>

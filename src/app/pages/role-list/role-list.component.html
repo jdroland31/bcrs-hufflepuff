@@ -1,11 +1,15 @@
 <div fxLayout="column"  fxLayoutAlign="center" class="container">
-  <mat-card>
-    <mat-card-title>Role Configuration</mat-card-title>
-    <mat-card-subtitle>
-      <button mat-raised-button routerLink="/roles/create/new" color="accent" >Create</button> <br />
-    </mat-card-subtitle>
 
-    <br /> <br />
+  <mat-card-title>Role Configuration</mat-card-title>
+
+  <button class="createButton" mat-button routerLink="/roles/create/new">
+    <mat-icon>addition</mat-icon>
+    Add New Role
+  </button>
+  <br /> <br />
+  <mat-card>
+
+
 
     <mat-card-content *ngIf="roles">
 
@@ -16,7 +20,7 @@
         </ng-container>
 
         <ng-container matColumnDef="functions">
-          <th mat-header-cell *matHeaderCellDef>Functions</th>
+          <th mat-header-cell *matHeaderCellDef class="functions">Functions</th>
           <td mat-cell *matCellDef="let element" class="functions">
             <button mat-icon-button routerLink='/roles/{{element._id}}'>
               <mat-icon color="accent">edit</mat-icon>
