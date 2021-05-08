@@ -123,6 +123,7 @@ import { InvoiceConfirmationComponent } from './dialogs/invoice-confirmation/inv
     ChartModule
   ],
   providers: [
+    //the error interceptor it intercepts all the error codes that was declared in the error interceptor ts file
     {
       provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true
     }

@@ -12,13 +12,14 @@
 
   <mat-card class="mat-elevation-z8">
     <mat-card-title> Update Role Name</mat-card-title> <br />
-
+<!-- the role details form -->
     <form [formGroup]="form" (ngSubmit)="save()" #roleForm>
 
       <mat-card-content>
         <div fxLayout="column" fxLayoutGap="10px">
           <mat-form-field>
             <mat-label>Role Name</mat-label>
+            <!-- the input field for update role name -->
             <input matInput
                   [formControl]="form.controls['text']"
                   placeholder="Role" />
@@ -28,7 +29,9 @@
 
       <br />
         <mat-card-actions align="end">
+          <!-- cancel button-->
           <button mat-raised-button (click)="cancel()" color="warn">Cancel</button>
+          <!-- the submit button to be able to call the save function -->
           <button mat-raised-button color="accent" [disabled]="!form.valid">Update</button>
         </mat-card-actions>
 

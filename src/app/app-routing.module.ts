@@ -40,6 +40,7 @@ import { RoleGuard } from './shared/guards/role-guard';
 const routes: Routes = [
   {
     path: '',
+    //The baseLayout can only be navigated if a valid user is logged-in
     component: BaseLayoutComponent,
     children: [
       {
@@ -55,6 +56,10 @@ const routes: Routes = [
         path: 'contact',
         component: ContactComponent
       },
+      /**
+       * All the components with RoleGuard
+       * will only show for admin users
+       */
       {
         path: 'users/create/new',
         component: UserCreateComponent,

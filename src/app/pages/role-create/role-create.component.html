@@ -12,13 +12,14 @@
   <!-- Create Role Form -->
   <mat-card class="mat-elevation-z8">
     <mat-card-title> Create User Role</mat-card-title> <br />
-
+<!-- The form for create role -->
     <form [formGroup]="form" (ngSubmit)="create()" #roleForm>
 
       <mat-card-content>
         <div fxLayout="column" fxLayoutGap="10px">
           <mat-form-field>
             <mat-label>Role Name</mat-label>
+            <!-- the input form to add a new role -->
             <input matInput
                   [formControl]="form.controls['text']"
                   placeholder="Role" />
@@ -28,7 +29,9 @@
 
       <br />
         <mat-card-actions align="end">
+          <!-- cancel button -->
           <button mat-raised-button (click)="cancel()" color="warn">Cancel</button>
+          <!-- once click the form will be submitted and will call the create function -->
           <button mat-raised-button color="accent" [disabled]="!form.valid">Create</button>
         </mat-card-actions>
 

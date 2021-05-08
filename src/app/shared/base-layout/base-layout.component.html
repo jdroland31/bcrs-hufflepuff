@@ -24,6 +24,10 @@
       <mat-form-field>
        <mat-icon class="nav-icon" ng-controller="navsController">account_circle </mat-icon>  <span class="user">{{ user }}</span>
         <mat-select class="user-dropdown" trigger="userTrigger" #userSelect>
+          <!--
+            The options that has admin as userRole will only show for users
+            who has admin as a role.
+          -->
           <mat-option class="user-option" routerLink="/userlist" *ngIf="userRole === 'admin'">Users Configuration</mat-option>
           <mat-option class="user-option" routerLink="/security-questions" *ngIf="userRole === 'admin'">Security Questions Configuration</mat-option>
           <mat-option class="user-option" routerLink="/roles" *ngIf="userRole === 'admin'">Roles Configuration</mat-option>

@@ -29,6 +29,7 @@ export class BaseLayoutComponent implements OnInit {
     //finds the user role of the signed-in user
     this.roleService.findUserRole(this.cookieService.get('session_user')).subscribe(res => {
       this.userRole = res['data'].role;
+      //gets the user of the logged-in user in the cookieService
       this.user = this.cookieService.get('session_user');
       console.log("this is the output from baselayout")
       console.log(this.userRole)

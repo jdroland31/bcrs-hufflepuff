@@ -35,7 +35,7 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //Set required on all form fields and enforce password standards.
+    //Set required on all form fields are set as required.
     this.registrationForm = new FormGroup({
       contactInformation: new FormGroup({
         firstName: new FormControl(null, Validators.required),
@@ -54,6 +54,7 @@ export class RegisterComponent implements OnInit {
       }),
       credentials: new FormGroup({
         userName: new FormControl(null, Validators.required),
+        //the password requirements
         password: new FormControl(null, [
           Validators.required,
           Validators.minLength(8),

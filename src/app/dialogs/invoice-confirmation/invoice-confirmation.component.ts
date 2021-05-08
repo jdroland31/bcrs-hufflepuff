@@ -21,6 +21,7 @@ import { Invoice } from '../../shared/interfaces/invoice.interface';
 export class InvoiceConfirmationComponent implements OnInit {
   invoice: Invoice
 
+  //this is the declared variable for the invoice dialog
   constructor(private dialogRef: MatDialogRef<InvoiceConfirmationComponent>, @Inject(MAT_DIALOG_DATA) data){
     this.invoice = data.invoice;
   }

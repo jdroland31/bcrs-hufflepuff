@@ -20,7 +20,7 @@ import { Invoice } from '../../shared/interfaces/invoice.interface';
 
 export class InvoiceSummaryDialogComponent implements OnInit {
   invoice: Invoice
-
+  //declaration of variables for the invoice summary dialog
   constructor(private dialogRef: MatDialogRef<InvoiceSummaryDialogComponent>, @Inject(MAT_DIALOG_DATA) data){
     this.invoice = data.invoice;
   }

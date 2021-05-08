@@ -53,7 +53,7 @@ export class SigninComponent implements OnInit {
       }
     })
   }
-
+//the error alert
   openSnackBar(message: string, notificationType: string) : void
   {
     this.snackBar.open(message, notificationType, {

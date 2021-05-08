@@ -64,7 +64,7 @@ export class RoleDetailsComponent implements OnInit {
       console.log(err);
     });
   }
-
+//goes back tp roles page once this function is called
   cancel() {
     this.router.navigate(['/roles']);
   }

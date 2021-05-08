@@ -8,14 +8,18 @@
 ;===========================================
 -->
 
+<!-- it takes the username of the invoice -->
 <h2 style="text-align: center;" mat-dialog-title> {{invoice.userName}}, Your Order is Confirmed</h2>
 
 <div mat-dialog-content>
+  <!-- gets the order date of the invoice  -->
   <h3>Order date: {{ invoice.orderDate | date }}</h3>
+  <!-- gets the total of the invoice -->
   <h3>Order Total: {{ invoice.total | currency }}</h3>
   <mat-divider></mat-divider>
 </div>
 
 <div mat-dialog-actions align="end">
+  <!-- confirm button to close the dialog -->
   <button mat-raised-button matDialogClose="confirm" color="accent">OK</button>
 </div>
